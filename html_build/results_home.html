@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><script></script>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>results_home</title>
+
+<strong>MetaABC_Mod</strong><br></head><body>
+
+<big style="font-family: Calibri;"><big><big><strong>MetaABC_Mod</strong></big></big></big><br>Choose a taxonomy level for pie chart fun!<br>
+<p>All that is in here at the moment is Puni_CH_01</p>
+why doesnt superkingdom work?<br>
+
+<script type="text/javascript"><!--
+function dropdown(mySel)
+{
+var myWin, myVal;
+myVal = mySel.options[mySel.selectedIndex].value;
+if(myVal)
+{
+if(mySel.form.target)myWin = parent[mySel.form.target];
+else myWin = window;
+if (! myWin) return true;
+myWin.location = myVal;
+}
+return false;
+}
+//-->
+</script>
+<form action="../cgi-bin/redirect.pl" method="post" onsubmit="return dropdown(this.gourl)">
+<select name="gourl"><option value="">Choose Taxonomy level... </option><option value="taxa/superkingdom.html">Superkingdom
+</option><option value="taxa/phylum.html">Phylum
+</option><option value="taxa/class.html">Class
+</option><option value="taxa/order.html">Order
+</option><option value="taxa/family.html">Family
+</option><option value="taxa/genus.html">Genus
+</option><option value="taxa/species.html">Species
+</option></select>
+<input value="Go" type="submit">
+</form>
+<br>
+</body></html>
