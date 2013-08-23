@@ -1,0 +1,13 @@
+<img style="width: 150px; height: auto;" onclick="changeImg(this, 'images/Processing1.gif')" src="images/go_button-green.jpg">
+
+<button type="button">Click Me!</button>
+
+<input type="submit" value="Submit"/>
+
+<script>
+function processing(){
+        <SCRIPT LANGUAGE="Javascript" SRC="scripts/do_processing.pl">
+        alert("Processing has begun");
+}
+</script>
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>New project</title>
+</head><body>
+<big style="font-family: Calibri;"><big><big><strong>MetaABC_Mod<br>
+</strong></big></big></big><big style="font-family: Calibri;"><big><big><strong></strong></big></big></big><br>
+<b>Here is where we will do the processing stuff.<br>
+</b>
+<form action="scripts/do_processing.pl" method="get">
+<table>
+<td>Select input file: (must be fasta format)</td>
+<td>
+<input type="file" name="first_name" value="" maxlength="100" />
+</td>
+</tr>
+<br>
+<tr>
+<tr><td>Binning:</td>
+<td>
+<input type="radio" name="bin_method" value="blastn" /> Blastn
+<input type="radio" name="bin_method" value="blastx" /> Blastx
+<input type="radio" name="bin_method" value="megan" /> Megan
+</td>
+</tr>
+</table>
+<br><br>
+<INPUT  TYPE=IMAGE 
+        SRC="images/go_button-green.jpg" 
+        HEIGHT=100 WIDTH=auto
+        ALT="Go!" BORDER=0 
+        NAME="go"
+     >
+</td>
+</tr>
+</form><br>
+
+</body></html>
