@@ -6,6 +6,8 @@ import sys
 import getopt
 args = '-i'.split()
 
+from subprocess import call
+
 from Bio import SeqIO
 from Bio.Blast.Applications import NcbiblastnCommandline
 
@@ -16,7 +18,7 @@ lengths = []
 try:
     in_fasta = open("test_data/18s.fas", "rU")
 except IOError:
-    print "Cannot find in_fasta"
+    print "Cannot find input fasta"
 
 
 def main():
@@ -30,8 +32,11 @@ def main():
     seq_no = len(lengths)
 
     print "Average length of", seq_no, "input sequences is ", sum(lengths)/seq_no, "base pairs"
+
     #cd-hit
     print "Passing to CD-HIT for data reduction"
+
+    call(["cd-hit-454" + "-i" + "test_data/18s.fas"  + "-o cd-hit-out.fa"])
 
     #do blast
     #blastn(in_fasta)
