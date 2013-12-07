@@ -1,0 +1,22 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+my $site = $ARGV[0];
+my $code = $ARGV[1];
+my $file = $ARGV[2];
+
+open FILE, '<', "$file" or die "cannot open $file\n";
+
+my $count;
+while(my $line = <FILE>){
+	if ($line =~ /^>/){
+		$count++;
+		$line =~ s/^>.*/>$site$count|$code/;
+		print $line;
+	}else{
+		print $line;
+	}
+}
+		
+	

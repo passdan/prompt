@@ -1,0 +1,21 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+#open BLAST, ">blast.fasta";
+#open ALLTAXA, ">all_taxa.txt";
+
+my $organism;
+my $taxon;
+my $fasta;
+
+while (<>){
+	if (/ORGANISM\s(.*)/){
+		$organism = "$1";
+	}elsif (/db_xref="taxon:(.+)"/){
+		$taxon = "$1";
+	}elsif (/\s+\d+ (.*)/){
+		$fasta = "$1";
+		print "$fasta\n";
+	}
+}
