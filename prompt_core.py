@@ -26,7 +26,10 @@ lengths = []
 in_fasta = "18s.fas"
 database = "blast_db/randomised_diatom.fasta"
 indir = "test_data/"
-tmpdir = "tmp_dir/"
+tmpdir = "tmp_dir2/"
+
+##parameters
+blast_minscore = 100
 
 
 try:
@@ -43,18 +46,20 @@ def main():
 
     #cd-hit
     print "Passing to CD-HIT for data reduction"
-    #cdhit_fas = cdhit(in_fasta)
+    cdhit_fas = cdhit(in_fasta)
 
     #do blast
     print "Passing to blastn for taxonomic assignment"
-    #blast_out = blastn(cdhit_fas, database)
+    blast_out = blastn(cdhit_fas, database)
 
     ##split blast output into sample files
-    call(["perl", "scripts/split_blast.pl", "tmp_dir/18s.fas_cdhitout.fa.blastn", tmpdir])
+    call(["perl", "scripts/split_blast.pl", blast_out, tmpdir])
 
-    ##filter blast output for accuracy
-    call(["perl", "scripts/.....................................])
+    ##Create abundance files
+    sample_list = open(tmpdir + "sample_list.txt", "rU")
 
+    for sample in sample_list:
+        call(["perl", "scripts/create_abundance_file.pl", sample, seq_no, "proportion", tmpdir])
 
     #create outfiles
     ##Merge blast and cdhit
@@ -81,6 +86,9 @@ def blastn(fas, db):
     blast_err_log.write(stderr)
     blast_stdout_log.write(stdout)
 
+    #filter blast
+    #call(["perl", "scripts/filter_blast.pl", blast_out, blast_minscore])
+
     return blast_out
 
 
@@ -91,7 +99,7 @@ def cdhit(fas):
     cd_stdout = (tmpdir + "cdhit_stdout.txt")
     cd_stderr = (tmpdir + "cdhit_sterr.txt")
 
-    call(["cd-hit-454","-i",cdhit_in,"-o",cdhit_out])
+    call(["./cd-hit-454","-i",cdhit_in,"-o",cdhit_out])
 
     return cdhit_out
 
