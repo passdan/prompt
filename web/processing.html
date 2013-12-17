@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Metamod Processing page</title>
+<style type="text/css">
+body {background-image:url('images/diatom_back.jpg');}
+</style>
+</head>
+
+<body>
+<p>
+<img style="width: 700px; height: 150px;" alt="" src="images/prompt_logo.png" float:left="">&nbsp;
+<hr>
+
+<h3><b>Processing.</b></h3>
+On submission, the local fasta file will be submitted to CD-HIT for reduction of duplicate reads. It will then be aligned with BLAST, to identify the closest reference sequence in the ncbi database. Quality controls remove the matches beyond a cut-off and are described taxonomically. On completion, the user is notified and the files are available in the result analysis page for viewing.
+<hr>
+<form action="scripts/do_processing.pl" method="get"><br>
+<td>Select input file: (must be fasta format with headers in the format of:</td>
+<p>>UNIQUE_ID|SITE_ID *any additional information*</p>
+<td>Where UNIQUE_ID can be any unique number (ie from the sequencing centre) and SITE_ID must be a unique <b>numerical</b> reference to the site/population that the sequence is from. 
+<td>
+<br>
+<br>
+<input name="first_name" value="" maxlength="100" type="file"></td>
+</tr>
+</tr>
+</form>
+<br>
+<input src="images/go_button-green.jpg" alt="Go!" name="go" border="0" height="100" type="image" width="auto">
+</body>
+</html>
