@@ -4,34 +4,20 @@ use warnings;
 
 #Create abundance files from blastn output
 
-my $usage = "\nusage :\n\n$0 <BLASTn_file> <total_read_number> <output_type : read_count/proportion (default: proportion)> <output directory (default: .)> \n\n";
+my $usage = "\nusage :\n\n$0 <BLASTn_file> <total_read_number> <output directory> \n\n";
 
-die $usage unless ($#ARGV == 1 or $#ARGV == 3);
+my $BLASTn_file = $ARGV[0] ;
+my $total_read_number = $ARGV[1];
+my $output_dir = $ARGV[2];
 
-my $BLASTn_file ;
-my $total_read_number;
-my $output_type ;
-my $output_dir ;
-
-if ($#ARGV == 1){
-	$BLASTn_file = shift ;
-	$total_read_number = shift ;
-	$output_type = 'proportion';
-	$output_dir = '.';
-}else{
-	( $BLASTn_file, $total_read_number, $output_type, $output_dir ) = @ARGV;
-}
 
 print "Calculating abundances for $BLASTn_file\n";
-
-my $PATH =  `pwd`;
-chomp $PATH;
 
 open IN1, "< $output_dir/blast/$BLASTn_file.blast" or die("Can't open $BLASTn_file for reading.\n");
 print "blast in = $output_dir/blast/$BLASTn_file.blast";
 
-open IN2, "< $PATH//taxonomy/all_taxa.txt" or die "Can't open all_taxa.txt for reading.\n";	##DAN edit from strain_length
-open IN3, " < $PATH/taxonomy/names.dmp";
+open IN2, "< /taxonomy/all_taxa.txt" or die "Can't open all_taxa.txt for reading.\n";
+open IN3, " < /taxonomy/names.dmp";
 
 my $sample = $BLASTn_file;
 $sample =~ s/\..*//;

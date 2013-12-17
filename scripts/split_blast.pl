@@ -10,7 +10,7 @@ print "Converting BLASTn result into sample specific files\n";
 my $BLASTn_file = $ARGV[0];
 my $out_dir = $ARGV[1];
 
-system "mkdir $out_dir/blast/";
+system "mkdir $out_dir/split_blasts/";
 open (IN1, '<', $BLASTn_file) or die ("Can't open $BLASTn_file for reading.\n");
 open (IDS, '>', "$out_dir/sample_list.txt") or die ("cant open sample_list.txt\n");
 
@@ -24,7 +24,7 @@ while ( my $line = <IN1> ) {
 
                 my $query = $fields[0];
                         my @q = split(/\|/, $query);
-                        push (@IDS, $q[1]);  #FIX THE UNIQ CMD
+                        push (@IDS, $q[1]); 
         }
 }
 
@@ -40,7 +40,7 @@ foreach my $a (@IDS){
 
 my @handles;
 foreach my $id (@uniques){
-        open $handles[$id], '>', "$out_dir/blast/$id.blast" or die "Cant open filehandle $id\n";
+        open $handles[$id], '>', "$out_dir/split_blasts/$id.blast" or die "Cant open filehandle $id\n";
         print "Split $id.blast\n";
 }
 seek IN1, $data_pos, 0;

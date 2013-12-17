@@ -20,13 +20,14 @@ from subprocess import call
 from Bio import SeqIO
 from Bio.Blast.Applications import NcbiblastnCommandline
 
-in_fasta = 0
 seq_no = 0
 lengths = []
 in_fasta = "18s.fas"
+bcfile = "barcodes.txt"
 database = "blast_db/randomised_diatom.fasta"
 indir = "test_data/"
 tmpdir = "tmp_dir2/"
+barcoded = 0
 
 ##parameters
 blast_minscore = 100
@@ -42,7 +43,7 @@ def main():
     #process infiles
     print "Processing infiles"
 
-    process_infiles(open_fasta)
+    process_infiles(open_fasta,bcfile)
 
     #cd-hit
     print "Passing to CD-HIT for data reduction"
@@ -59,7 +60,7 @@ def main():
     sample_list = open(tmpdir + "sample_list.txt", "rU")
 
     for sample in sample_list:
-        call(["perl", "scripts/create_abundance_file.pl", sample, seq_no, "proportion", tmpdir])
+        call(["perl", "scripts/create_abundance_file.pl", sample, seq_no, tmpdir])
 
     #create outfiles
     ##Merge blast and cdhit
@@ -103,7 +104,7 @@ def cdhit(fas):
 
     return cdhit_out
 
-def process_infiles(open_fasta):
+def process_infiles(open_fasta,barcodes):
 
     for record in SeqIO.parse(open_fasta, "fasta"):
         lengths.append(len(record.seq))
@@ -113,7 +114,13 @@ def process_infiles(open_fasta):
 
     print "Average length of", seq_no, "input sequences is ", sum(lengths)/seq_no, "base pairs"
 
- 
+    if (barcoded = 1):
+        bc = open(barcodes, rU)
+        print "Splitting inputted fasta by barcodes"
+        call(["fastx_barcode_splitter.pl", "--bcfile " + bc, "--prefix split_" + in_fasta + "/", "--exact"])
+
+    for samples in bc:
+        re.match 
 
 if __name__ == "__main__":
     main()
