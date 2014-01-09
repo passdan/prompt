@@ -1,0 +1,4 @@
+fasta	18s.fas
+barcode_map	barcodes.txt
+blastdb	blast_db/randomised_diatom.fasta
+
