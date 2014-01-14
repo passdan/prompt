@@ -60,7 +60,9 @@ def main():
     sample_list = open(tmpdir + "sample_list.txt", "rU")
 
     for sample in sample_list:
-        call(["perl", "scripts/create_abundance_file.pl", sample, seq_no, tmpdir])
+        sample_path = tmpdir + "/split_blasts/" + sample.rstrip() + ".blast"
+        call(["perl", "scripts/create_abundance_files.pl", sample_path, "529", tmpdir])
+        #call(["perl", "scripts/create_abundance_file.pl", sample, seq_no, tmpdir])
 
     #create outfiles
     ##Merge blast and cdhit
@@ -100,7 +102,7 @@ def cdhit(fas):
     cd_stdout = (tmpdir + "cdhit_stdout.txt")
     cd_stderr = (tmpdir + "cdhit_sterr.txt")
 
-    call(["./cd-hit-454","-i",cdhit_in,"-o",cdhit_out])
+    call(["cd-hit-454","-i",cdhit_in,"-o",cdhit_out])
 
     return cdhit_out
 
@@ -114,13 +116,13 @@ def process_infiles(open_fasta,barcodes):
 
     print "Average length of", seq_no, "input sequences is ", sum(lengths)/seq_no, "base pairs"
 
-    if (barcoded = 1):
+    if (barcoded == 1):
         bc = open(barcodes, rU)
         print "Splitting inputted fasta by barcodes"
         call(["fastx_barcode_splitter.pl", "--bcfile " + bc, "--prefix split_" + in_fasta + "/", "--exact"])
 
-    for samples in bc:
-        re.match 
+#    for samples in bc:
+#        re.match 
 
 if __name__ == "__main__":
     main()
