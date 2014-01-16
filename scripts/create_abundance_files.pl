@@ -4,24 +4,25 @@ use warnings;
 
 #Create abundance files from blastn output
 
-my $usage = "\nusage :\n\n$0 <BLASTn_file> <total_read_number> <output directory> \n\n";
+my $usage = "\nusage :\n\n$0 <BLASTn_file> <total_read_number> <processing directory> \n\n";
 
 my $BLASTn_file = $ARGV[0] ;
 my $total_read_number = $ARGV[1];
-my $output_dir = $ARGV[2];
+my $tmp_dir = $ARGV[2];
 
 
 print "Calculating abundances for $BLASTn_file\n";
 
-open IN1, "< $output_dir/blast/$BLASTn_file.blast" or die("Can't open $BLASTn_file for reading.\n");
-print "blast in = $output_dir/blast/$BLASTn_file.blast";
+open IN1, "< $tmp_dir" . "$BLASTn_file" or die("Can't open $BLASTn_file for reading.\nPath: $tmp_dir" . "$BLASTn_file\n");
+print "Processing: blast in = $tmp_dir" . "$BLASTn_file\n";
 
-open IN2, "< /taxonomy/all_taxa.txt" or die "Can't open all_taxa.txt for reading.\n";
-open IN3, " < /taxonomy/names.dmp";
+open IN2, "< taxonomy/all_taxa.txt" or die "Can't open all_taxa.txt for reading.\n";
+open IN3, " < taxonomy/names.dmp";
+
 
 my $sample = $BLASTn_file;
-$sample =~ s/\..*//;
-system "mkdir $output_dir/abundance/$sample/";
+$sample =~ s/split_blasts\/(.*)\..*/$1/;
+system "mkdir $tmp_dir" . "abundance_files/$sample/";
 
 my %Match = ();
 
@@ -57,7 +58,6 @@ my %hash_family;
 my %hash_order;
 my %hash_class;
 my %hash_phylum;
-my %hash_superkingdom;
 
 while(my $line = <IN2>)
 {
@@ -71,7 +71,6 @@ while(my $line = <IN2>)
 	$hash_order{$fields[0]} =$fields[4] ;			##axIdentifier/tax_identifier.cgi
 	$hash_class{$fields[0]} = $fields[6] ;			##DAN
 	$hash_phylum{$fields[0]} = $fields[8] ;			
-	$hash_superkingdom{$fields[0]} = $fields[9] ;
 	
 }
 close IN2;
@@ -87,7 +86,7 @@ while(my $line =<IN3>){
 	if ( $fields[6] eq 'scientific name' ){
 
 		if (exists $names{$fields[0]}){
-			print "Exists the same key of the name hash table !! \n";
+			print "Duplicate keys in the hash\n";
 		}else{
 			$names{$fields[0]} = $fields[2];
 			#$taxid{$fields[2]} = $fields[0];
@@ -96,10 +95,10 @@ while(my $line =<IN3>){
 }
 close IN3;
 
-my $tax_level ;
-my %hash ;
+my $tax_level;
+my %hash;
 
-for (my $i=1 ; $i<=7 ; $i++){
+for (my $i=1; $i<=6; $i++){
 
 	if( $i == 1 ){
 		$tax_level = 'species';
@@ -119,18 +118,17 @@ for (my $i=1 ; $i<=7 ; $i++){
 	}elsif( $i == 6 ){
 		$tax_level = 'phylum';
 		%hash = %hash_phylum;
-	}elsif( $i == 7 ){
-		$tax_level = 'superkingdom';
-		%hash = %hash_superkingdom;
 	}
 	
-	open OUT, '>',"$output_dir/abundance/$sample/$BLASTn_file".'_'."$tax_level"."_proportion" or die("Can't open $sample/$BLASTn_file".'_'."$tax_level"."_proportion for writing.\n");
+	open OUT, '>',"$tmp_dir/abundance_files/$sample/$sample".'_'."$tax_level"."_proportion" or die "Can't open file $tmp_dir/abundance_files/$sample/$sample".'_'."$tax_level"."_proportion: $!";
 	
 	my %Count;
 
 	my $total_abundance = 0 ;
 	
 	while (my ($key, $value) = each (%Match)) {
+		print "Key: $Match{$key} Value: $Match{$value}\n";
+		next;
 		if (exists $Count{$hash{$value}}){
 			$Count{$hash{$value}}++;
 		}else{
