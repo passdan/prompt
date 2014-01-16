@@ -22,9 +22,9 @@ from Bio.Blast.Applications import NcbiblastnCommandline
 
 seq_no = 0
 lengths = []
-in_fasta = "18s.fas"
+in_fasta = sys.argv[1] + ".fas"
 bcfile = "barcodes.txt"
-database = "blast_db/randomised_diatom.fasta"
+database = "blast_db/dia_db"
 indir = "test_data/"
 tmpdir = "tmp_dir2/"
 barcoded = 0
@@ -47,20 +47,21 @@ def main():
 
     #cd-hit
     print "Passing to CD-HIT for data reduction"
-    cdhit_fas = cdhit(in_fasta)
+#    cdhit_fas = cdhit(in_fasta)
 
     #do blast
     print "Passing to blastn for taxonomic assignment"
-    blast_out = blastn(cdhit_fas, database)
+#    blast_out = blastn(cdhit_fas, database)
 
     ##split blast output into sample files
-    call(["perl", "scripts/split_blast.pl", blast_out, tmpdir])
+#    call(["perl", "scripts/split_blast.pl", blast_out, tmpdir])
 
     ##Create abundance files
     sample_list = open(tmpdir + "sample_list.txt", "rU")
+    call(["mkdir", tmpdir + "abundance_files"])
 
     for sample in sample_list:
-        sample_path = tmpdir + "/split_blasts/" + sample.rstrip() + ".blast"
+        sample_path = "split_blasts/" + sample.rstrip() + ".blast"
         call(["perl", "scripts/create_abundance_files.pl", sample_path, "529", tmpdir])
         #call(["perl", "scripts/create_abundance_file.pl", sample, seq_no, tmpdir])
 

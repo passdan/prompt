@@ -7,6 +7,7 @@ body {background-image:url('images/diatom_back.jpg');}
 </head>
 
 <body>
+<center>
 <p>
 <img style="width: 700px; height: 150px;" alt="" src="images/prompt_logo.png" float:left="">&nbsp;
 <hr>
