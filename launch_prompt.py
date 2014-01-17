@@ -5,16 +5,23 @@ import sys
 import getopt
 from subprocess import call
 
-indir = "test_data/"
+sample_dir = "input_fasta/"
 sample_list = "sample_list.txt"
+tmp_dir = "tmp_dir"
 
-open_sample_list = open(indir + sample_list, "rU")
+call(["mkdir", tmp_dir])
+call(["mkdir", tmp_dir + "/abundance_files"])
+call(["mkdir", tmp_dir + "/blast_files"])
+call(["mkdir", tmp_dir + "/html_files"])
 
+
+open_sample_list = open(sample_dir + sample_list, "rU")
 
 
 for sample in open_sample_list:
     rows = sample.split('\t') 
     sampleID =  rows[0]
 
-    print "Running prompt_core on sample: " + sampleID
-    call(["./prompt_core.py", sampleID])
+    print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    print "Running prompt_core on sample " + sampleID + " (" + rows[1].rstrip() + ")"
+    call(["scripts/prompt_sample.py", sample_dir, sampleID])

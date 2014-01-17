@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=utf-8">
+  <title>PROMpT Taxa Pie</title>
+  <link rel="stylesheet" href="style.css"
+ type="text/css">
+</head>
+<body>
+<h2>family:</h2>
+<font face="Arial Narrow">
+<script src="../../../amcharts/javascript/amcharts.js"
+ type="text/javascript"></script>
+<script src="../../../amcharts/javascript/raphael.js"
+ type="text/javascript"></script>
+<script type="text/javascript">
+var chart;
+var legend;
+var chartData =[{family:"Thalassiosiraceae",abundance:0.351},
+{family:"Bacillariaceae",abundance:0.269},
+{family:"Naviculaceae",abundance:0.107},
+{family:"Skeletonemataceae",abundance:0.077},
+{family:"Sellaphoraceae",abundance:0.044},
+{family:"Aulacoseiraceae",abundance:0.035},
+{family:"Thalassiosirales",abundance:0.019},
+{family:"Fragilariaceae",abundance:0.012},
+{family:"Licmophoraceae",abundance:0.012},
+{family:"Lithodesmiaceae",abundance:0.012},
+{family:"Nitzschia",abundance:0.010},
+{family:"Chaetoceros",abundance:0.008},
+{family:"Cymatosiraceae",abundance:0.006},
+{family:"other",abundance:0.038},
+window.onload = function()
+{
+chart = new AmCharts.AmPieChart();
+chart.dataProvider = chartData;
+chart.titleField = "family";
+chart.valueField = "abundance";
+legend = new AmCharts.AmLegend();
+legend.align = "center";
+chart.addLegend(legend);
+chart.write("chartdiv");
+}
+</script></font>
+<div id="chartdiv"
+ style="width: 1200px; height: 800px; background-color: rgb(255, 255, 255);"></div>
+<br>
+</body>
+</html>
+

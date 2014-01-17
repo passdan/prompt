@@ -1,5 +1,0 @@
-#Comment line
-DTM1	ACGT
-DTM2	TGCA
-DTM3	ACTG
-DTM4	CGTA

@@ -64,12 +64,12 @@ while(my $line = <TAXA>)
 	
 	my @fields = split(/\t/, $line);
 	
-	$hash_species{$fields[0]} = $fields[1];			##Numbers changed to represent eukaryota
-	$hash_genus{$fields[0]} = $fields[2] ;			##and to accomodate tables produced from
-	$hash_family{$fields[0]} = $fields[3] ;			##http://www.ncbi.nlm.nih.gov/Taxonomy/T
-	$hash_order{$fields[0]} =$fields[4] ;			##axIdentifier/tax_identifier.cgi
-	$hash_class{$fields[0]} = $fields[6] ;			##DAN
-	$hash_phylum{$fields[0]} = $fields[8] ;			
+	$hash_species{$fields[0]} = $fields[1];			
+	$hash_genus{$fields[0]} = $fields[2];			
+	$hash_family{$fields[0]} = $fields[3];	
+	$hash_order{$fields[0]} =$fields[4]; 
+	$hash_class{$fields[0]} = $fields[6];
+	$hash_phylum{$fields[0]} = $fields[8];			
 	
 }
 close TAXA;
@@ -131,39 +131,30 @@ for (my $i=1; $i<=6; $i++){
 	open OUT, '>',"$tmp_dir/abundance_files/$sample/$sample".'_'."$tax_level"."_proportion" or die "Can't open file $tmp_dir/abundance_files/$sample/$sample".'_'."$tax_level"."_proportion: $!";
 	
 	my %Count;
+	my $total_abundance = 0;
 
-	#my $total_abundance = 0 ;
-	
 	while (my ($key, $value) = each (%Match)) {
-		#print "Key: $key Value: $value\n";
-#		print "hash{key} = hash{$key} = $hash{$key}\n";
-#		print "hash{value} = hash{$value} = $hash{$value}\n";
-		#print "hash{$value} = $hash{$value}\n";
-		#next;
 		my $tax_id = $hash{$value};
-		print "$tax_id : $key : $abun{$key}\n";
-#		next;
+
 		if (exists $Count{$tax_id}){
+#			print "recog_tax: $Count{$tax_id} + $abun{$key}\n";
 			$Count{$tax_id} = $Count{$tax_id} + $abun{$key};
 		}else{
-			$Count{$hash{$value}} = $abun{$key} ;
+#			print "New Tax: $tax_id\tabun: $abun{$key}\n";
+			$Count{$tax_id} = $abun{$key};
 		}
-		#
-		#if ($hash{$value} ne 'NULL'){
-		#	$total_abundance ++ ;
-		#}
+		$total_abundance +=$abun{$key};
 	}
 
 	while (my ($key, $value) = each (%Count)) {
-		#print "Key: $key Value $value\n";
 			
 		if ($key ne 'NULL'){
 			my $prop = $value / $total_read_number;
-			my $round = sprintf "%.3f", $prop;
+			my $round = sprintf "%.5d", $prop;
 			print OUT $key,"\t", $names{$key} ,"\t", $prop, "\n";
 		}
 	}
-		print OUT "Assigned read proportion : ", $total_abundance / $total_read_number , "\n";
-		print OUT "Total read number : ", $total_read_number , "\n";
+print OUT "Assigned read proportion : ", $total_abundance / $total_read_number , "\n";
+	print OUT "Total read number : ", $total_read_number , "\n";
 close OUT;
 }
