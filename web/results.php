@@ -9,42 +9,57 @@ body {background-image:url('images/diatom_back.jpg');}
 <body>
 <center>
 <p>
-<img style="width: 700px; height: 150px;" alt="" src="images/prompt_logo.png" float:left="">&nbsp;
+<img style="width: 700px; height: 150px;" alt="" src="images/prompt_logo.png" float:left="">
+</center>
 <hr>
 
-<br><big style="font-weight: bold;">Choose a taxonomy level for pie chart fun!</font><br>
+<h1>Taxonomic Analysis</h1>
+<h2>Sample Pie charts</h2>
 
+<form name='form1' action='./results.php'>
+	<b>Data Origin:</b><br>
+	<input type="radio" name="origin" value="SEQ" onclick=submit() selected >Barcode Sequencing
+	<input type="radio" name="origin" value="MIC" onclick=submit() >Microscopy
+</form>
+
+<form name='form2' action='./results.php'>
+<b>Select a Site:</b><br>
 <?php
-	$arr = array('phylum', 'class', 'order', 'family', 'genus', 'species');
-	echo "<form name='form1' action='./results.php'>";
-	echo "<b>Select a Site:</b><br>\n";
+	foreach($_GET as $key=>$value){
+        	$$key = $value;
+                $origin = $value;
+	}
 
-	$sites = glob("DIATOMS_FULL/pie/*");
-
+	$sites = glob("analyses/$origin/*");
 
 	foreach ($sites as $site){
-		$site = preg_replace("/DIATOMS_FULL\/pie\//i", '', $site);
-		print "<input name=\"$site\" type=\"radio\" value=\"$site\" onclick=\"submit()\">$site<br>\n";
+		$site = preg_replace("/analyses\/$origin\//i", '', $site);
+		print "<input name=\"site\" type=\"radio\" value=\"$site\"  onclick=\"submit()\">$site\n";
 	
 	}
-	echo "</form>";
-	
+?>
+</form>
+
+<?php	
 	foreach($_GET as $key=>$value){
 		$$key = $value;
-		$return = $value;
-		print "<b>site: $return</b>";
+		$site_code = $value;
+		print "<b>site: $site_code</b>";
+	
 
+
+	$arr = array('phylum', 'class', 'order', 'family', 'genus', 'species');
 	print "<br><select id='setit' name='url'>
 	<option value=\"\">Choose Taxonomy level...</option>";
 	foreach ($arr as $value){
-        	print "<option value='DIATOMS_FULL/pie/$return/$value.html'>$value</option>\n";
+        	print "<option value='analyses//$site_code/$value.html'>$value</option>\n";
 		}
 	print "<input type='button' value='go' onclick=\"window.open(setit.options[setit.selectedIndex].value)\">";
 
 }
 ?>
 
-<p><big style="font-weight: bold;">Select sites to be compared in a heat map:</big><br>
+<h2>Heatmap Comparison</h2>
 
 <?php
 	echo "<form name='form2' target=\"_blank\" action='/cgi-bin/metamod/make_csv.cgi'>";
