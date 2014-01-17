@@ -23,7 +23,6 @@ my $file = $site . "_" . $level . "_proportion";
 	open TEMPLATE, "./scripts/html_template" or die "!!Template file is not present in script directory!!\n";
 
 	$file =~ s/.*_(.+)_proportion/$1/;
-	print $file;
 	open OUTFILE, '>', "$tmp_dir/html_files/$site/$file.html" or die "Couldn't open $file.html for writing\n";
 
 	my @fields;

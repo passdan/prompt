@@ -71,8 +71,8 @@ def main():
     print "converting output files into html webfiles"
     call(["mkdir", tmpdir + "html_files/" + sample])
     for level in taxa_list:
+        print "Generating html file:" + sample + "-" + level
         call(["perl", "scripts/gen_taxa_html.pl", tmpdir, sample, level])
-
 
 def blastn(fas, db):
     #print("blasting " + str(seq_no) + " sequences against the " + db + " database")  ##fix
