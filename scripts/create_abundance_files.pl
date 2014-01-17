@@ -4,31 +4,30 @@ use warnings;
 
 #Create abundance files from blastn output
 
-my $usage = "\nusage :\n\n$0 <BLASTn_file> <total_read_number> <processing directory> \n\n";
+my $usage = "\nusage :\n\n$0 <BLASTn_file> <total_read_number> <processing directory> <cluster size file> \n\n";
 
 my $BLASTn_file = $ARGV[0] ;
 my $total_read_number = $ARGV[1];
 my $tmp_dir = $ARGV[2];
-
+my $clust_abun = $ARGV[3];
 
 print "Calculating abundances for $BLASTn_file\n";
 
-open IN1, "< $tmp_dir" . "$BLASTn_file" or die("Can't open $BLASTn_file for reading.\nPath: $tmp_dir" . "$BLASTn_file\n");
-print "Processing: blast in = $tmp_dir" . "$BLASTn_file\n";
+open BLAST, "< $tmp_dir/" . "blast_files/" . "$BLASTn_file" or die("\nPath: $tmp_dir/" . "blast_files/" . "$BLASTn_file\n$!");
+print "Processing: blast in = $tmp_dir/" . "blast_files/" . "$BLASTn_file\n";
 
-open IN2, "< taxonomy/all_taxa.txt" or die "Can't open all_taxa.txt for reading.\n";
-open IN3, " < taxonomy/names.dmp";
-
+open TAXA, "< taxonomy/all_taxa.txt" or die "Can't open all_taxa.txt for reading.\n";
+open NAMES, " < taxonomy/names.dmp" or die "Can't open names.dmp file\n";
+open ABUN, "< $tmp_dir/clusters.txt" or die "Can't open cluster.txt abundance file\n";
 
 my $sample = $BLASTn_file;
-$sample =~ s/split_blasts\/(.*)\..*/$1/;
-system "mkdir $tmp_dir" . "abundance_files/$sample/";
+$sample =~ s/\..*//;
 
 my %Match = ();
 
 my %Evalue = ();
 
-while ( my $line = <IN1> ) 
+while ( my $line = <BLAST> ) 
 {
 
 	if ( $line !~ /^#/ ) {
@@ -48,9 +47,9 @@ while ( my $line = <IN1> )
 		}
 	}
 }
-close IN1;
+close BLAST;
 
-my $line = <IN2>;
+my $line = <TAXA>;
 
 my %hash_species ;
 my %hash_genus ;
@@ -59,7 +58,7 @@ my %hash_order;
 my %hash_class;
 my %hash_phylum;
 
-while(my $line = <IN2>)
+while(my $line = <TAXA>)
 {
 	chomp $line;
 	
@@ -73,12 +72,22 @@ while(my $line = <IN2>)
 	$hash_phylum{$fields[0]} = $fields[8] ;			
 	
 }
-close IN2;
+close TAXA;
 
-my %names ;
-#my %taxid ;
+my %abun;
+my $total_abundance = 0;
 
-while(my $line =<IN3>){
+while(my $pair = <ABUN>){
+	chomp $pair;
+	my @ab = split(/\t/, $pair);
+
+	$abun{$ab[0]} = $ab[1];
+}
+close ABUN;
+
+my %names;
+
+while(my $line =<NAMES>){
 
 	chomp $line;
 	my @fields = split/\t/, $line;
@@ -89,11 +98,10 @@ while(my $line =<IN3>){
 			print "Duplicate keys in the hash\n";
 		}else{
 			$names{$fields[0]} = $fields[2];
-			#$taxid{$fields[2]} = $fields[0];
 		}
 	}
 }
-close IN3;
+close NAMES;
 
 my $tax_level;
 my %hash;
@@ -124,26 +132,33 @@ for (my $i=1; $i<=6; $i++){
 	
 	my %Count;
 
-	my $total_abundance = 0 ;
+	#my $total_abundance = 0 ;
 	
 	while (my ($key, $value) = each (%Match)) {
-		print "Key: $Match{$key} Value: $Match{$value}\n";
-		next;
-		if (exists $Count{$hash{$value}}){
-			$Count{$hash{$value}}++;
+		#print "Key: $key Value: $value\n";
+#		print "hash{key} = hash{$key} = $hash{$key}\n";
+#		print "hash{value} = hash{$value} = $hash{$value}\n";
+		#print "hash{$value} = $hash{$value}\n";
+		#next;
+		my $tax_id = $hash{$value};
+		print "$tax_id : $key : $abun{$key}\n";
+#		next;
+		if (exists $Count{$tax_id}){
+			$Count{$tax_id} = $Count{$tax_id} + $abun{$key};
 		}else{
-			$Count{$hash{$value}} = 1 ;
+			$Count{$hash{$value}} = $abun{$key} ;
 		}
-	
-		if ($hash{$value} ne 'NULL'){
-			$total_abundance ++ ;
-		}
+		#
+		#if ($hash{$value} ne 'NULL'){
+		#	$total_abundance ++ ;
+		#}
 	}
 
 	while (my ($key, $value) = each (%Count)) {
+		#print "Key: $key Value $value\n";
 			
 		if ($key ne 'NULL'){
-			my $prop = $value / $total_abundance;
+			my $prop = $value / $total_read_number;
 			my $round = sprintf "%.3f", $prop;
 			print OUT $key,"\t", $names{$key} ,"\t", $prop, "\n";
 		}
