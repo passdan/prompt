@@ -35,11 +35,11 @@ my $file = $site . "_" . $level . "_proportion";
         	        last;
 	        }else{
         	my @cols = split(/\t/, $line);
-		if ($cols[2] > 0.005){
-			my $round = sprintf("%.3f", "$cols[2]");
-		        push @fields, "\{$file:\"$cols[1]\",abundance:$round\}";
+		if ($cols[1] > 0.005){
+			my $round = sprintf("%.3f", "$cols[1]");
+		        push @fields, "\{$file:\"$cols[0]\",abundance:$round\}";
 		}else{
-			$cumulative = $cumulative + $cols[2];
+			$cumulative = $cumulative + $cols[1];
 		}
 		$size++;	
 		}

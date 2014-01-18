@@ -22,12 +22,14 @@ from Bio.Blast.Applications import NcbiblastnCommandline
 
 indir = sys.argv[1]
 sample = sys.argv[2]
+tmpdir = sys.argv[3]
+database = sys.argv[4]
 
 in_fasta = sample + ".fas"
-database = "blast_db/dia_db"
+
 seq_no = 0
 lengths = []
-tmpdir = "tmp_dir/"
+
 taxa_list = ("species","genus","family","order","class","phylum")
 
 ##parameters
@@ -45,26 +47,23 @@ def main():
     print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     print "Processing infiles"
 
-#    process_infiles(open_fasta)
+    process_infiles(open_fasta)
 
     #cd-hit
     print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     print "Passing to CD-HIT for data reduction"
-#    cdhit_fas = cdhit(in_fasta)
+    cdhit_fas = cdhit(in_fasta)
 
     #do blast
     print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     print "Passing to blast for taxonomic assignment"
-#    blast_out = blastn(cdhit_fas, database)
-
-    ##split blast output into sample files
-#    call(["perl", "scripts/split_blast.pl", blast_out, tmpdir])
+    blast_out = blastn(cdhit_fas, database)
 
     ##Create abundance files
     print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     print "Converting blast output into abundance files"
-#    call(["mkdir", tmpdir + "abundance_files/" + sample])
-#    call(["perl", "scripts/create_abundance_files.pl", str(sample) + ".blast", str(seq_no), tmpdir])
+    call(["mkdir", tmpdir + "abundance_files/" + sample])
+    call(["perl", "scripts/create_abundance_files.pl", str(sample) + ".blast", str(seq_no), tmpdir])
 
     #build web files
     print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -75,14 +74,13 @@ def main():
         call(["perl", "scripts/gen_taxa_html.pl", tmpdir, sample, level])
 
 def blastn(fas, db):
-    #print("blasting " + str(seq_no) + " sequences against the " + db + " database")  ##fix
     print("blasting cdhit sequences against the " + db + " database")
 
     blast_in = (fas)
     blast_out = (tmpdir + "blast_files/" + sample + ".blast")
 
 
-    blastn_cline = NcbiblastnCommandline(query=blast_in, db=db, evalue=0.001, outfmt=6, out=blast_out, num_threads=3)
+    blastn_cline = NcbiblastnCommandline(query=blast_in, db=db, evalue=0.001, outfmt=6, out=blast_out, num_threads=6)
 
     stdout, stderr = blastn_cline()
 

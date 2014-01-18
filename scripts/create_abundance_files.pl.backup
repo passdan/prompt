@@ -17,6 +17,7 @@ open BLAST, "< $tmp_dir/" . "blast_files/" . "$BLASTn_file" or die("\nPath: $tmp
 print "Processing: blast in = $tmp_dir/" . "blast_files/" . "$BLASTn_file\n";
 
 open TAXA, "< taxonomy/all_taxa.txt" or die "Can't open all_taxa.txt for reading.\n";
+open NAMES, " < taxonomy/names.dmp" or die "Can't open names.dmp file\n";
 open ABUN, "< $tmp_dir/clusters.txt" or die "Can't open cluster.txt abundance file\n";
 
 my $sample = $BLASTn_file;
@@ -40,8 +41,7 @@ while ( my $line = <BLAST> )
 
 		my $evalue = $fields[10];
 
-		if ((not exists  $Match{$query}) or ($evalue <  $Evalue{$query})){
-		# Select lowest eval
+		if ((not exists  $Match{$query}) or ($evalue <  $Evalue{$query})){	# only take the best hit
 			$Match{$query} = $match;
 			$Evalue{$query} = $evalue;
 		}
@@ -56,20 +56,20 @@ my %hash_genus ;
 my %hash_family;
 my %hash_order;
 my %hash_class;
-my %hash_refseq;
+my %hash_phylum;
 
-while(my $line = <TAXA>){
+while(my $line = <TAXA>)
+{
 	chomp $line;
 	
 	my @fields = split(/\t/, $line);
 	
-	$hash_refseq{$fields[0]} = $fields[0];			
-	$hash_species{$fields[0]} = $fields[1];
+	$hash_species{$fields[0]} = $fields[1];			
 	$hash_genus{$fields[0]} = $fields[2];			
 	$hash_family{$fields[0]} = $fields[3];	
-	$hash_order{$fields[0]} = $fields[4]; 
-	$hash_class{$fields[0]} = $fields[5];
-
+	$hash_order{$fields[0]} =$fields[4]; 
+	$hash_class{$fields[0]} = $fields[6];
+	$hash_phylum{$fields[0]} = $fields[8];			
 	
 }
 close TAXA;
@@ -84,6 +84,24 @@ while(my $pair = <ABUN>){
 	$abun{$ab[0]} = $ab[1];
 }
 close ABUN;
+
+my %names;
+
+while(my $line =<NAMES>){
+
+	chomp $line;
+	my @fields = split/\t/, $line;
+	
+	if ( $fields[6] eq 'scientific name' ){
+
+		if (exists $names{$fields[0]}){
+			print "Duplicate keys in the hash\n";
+		}else{
+			$names{$fields[0]} = $fields[2];
+		}
+	}
+}
+close NAMES;
 
 my $tax_level;
 my %hash;
@@ -106,8 +124,8 @@ for (my $i=1; $i<=6; $i++){
 		$tax_level = 'class';
 		%hash = %hash_class;
 	}elsif( $i == 6 ){
-		$tax_level = 'refseq';
-		%hash = %hash_refseq;
+		$tax_level = 'phylum';
+		%hash = %hash_phylum;
 	}
 	
 	open OUT, '>',"$tmp_dir/abundance_files/$sample/$sample".'_'."$tax_level"."_proportion" or die "Can't open file $tmp_dir/abundance_files/$sample/$sample".'_'."$tax_level"."_proportion: $!";
@@ -133,7 +151,7 @@ for (my $i=1; $i<=6; $i++){
 		if ($key ne 'NULL'){
 			my $prop = $value / $total_read_number;
 			my $round = sprintf "%.5d", $prop;
-			print OUT $key,"\t", $prop, "\n";
+			print OUT $key,"\t", $names{$key} ,"\t", $prop, "\n";
 		}
 	}
 print OUT "Assigned read proportion : ", $total_abundance / $total_read_number , "\n";
