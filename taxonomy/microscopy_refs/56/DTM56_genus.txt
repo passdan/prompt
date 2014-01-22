@@ -1,0 +1,17 @@
+Achnanthidium	4.682274247
+Amphora	32.77591973
+Cocconeis	7.023411371
+Diploneis	0.668896321
+Encyonema	0.668896321
+Eolimna	13.71237458
+Fallacia	1.672240803
+Gomphonema	1.337792642
+Gomphosphenia	2.341137124
+Kolbesia	0.668896321
+Melosira	0.334448161
+Navicula	8.026755853
+Nitzschia	7.357859532
+Planothidium	15.38461538
+Rhoicosphenia	2.006688963
+Surirella	0.334448161
+Trybionella	1.003344482

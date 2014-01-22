@@ -17,7 +17,7 @@ open BLAST, "< $tmp_dir/" . "blast_files/" . "$BLASTn_file" or die("\nPath: $tmp
 print "Processing: blast in = $tmp_dir/" . "blast_files/" . "$BLASTn_file\n";
 
 open TAXA, "< taxonomy/all_taxa.txt" or die "Can't open all_taxa.txt for reading.\n";
-open ABUN, "< $tmp_dir/clusters.txt" or die "Can't open cluster.txt abundance file\n";
+open ABUN, "< $clust_abun" or die "Can't open $clust_abun abundance file\n";
 
 my $sample = $BLASTn_file;
 $sample =~ s/\..*//;

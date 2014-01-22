@@ -6,15 +6,10 @@
 ##This script runs the backbone of prompt. External packages 
 ##are called from here but additional scripts which are refered
 ##to can be found in the ./scripts folder.
-##
-##Functions are listed alphabetically.
 #######################
 
 
 import sys
-import getopt
-args = '-i'.split()
-
 import re
 from subprocess import call
 from Bio import SeqIO
@@ -30,10 +25,10 @@ in_fasta = sample + ".fas"
 seq_no = 0
 lengths = []
 
-taxa_list = ("species","genus","family","order","class","phylum")
+taxa_list = ("refseq","species","genus","family","order","class")
 
 ##parameters
-blast_minscore = 100
+blast_homology = 94
 
 
 try:
@@ -59,18 +54,26 @@ def main():
     print "Passing to blast for taxonomic assignment"
     blast_out = blastn(cdhit_fas, database)
 
+    print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    print "Filtering Blast results at " + str(blast_homology) + "% required database match"
+#    blast_temp = (tmpdir + "blast_files/" + sample + ".blast")
+    print "Filtering " + blast_out
+#    call(["scripts/filter_blast.py", blast_temp, str(blast_homology)])
+    call(["scripts/filter_blast.py", blast_out, str(blast_homology)])
+
+
     ##Create abundance files
     print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     print "Converting blast output into abundance files"
     call(["mkdir", tmpdir + "abundance_files/" + sample])
-    call(["perl", "scripts/create_abundance_files.pl", str(sample) + ".blast", str(seq_no), tmpdir])
+    call(["perl", "scripts/create_abundance_files.pl", str(sample) + ".blast_filter", str(seq_no), tmpdir, cdhit_clusters])
 
     #build web files
     print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     print "converting output files into html webfiles"
     call(["mkdir", tmpdir + "html_files/" + sample])
     for level in taxa_list:
-        print "Generating html file:" + sample + "-" + level
+        print "Generating html file:" + sample + ":" + level
         call(["perl", "scripts/gen_taxa_html.pl", tmpdir, sample, level])
 
 def blastn(fas, db):
@@ -80,7 +83,7 @@ def blastn(fas, db):
     blast_out = (tmpdir + "blast_files/" + sample + ".blast")
 
 
-    blastn_cline = NcbiblastnCommandline(query=blast_in, db=db, evalue=0.001, outfmt=6, out=blast_out, num_threads=6)
+    blastn_cline = NcbiblastnCommandline(query=blast_in, db=db, evalue=0.001, outfmt=6, out=blast_out, num_threads=14)
 
     stdout, stderr = blastn_cline()
 
@@ -89,9 +92,6 @@ def blastn(fas, db):
 
     blast_err_log.write(stderr)
     blast_stdout_log.write(stdout)
-
-    #filter blast
-    #call(["perl", "scripts/filter_blast.pl", blast_out, blast_minscore])
 
     return blast_out
 
@@ -106,6 +106,8 @@ def cdhit(fas):
     call(["cd-hit-454","-i",cdhit_in,"-o",cdhit_out])
 
     call(["scripts/parse_cd-hit.py", cdhit_out + ".clstr", tmpdir])
+    global cdhit_clusters
+    cdhit_clusters = (cdhit_out + ".clstr.parse")
 
     return cdhit_out
 

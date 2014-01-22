@@ -1,0 +1,4 @@
+Achnanthidiaceae	91.91919192
+Neidiaceae	0.336700337
+Pinnulariaceae	0.673400673
+Sellaphoraceae	7.070707071

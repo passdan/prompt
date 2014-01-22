@@ -219,10 +219,10 @@ Gomphonema_truncatum_var_capitatum	Gomphonema	Gomphonemataceae	NA	Bacillariophyc
 Gomphonema_truncatum_var_capitatum	Gomphonema	Gomphonemataceae	NA	Bacillariophyceae	661GomK09
 Hannaea_arcus	Hannaea	Fragilariaceae	NA	Bacillariophyceae	739HanB13
 Hannaea_arcus	Hannaea	Fragilariaceae	NA	Bacillariophyceae	839HanN05
-Mayamaea_atomus_var_permitis	Mayamaea				715MayK13
-Mayamaea_atomus_var_permitis	Mayamaea				790MayN01
-Mayamaea_atomus_var_permitis	Mayamaea				808MayN02
-Mayamaea_atomus_var_atomus	Mayamaea				082MayP07
+Mayamaea_atomus_var_permitis	Mayamaea	Sellaphoraceae	Na	Bacillariophyceae	715MayK13
+Mayamaea_atomus_var_permitis	Mayamaea	Sellaphoraceae	Na	Bacillariophyceae	790MayN01
+Mayamaea_atomus_var_permitis	Mayamaea	Sellaphoraceae	Na	Bacillariophyceae	808MayN02
+Mayamaea_atomus_var_atomus	Mayamaea	Sellaphoraceae	Na	Bacillariophyceae	082MayP07
 Melosira_varians	Melosira	Melosiraceae		Coscinodiscophyceae	298MelC06
 Melosira_varians	Melosira	Melosiraceae		Coscinodiscophyceae	306MelC07
 Melosira_varians	Melosira	Melosiraceae		Coscinodiscophyceae	523MelK02

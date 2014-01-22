@@ -1,0 +1,4 @@
+Achnanthidium	91.91919192
+Eolimna	7.070707071
+Neidium	0.336700337
+Pinnularia	0.673400673

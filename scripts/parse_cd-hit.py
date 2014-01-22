@@ -3,10 +3,12 @@
 import sys
 import re
 
+
+in_file = sys.argv[1]
 tmp_dir = sys.argv[2]
 
-lines = open(sys.argv[1], "rU")
-clust = open(tmp_dir + "clusters.txt", "w")
+lines = open(in_file, "rU")
+clust = open(in_file + ".parse", "w")
 
 C = "OTU"
 a = "size"

@@ -1,0 +1,7 @@
+Achnanthidium_minutissimum_type	33.97435897
+Eunotia_bidentula	0.320512821
+Fragilaria_capucina_var_gracilis	0.641025641
+Meridion_circulare_var_constrictum	0.320512821
+Navicula_[small_species]	0.320512821
+Navicula_minima	63.78205128
+Nitzschia_palea	0.641025641
