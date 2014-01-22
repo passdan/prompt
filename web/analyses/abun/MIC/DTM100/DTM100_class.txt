@@ -1,0 +1,3 @@
+Bacillariophyceae	99.375
+Coscinodiscophyceae	0.3125
+Fragilariophyceae	0.3125

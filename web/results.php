@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>php test page</title>
+<link rel="stylesheet" type="text/css" href="mystyles.css" media="screen" />
 <style type="text/css">
 body {background-image:url('images/diatom_back.jpg');}
 </style>
@@ -13,7 +14,7 @@ body {background-image:url('images/diatom_back.jpg');}
 </center>
 <hr>
 
-<h1>Taxonomic Analysis</h1>
+<h1><center>Data Portal</center></h1>
 <h2>Sample Pie charts</h2>
 
 <form name='form1' action='./results.php'>
@@ -23,18 +24,22 @@ body {background-image:url('images/diatom_back.jpg');}
 </form>
 
 <form name='form2' action='./results.php'>
-<b>Select a Site:</b><br>
+	<b>Select a Site:</b><br>
+	<input type="hidden" name="origin" value="<?php if(isset($_GET['origin'])) echo $_GET['origin']; ?>" />
 <?php
-	foreach($_GET as $key=>$value){
-        	$$key = $value;
-                $origin = $value;
-	}
-
-	$sites = glob("analyses/$origin/*");
+	$origin = $_GET['origin'];
+	
+	$sites = glob("analyses/pie/$origin/*");
+	
+	$col1 = 0;
 
 	foreach ($sites as $site){
-		$site = preg_replace("/analyses\/$origin\//i", '', $site);
+		$site = preg_replace("/analyses\/pie\/$origin\//i", '', $site);
 		print "<input name=\"site\" type=\"radio\" value=\"$site\"  onclick=\"submit()\">$site\n";
+		$col1++;
+		if ($col1 == 10){
+			print "<br>\n";
+		}
 	
 	}
 ?>
@@ -44,27 +49,26 @@ body {background-image:url('images/diatom_back.jpg');}
 	foreach($_GET as $key=>$value){
 		$$key = $value;
 		$site_code = $value;
+	}
 		print "<b>site: $site_code</b>";
 	
 
 
-	$arr = array('phylum', 'class', 'order', 'family', 'genus', 'species');
+	$arr = array('class', 'family', 'genus', 'species', 'refseq');
 	print "<br><select id='setit' name='url'>
 	<option value=\"\">Choose Taxonomy level...</option>";
 	foreach ($arr as $value){
-        	print "<option value='analyses//$site_code/$value.html'>$value</option>\n";
+        	print "<option value='analyses/pie/$origin/$site_code/$value.html'>$value</option>\n";
 		}
 	print "<input type='button' value='go' onclick=\"window.open(setit.options[setit.selectedIndex].value)\">";
-
-}
 ?>
 
-<h2>Heatmap Comparison</h2>
+<h2>Comparative analyses</h2>
+
+<form name='form2' target="_blank" action='/cgi-bin/prompt/make-csv.cgi' method="GET">
+	Choose Taxa Level:<br>
 
 <?php
-	echo "<form name='form2' target=\"_blank\" action='/cgi-bin/metamod/make_csv.cgi'>";
-	echo "Choose Taxa Level:<br>";
-
         foreach ($arr as $value){
 		print "<input name=\"taxa\" type=\"radio\" value=\"$value\">$value\n";
                 }
@@ -72,11 +76,27 @@ body {background-image:url('images/diatom_back.jpg');}
 
 	echo "<p>";
 	echo "Select sites:<br>";
-	$heat_opts = glob("DIATOMS_FULL/abundance/*");
+	$MIC_opts = glob("analyses/abun/MIC/*");
 
-        foreach ($heat_opts as $heat_opt){
-              $heat_opt = preg_replace("/DIATOMS_FULL\/abundance\//i", '', $heat_opt);
-              print "<input name='$heat_opt' type='checkbox' value='$heat_opt' >$heat_opt<br>";
+
+	$col2 = 1;
+	print "<b>MIC</b><br>\n";
+       foreach ($MIC_opts as $heat_opt){
+              $heat_opt = preg_replace("/analyses\/abun\/MIC\//i", '', $heat_opt);
+              print "<input name='$heat_opt' type='checkbox' value='$heat_opt' >$heat_opt";
+	      if ( is_int ($col2 / 10))
+		print "<br>\n";
+		$col2++;
+	}
+	$SEQ_opts = glob("analyses/abun/SEQ/*");
+	$col2 = 1;
+	print "<br><b>NGS</b><br>\n";
+	foreach ($SEQ_opts as $heat_opt){
+              $heat_opt = preg_replace("/analyses\/abun\/SEQ\//i", '', $heat_opt);
+              print "<input name='$heat_opt' type='checkbox' value='$heat_opt' >$heat_opt";
+	      if ( is_int ($col2 / 10))
+		print "<br>\n";
+		$col2++;
 
         }
 	echo "</p>";
