@@ -107,7 +107,7 @@ Ref_seq	Species	Genus	Family	Order	Class
 400EncB10	Encyonopsis_cesatii	Encyonopsis	Cymbellaceae	NA	Bacillariophyceae
 389EncB10	Encyonopsis_falaisensis	Encyonopsis	Cymbellaceae	NA	Bacillariophyceae
 731EncB12	Encyonopsis_microcephala	Encyonopsis	Cymbellaceae	NA	Bacillariophyceae
-495EolR03	Eolimna_minima	Eolimna	Sellaphoraceae	NA	Bacillariophyceae
+495EolR03	Navicula_minima	Navicula	Naviculaceae	NA	Bacillariophyceae
 102EunB02	Eunotia_bilunaris	Eunotia	Eunotiaceae	NA	Bacillariophyceae
 742EunB14	Eunotia_bilunaris	Eunotia	Eunotiaceae	NA	Bacillariophyceae
 794EunN01	Eunotia_bilunaris	Eunotia	Eunotiaceae	NA	Bacillariophyceae
@@ -138,7 +138,6 @@ Ref_seq	Species	Genus	Family	Order	Class
 741FraB13	Fragilaria_gracilis	Fragilaria	Fragilariaceae	NA	Bacillariophyceae
 743FraB14	Fragilaria_gracilis	Fragilaria	Fragilariaceae	NA	Bacillariophyceae
 845FraN04	Fragilaria_gracilis	Fragilaria	Fragilariaceae	NA	Bacillariophyceae
-861FraN03	Fragilaria_gracilis	Fragilaria	Fragilariaceae	NA	Bacillariophyceae
 034FraP03	Fragilaria_gracilis	Fragilaria	Fragilariaceae	NA	Bacillariophyceae
 047FraP04	Fragilaria_gracilis	Fragilaria	Fragilariaceae	NA	Bacillariophyceae
 085FraP07	Fragilaria_gracilis	Fragilaria	Fragilariaceae	NA	Bacillariophyceae
