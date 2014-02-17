@@ -28,7 +28,7 @@ lengths = []
 taxa_list = ("refseq","species","genus","family","order","class")
 
 ##parameters
-blast_homology = 94
+blast_homology = 97
 
 
 try:

@@ -8,7 +8,7 @@ from subprocess import call
 sample_dir = "input_fasta/"
 sample_list = "sample_list.txt"
 tmp_dir = "tmp_dir/"
-blast_db = "blast_db/HQ"
+blast_db = "blast_db/composite"
 
 call(["mkdir", tmp_dir])
 call(["mkdir", tmp_dir + "/abundance_files"])

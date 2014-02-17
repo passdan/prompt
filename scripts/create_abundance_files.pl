@@ -16,7 +16,7 @@ print "Calculating abundances for $BLASTn_file\n";
 open BLAST, "< $tmp_dir/" . "blast_files/" . "$BLASTn_file" or die("\nPath: $tmp_dir/" . "blast_files/" . "$BLASTn_file\n$!");
 print "Processing: blast in = $tmp_dir/" . "blast_files/" . "$BLASTn_file\n";
 
-open TAXA, "< taxonomy/all_taxa.txt" or die "Can't open all_taxa.txt for reading.\n";
+open TAXA, "< taxonomy/taxa_dictionary.txt" or die "Can't open all_taxa.txt for reading.\n";
 open ABUN, "< $clust_abun" or die "Can't open $clust_abun abundance file\n";
 
 my $sample = $BLASTn_file;
@@ -29,21 +29,22 @@ my %Evalue = ();
 while ( my $line = <BLAST> ) 
 {
 
-	if ( $line !~ /^#/ ) {
+	if ($line !~ /^#/ ) {
 		chomp $line;
 
 		my @fields = split(/\t/, $line);
 
-		my $query = $fields[0];
+		if ($fields[1] !~ /^n/){
+		#filter out non-diatom sequences
+			my $query = $fields[0];
+			my $match = $fields[1];
+			my $evalue = $fields[10];
 
-		my $match = $fields[1];
-
-		my $evalue = $fields[10];
-
-		if ((not exists  $Match{$query}) or ($evalue <  $Evalue{$query})){
-		# Select lowest eval
-			$Match{$query} = $match;
-			$Evalue{$query} = $evalue;
+			if ((not exists  $Match{$query}) or ($evalue <  $Evalue{$query})){
+			# Select lowest eval
+				$Match{$query} = $match;
+				$Evalue{$query} = $evalue;
+			}
 		}
 	}
 }
@@ -67,8 +68,7 @@ while(my $line = <TAXA>){
 	$hash_species{$fields[0]} = $fields[1];
 	$hash_genus{$fields[0]} = $fields[2];			
 	$hash_family{$fields[0]} = $fields[3];	
-	$hash_order{$fields[0]} = $fields[4]; 
-	$hash_class{$fields[0]} = $fields[5];
+	$hash_class{$fields[0]} = $fields[4];
 
 	
 }
@@ -100,12 +100,9 @@ for (my $i=1; $i<=6; $i++){
 		$tax_level = 'family';
 		%hash = %hash_family;
 	}elsif( $i == 4 ){
-		$tax_level = 'order';
-		%hash = %hash_order;
-	}elsif( $i == 5 ){
 		$tax_level = 'class';
 		%hash = %hash_class;
-	}elsif( $i == 6 ){
+	}elsif( $i == 5 ){
 		$tax_level = 'refseq';
 		%hash = %hash_refseq;
 	}
@@ -131,12 +128,11 @@ for (my $i=1; $i<=6; $i++){
 	while (my ($key, $value) = each (%Count)) {
 			
 		if ($key ne 'NULL'){
-			my $prop = $value / $total_read_number;
+			my $prop = $value / $total_abundance;
 			my $round = sprintf "%.5d", $prop;
 			print OUT $key,"\t", $prop, "\n";
 		}
 	}
-print OUT "Assigned read proportion : ", $total_abundance / $total_read_number , "\n";
-	print OUT "Total read number : ", $total_read_number , "\n";
-close OUT;
+	print OUT "Proportion of reads as Diatoms : ", $total_abundance / $total_read_number , "\n";
+	close OUT;
 }
