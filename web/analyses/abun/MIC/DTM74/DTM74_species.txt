@@ -23,7 +23,7 @@ Navicula_ignota_var_acceptata	1.238390093
 Navicula_joubaudii	0.309597523
 Navicula_lanceolata	1.857585139
 Navicula_menisculus	4.024767802
-Navicula_minima	1.238390093
+Eolima_minima	1.238390093
 Navicula_reichardtiana	0.309597523
 Navicula_subminuscula	0.309597523
 Navicula_tripunctata	2.167182663

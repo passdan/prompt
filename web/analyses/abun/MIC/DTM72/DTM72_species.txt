@@ -17,12 +17,12 @@ Fragilaria_capucina_var_gracilis	15.18987342
 Fragilaria_capucina_var_mesolepta	8.227848101
 Fragilaria_sp	0.316455696
 Fragilaria_vaucheriae	9.17721519
-"Gomphonema_""intricatum""_type"	1.898734177
+Gomphonema_intricatum_type	1.898734177
 Luticola_mutica	0.316455696
 Melosira_varians	12.02531646
 Navicula_[small_species]	0.316455696
 Navicula_cryptotenella	1.582278481
-Navicula_minima	0.632911392
+Eolima_minima	0.632911392
 Navicula_sp	0.316455696
 Navicula_subrotundata	0.949367089
 Navicula_tripunctata	0.316455696

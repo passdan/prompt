@@ -8,14 +8,14 @@ Cyclotella_atomus	0.325732899
 Cyclotella_meneghiniana	0.325732899
 Cyclotella_sp	2.931596091
 Ellerbeckia_arenaria	2.931596091
-"Gomphonema_""intricatum""_type"	0.325732899
+Gomphonema_intricatum_type	0.325732899
 Gomphonema_sp	4.885993485
 Kolbesia_ploenensis	16.28664495
 Luticola_mutica	0.325732899
 Melosira_varians	0.651465798
 Navicula_gregaria	1.628664495
 Navicula_lanceolata	1.302931596
-Navicula_minima	1.628664495
+Eolima_minima	1.628664495
 Navicula_tenelloides	0.651465798
 Navicula_tripunctata	0.651465798
 Nitzschia_capitellata	0.325732899

@@ -1,18 +1,10 @@
-Navicula_gregaria	0.00280112044817927
-Pinnularia_viridis	0.00280112044817927
-Pinnularia_subcapitata	0.00840336134453781
-Mayamaea_atomus_var_permitis	0.00280112044817927
-Melosira_varians	0.00840336134453781
-Encyonopsis_microcephala	0.030812324929972
-Nitzschia_sigma	0.00280112044817927
-Nitzschia_romana	0.00560224089635854
-Eolimna_minima	0.00560224089635854
-Navicula_radiosa	0.00280112044817927
-Planothidium_frequentissimum	0.0168067226890756
-Gomphonema_sarcophagus	0.00280112044817927
-Cyclotella_meneghiniana	0.23249299719888
-Amphora_pediculus	0.0420168067226891
-Amphora_indistincta	0.627450980392157
-Tryblionella_debilis	0.00280112044817927
-Assigned read proportion : 0.997198879551821
-Total read number : 357
+Pinnularia_neomajor	0.280112044817927
+Eolimna_minima	0.560224089635854
+No_Match	5.60224089635854
+Planothidium_frequentissimum	1.68067226890756
+Navicula_radiosa	0.280112044817927
+Cyclotella_meneghiniana	23.249299719888
+Melosira_varians	0.840336134453782
+Amphora_pediculus	67.2268907563025
+Gomphonema_cymbelliclinum	0.280112044817927
+Proportion of reads identified as Diatoms : 100

@@ -1,5 +1,5 @@
 Strain	Species	Genus	Family	Class
-No_Match	No_Match	No_Match	No_Match	No_Match
+000	No_Match	No_Match	No_Match	No_Match
 002	Surirella_brebissonii	Surirella	Surirellaceae	Bacillariophyceae
 005	Fragilaria_gracilis	Fragilaria	Fragilariaceae	Bacillariophyceae
 007	Achnanthidium_minutissimum	Achnanthidium	Achnanthidiaceae	Bacillariophyceae
@@ -192,7 +192,7 @@ No_Match	No_Match	No_Match	No_Match	No_Match
 380	Fragilaria_gracilis	Fragilaria	Fragilariaceae	Bacillariophyceae
 382	Fragilaria_gracilis	Fragilaria	Fragilariaceae	Bacillariophyceae
 391	Achnanthidium_minutissimum	Achnanthidium	Achnanthidiaceae	Bacillariophyceae
-394	Achnanthes_pseudoswazi	Achnanthes (sensu lato)	Achnanthaceae	Bacillariophyceae
+394	Achnanthes_pseudoswazi	Achnanthes	Achnanthaceae	lato)
 398	Achnanthidium_minutissimum	Achnanthidium	Achnanthidiaceae	Bacillariophyceae
 400	Encyonopsis_falaisensis	Encyonopsis	Cymbellaceae	Bacillariophyceae
 407	Achnanthidium_minutissimum	Achnanthidium	Achnanthidiaceae	Bacillariophyceae
@@ -267,7 +267,7 @@ No_Match	No_Match	No_Match	No_Match	No_Match
 645	Pseudostaurosira_brevistriata	Pseudostaurosira	Fragilariaceae	Bacillariophyceae
 647	Pseudostaurosira_brevistriata	Pseudostaurosira	Fragilariaceae	Bacillariophyceae
 648	Cyclotella_meneghiniana	Cyclotella	Stephanodiscaceae	Coscinodiscophyceae
-649	Nitzschia_sp	Nitzschia	Bacillariaceae	Bacillariophyceae
+649	Nitzschia_dissipata	Nitzschia	Bacillariaceae	Bacillariophyceae
 651	Ulnaria_acus	Ulnaria	Fragilariaceae	Bacillariophyceae
 653	Fragilaria_mesolepta	Fragilaria	Fragilariaceae	Bacillariophyceae
 654	Gomphonema_acuminatum	Gomphonema	Gomphonemataceae	Bacillariophyceae
@@ -387,4 +387,26 @@ No_Match	No_Match	No_Match	No_Match	No_Match
 912	Nitzschia_palea	Nitzschia	Bacillariaceae	Bacillariophyceae
 913	Nitzschia_palea	Nitzschia	Bacillariaceae	Bacillariophyceae
 914	Planothidium_frequentissimum	Planothidium	Achnanthidiaceae	Bacillariophyceae
-s495	Navicula_minima	Eolimna	Sellaphoraceae	Bacillariophyceae
+s495	Eolimna_minima	Eolimna	Sellaphoraceae	Bacillariophyceae
+gDQ514780	Cyclotella_distinguenda	Cyclotella	Stephanodiscaceae	Coscinodiscophyceae
+gHQ912451	Staurosira_construens	Staurosira	Fragilariaceae	Fragilariophyceae
+gHQ828193	Staurosira_elliptica 	Staurosira	Fragilariaceae	Fragilariophyceae
+gHQ912474	Denticula_kuetzingii	Denticula	Bacillariaceae	Bacillariophyceae
+s860	Reimeria_sinuata	Reimeria	Gomphonemataceae	Bacillariophyceae
+s802	Reimeria_sinuata	Reimeria	Gomphonemataceae	Bacillariophyceae
+gHQ912403	Amphora_pediculus	Amphora	Catenulaceae	Bacillariophyceae
+iDTM113_247	Diatoma_sp	Diatoma	Fragilariaceae	Bacillariophyceae
+s674	Navicula_cryptotenelloides	Navicula	Naviculaceae	Bacillariophyceae
+nAJ579569	Botrydiopsis_callosa 	Botrydiopsis	Botryidiopsidaceae	Xanthophyceae
+nJN573801	Heterococcus_sp 	Heterococcus	Heteropediaceae	Tribonematales
+nDTM99_49	Yellow_green_Algae			
+nDTM99_33	Yellow_green_Algae			
+nJX681222	Heterococcus_mainxii 	Heterococcus	Heteropediaceae	Xanthophyceae
+nKC309594	Actinocyclus_sp	Actinocyclus	Hemidiscaceae	Coscinodiscophyceae
+iDTM98_32	Achnanthidium_minutissimum	Achnanthidium	Achnanthidiaceae	Bacillariophyceae
+nEF426797	Xanthonema_tribonematoides	Xanthonema	Tribonemataceae	Xanthophyceae
+iDTM42_2671	Eolimna_minima	Eolimna	Sellaphoraceae	Bacillariophyceae
+iDTM42_719	Eolimna_minima	Eolimna	Sellaphoraceae	Bacillariophyceae
+iDTM44_274	Eolimna_minima	Eolimna	Sellaphoraceae	Bacillariophyceae
+iDTM42_1080	Eolimna_minima	Eolimna	Sellaphoraceae	Bacillariophyceae
+iDTM96_900	Eolimna_minima	Eolimna	Sellaphoraceae	Bacillariophyceae

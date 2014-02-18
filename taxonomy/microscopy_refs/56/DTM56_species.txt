@@ -23,7 +23,7 @@ Navicula_cryptotenella	0.668896321
 Navicula_gregaria	3.344481605
 Navicula_lanceolata	0.668896321
 Navicula_menisculus	0.668896321
-Navicula_minima	13.04347826
+Eolima_minima	13.04347826
 Navicula_slesvicensis	0.334448161
 Navicula_sp	0.334448161
 Navicula_subminuscula	0.668896321

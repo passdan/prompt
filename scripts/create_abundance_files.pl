@@ -34,21 +34,29 @@ while ( my $line = <BLAST> )
 
 		my @fields = split(/\t/, $line);
 
-		if ($fields[1] !~ /^n/){
-		#filter out non-diatom sequences
-			my $query = $fields[0];
-			my $match = $fields[1];
-			my $evalue = $fields[10];
+		my $query = $fields[0];
+		my $match = $fields[1];
+		my $evalue = $fields[10];
 
-			if ((not exists  $Match{$query}) or ($evalue <  $Evalue{$query})){
-			# Select lowest eval
-				$Match{$query} = $match;
-				$Evalue{$query} = $evalue;
-			}
+		if ((not exists  $Match{$query}) or ($evalue <  $Evalue{$query})){
+		# Select lowest eval
+			$Match{$query} = $match;
+			$Evalue{$query} = $evalue;
 		}
 	}
 }
 close BLAST;
+
+#my %Filtered_Match;
+print "Filtering non-diatom species out of sample\n";
+#my @matching_values = grep !/^n/, values %Match;
+#delete @Match{@matching_keys};
+
+while (my ($key, $value) = each (%Match)) {
+	if ($value =~ /^n/){
+		delete $Match{$key};
+	}
+}
 
 my $line = <TAXA>;
 
@@ -128,11 +136,10 @@ for (my $i=1; $i<=6; $i++){
 	while (my ($key, $value) = each (%Count)) {
 			
 		if ($key ne 'NULL'){
-			my $prop = $value / $total_abundance;
-			my $round = sprintf "%.5d", $prop;
+			my $prop = ($value / $total_abundance) * 100;
 			print OUT $key,"\t", $prop, "\n";
 		}
 	}
-	print OUT "Proportion of reads as Diatoms : ", $total_abundance / $total_read_number , "\n";
+	print OUT "Proportion of reads identified as Diatoms : ", ($total_abundance / $total_read_number) * 100 , "\n";
 	close OUT;
 }

@@ -28,7 +28,7 @@ Navicula_cryptotenella	3.80952381
 Navicula_gregaria	9.841269841
 Navicula_ignota_var_acceptata	0.317460317
 Navicula_lanceolata	0.952380952
-Navicula_minima	1.587301587
+Eolima_minima	1.587301587
 Navicula_reichardtiana	0.317460317
 Navicula_subminuscula	0.317460317
 Navicula_tripunctata	0.952380952

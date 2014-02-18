@@ -83,7 +83,7 @@ body {background-image:url('images/diatom_back.jpg');}
 	print "<b>MIC</b><br>\n";
        foreach ($MIC_opts as $heat_opt){
               $heat_opt = preg_replace("/analyses\/abun\/MIC\//i", '', $heat_opt);
-              print "<input name='$heat_opt' type='checkbox' value='$heat_opt' >$heat_opt";
+              print "<input name='MIC_$heat_opt' type='checkbox' value='$heat_opt' >$heat_opt";
 	      if ( is_int ($col2 / 10))
 		print "<br>\n";
 		$col2++;
@@ -93,7 +93,7 @@ body {background-image:url('images/diatom_back.jpg');}
 	print "<br><b>NGS</b><br>\n";
 	foreach ($SEQ_opts as $heat_opt){
               $heat_opt = preg_replace("/analyses\/abun\/SEQ\//i", '', $heat_opt);
-              print "<input name='$heat_opt' type='checkbox' value='$heat_opt' >$heat_opt";
+              print "<input name='SEQ_$heat_opt' type='checkbox' value='$heat_opt' >$heat_opt";
 	      if ( is_int ($col2 / 10))
 		print "<br>\n";
 		$col2++;

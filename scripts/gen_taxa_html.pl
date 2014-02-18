@@ -30,11 +30,11 @@ my $cumulative = 0;
 
 while (my $line = <TAXA>){
         	chomp $line;
-        if ($line =~ /^Ass/){
+        if ($line =~ /Diatoms/){
         	        last;
         }else{
         	my @cols = split(/\t/, $line);
-	if ($cols[1] > 0.005){
+	if ($cols[1] > 0.5){
 		my $round = sprintf("%.3f", "$cols[1]");
 	        push @fields, "\{$file:\"$cols[0]\",abundance:$round\}";
 	}else{

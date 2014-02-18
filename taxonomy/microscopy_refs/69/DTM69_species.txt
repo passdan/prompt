@@ -22,7 +22,7 @@ Navicula_gregaria	1.18694362
 Navicula_ignota_var_acceptata	2.670623145
 Navicula_lanceolata	0.296735905
 Navicula_menisculus	1.78041543
-Navicula_minima	3.857566766
+Eolima_minima	3.857566766
 Navicula_reichardtiana	0.296735905
 Navicula_tripunctata	0.59347181
 Nitzschia_amphibia	5.934718101

@@ -16,7 +16,7 @@ Navicula_capitatoradiata	0.952380952
 Navicula_cryptocephala	0.634920635
 Navicula_cryptotenella	1.26984127
 Navicula_gregaria	0.634920635
-Navicula_minima	0.952380952
+Eolima_minima	0.952380952
 Navicula_molestiformis	0.634920635
 Navicula_tripunctata	1.26984127
 Nitzschia_acicularis	0.634920635

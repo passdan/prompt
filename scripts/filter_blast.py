@@ -12,6 +12,6 @@ for line in lines:
     cols = (line.split('\t'))
 
     if (float(cols[2]) < float(pc_match)):
-        cols[1] = "No_Match"
+        cols[1] = "000"
 
     out_file.write('\t'.join(cols))

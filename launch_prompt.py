@@ -9,6 +9,7 @@ sample_dir = "input_fasta/"
 sample_list = "sample_list.txt"
 tmp_dir = "tmp_dir/"
 blast_db = "blast_db/composite"
+blast_homology = "96"
 
 call(["mkdir", tmp_dir])
 call(["mkdir", tmp_dir + "/abundance_files"])
@@ -25,4 +26,4 @@ for sample in open_sample_list:
 
     print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     print "Running prompt_sample.py on sample " + sampleID + " (" + rows[1].rstrip() + ")"
-    call(["scripts/prompt_sample.py", sample_dir, sampleID, tmp_dir, blast_db])
+    call(["scripts/prompt_sample.py", sample_dir, sampleID, tmp_dir, blast_db, blast_homology])

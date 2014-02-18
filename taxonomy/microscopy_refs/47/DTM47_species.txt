@@ -24,7 +24,7 @@ Navicula_capitata	0.302114804
 Navicula_cincta	0.302114804
 Navicula_cryptocephala	0.302114804
 Navicula_lanceolata	0.906344411
-Navicula_minima	1.208459215
+Eolima_minima	1.208459215
 Navicula_rhynchocephala	0.604229607
 Nitzschia_amphibia	1.208459215
 Nitzschia_capitellata	1.510574018

@@ -14,7 +14,7 @@ Navicula_cincta	0.327868852
 Navicula_cryptotenella	0.327868852
 Navicula_gregaria	0.655737705
 Navicula_ignota_var_palustris	0.655737705
-Navicula_minima	23.27868852
+Eolima_minima	23.27868852
 Navicula_suchlandtii	2.950819672
 Navicula_tripunctata	0.655737705
 Nitzschia_amphibia	0.327868852

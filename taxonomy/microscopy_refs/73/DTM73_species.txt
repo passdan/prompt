@@ -12,7 +12,7 @@ Navicula_[small_species]	0.892857143
 Navicula_atomus_var_permitis	0.297619048
 Navicula_gregaria	1.19047619
 Navicula_menisculus	0.595238095
-Navicula_minima	0.892857143
+Eolima_minima	0.892857143
 Nitzschia_archibaldii	1.785714286
 Nitzschia_dissipata	0.297619048
 Nitzschia_dissipata_subsp_media	0.595238095

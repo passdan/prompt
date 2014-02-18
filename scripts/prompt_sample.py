@@ -8,10 +8,10 @@
 ##to can be found in the ./scripts folder.
 #######################
 
-
 import sys
 import re
 from subprocess import call
+import subprocess
 from Bio import SeqIO
 from Bio.Blast.Applications import NcbiblastnCommandline
 
@@ -19,17 +19,15 @@ indir = sys.argv[1]
 sample = sys.argv[2]
 tmpdir = sys.argv[3]
 database = sys.argv[4]
+blast_homology = sys.argv[5]
 
 in_fasta = sample + ".fas"
 
 seq_no = 0
 lengths = []
 
-taxa_list = ("refseq","species","genus","family","order","class")
-
-##parameters
-blast_homology = 97
-
+taxa_list = ("refseq","species","genus","family","class")
+divider = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 try:
     open_fasta = open(indir + in_fasta, "rU")
@@ -39,22 +37,22 @@ except IOError:
 
 def main():
     #process infiles
-    print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    print divider
     print "Processing infiles"
 
     process_infiles(open_fasta)
 
     #cd-hit
-    print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    print divider 
     print "Passing to CD-HIT for data reduction"
     cdhit_fas = cdhit(in_fasta)
 
     #do blast
-    print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    print divider 
     print "Passing to blast for taxonomic assignment"
     blast_out = blastn(cdhit_fas, database)
 
-    print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    print divider
     print "Filtering Blast results at " + str(blast_homology) + "% required database match"
 #    blast_temp = (tmpdir + "blast_files/" + sample + ".blast")
     print "Filtering " + blast_out
@@ -63,13 +61,13 @@ def main():
 
 
     ##Create abundance files
-    print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    print divider
     print "Converting blast output into abundance files"
     call(["mkdir", tmpdir + "abundance_files/" + sample])
     call(["perl", "scripts/create_abundance_files.pl", str(sample) + ".blast_filter", str(seq_no), tmpdir, cdhit_clusters])
 
     #build web files
-    print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    print divider
     print "converting output files into html webfiles"
     call(["mkdir", tmpdir + "html_files/" + sample])
     for level in taxa_list:
@@ -104,6 +102,7 @@ def cdhit(fas):
     cd_stderr = (tmpdir + "cdhit_sterr.txt")
 
     call(["cd-hit-454","-i",cdhit_in,"-o",cdhit_out])
+    #subprocess.Popen(["cd-hit-454","-i",cdhit_in,"-o",cdhit_out], stdout=subprocess.PIPE)
 
     call(["scripts/parse_cd-hit.py", cdhit_out + ".clstr", tmpdir])
     global cdhit_clusters
