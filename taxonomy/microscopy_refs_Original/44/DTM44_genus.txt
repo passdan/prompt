@@ -1,0 +1,16 @@
+Achnanthidium	4.848484848
+Amphora	15.45454545
+Cocconeis	0.303030303
+Cymbella	0.606060606
+Encyonema	0.606060606
+Fallacia	1.212121212
+Gomphonema	0.303030303
+Navicula	14.24242424
+Nitzschia	51.51515152
+Planothidium	1.212121212
+Simonsenia	4.848484848
+Staurosirella	0.303030303
+Surirella	2.121212121
+Synedra	0.303030303
+Trybionella	0.909090909
+Unknown	1.212121212

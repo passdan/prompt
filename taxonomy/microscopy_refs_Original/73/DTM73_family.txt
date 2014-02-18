@@ -1,0 +1,10 @@
+Achnanthidiaceae	52.08333333
+Bacillariaceae	7.44047619
+Catenulaceae	16.96428571
+Cocconeidaceae	7.44047619
+Fragilariaceae	10.71428571
+Gomphonemataceae	0.297619048
+Melosiraceae	0.595238095
+Naviculaceae	2.678571429
+Rhoicospheniaceae	0.595238095
+Sellaphoraceae	1.19047619

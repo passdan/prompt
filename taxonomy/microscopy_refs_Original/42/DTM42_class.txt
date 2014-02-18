@@ -1,0 +1,4 @@
+Bacillariophyceae	95.43973941
+Coscinodiscophyceae	10.74918567
+Fragilariophyceae	0.325732899
+Unknown	0.651465798

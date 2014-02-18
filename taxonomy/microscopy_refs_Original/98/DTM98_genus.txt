@@ -1,0 +1,7 @@
+Achnanthidium	33.97435897
+Eolimna	63.78205128
+Eunotia	0.320512821
+Fragilaria	0.641025641
+Meridion	0.320512821
+Navicula	0.320512821
+Nitzschia	0.641025641
