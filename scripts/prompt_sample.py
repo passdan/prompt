@@ -54,9 +54,7 @@ def main():
 
     print divider
     print "Filtering Blast results at " + str(blast_homology) + "% required database match"
-#    blast_temp = (tmpdir + "blast_files/" + sample + ".blast")
     print "Filtering " + blast_out
-#    call(["scripts/filter_blast.py", blast_temp, str(blast_homology)])
     call(["scripts/filter_blast.py", blast_out, str(blast_homology)])
 
 
@@ -81,7 +79,7 @@ def blastn(fas, db):
     blast_out = (tmpdir + "blast_files/" + sample + ".blast")
 
 
-    blastn_cline = NcbiblastnCommandline(query=blast_in, db=db, evalue=0.001, outfmt=6, out=blast_out, num_threads=14)
+    blastn_cline = NcbiblastnCommandline(query=blast_in, db=db, evalue=0.001, outfmt=6, out=blast_out, num_threads=3)
 
     stdout, stderr = blastn_cline()
 
@@ -101,7 +99,7 @@ def cdhit(fas):
     cd_stdout = (tmpdir + "cdhit_stdout.txt")
     cd_stderr = (tmpdir + "cdhit_sterr.txt")
 
-    call(["cd-hit-454","-i",cdhit_in,"-o",cdhit_out])
+    call(["cd-hit-454","-i",cdhit_in,"-o",cdhit_out, "-c", "0.99"])
     #subprocess.Popen(["cd-hit-454","-i",cdhit_in,"-o",cdhit_out], stdout=subprocess.PIPE)
 
     call(["scripts/parse_cd-hit.py", cdhit_out + ".clstr", tmpdir])

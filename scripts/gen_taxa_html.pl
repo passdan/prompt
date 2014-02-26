@@ -56,11 +56,13 @@ push (@sorted, "\{$file:\"other\",abundance:$cum_round\}");
 select OUTFILE;
 while (<TEMPLATE>){
 	if (/XXTAXALEVELXX/){
-	s/XXTAXALEVELXX/$file/;
-	print;
+		s/XXTAXALEVELXX/$file/;
+		print;
         }elsif(/XXTITLEXX/){
                 s/XXTITLEXX/454 Sequencing:$site:$file/;
                 print;
+	}elsif(/Sequencing/){
+		s/(Class)/<a href="analyses\/pie\/SEQ\/$site\/$1.html>$1/
 
 	}elsif (/(^var chartData)/){
 		print "$1 =\[";

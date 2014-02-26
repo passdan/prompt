@@ -47,10 +47,7 @@ while ( my $line = <BLAST> )
 }
 close BLAST;
 
-#my %Filtered_Match;
 print "Filtering non-diatom species out of sample\n";
-#my @matching_values = grep !/^n/, values %Match;
-#delete @Match{@matching_keys};
 
 while (my ($key, $value) = each (%Match)) {
 	if ($value =~ /^n/){
@@ -66,6 +63,7 @@ my %hash_family;
 my %hash_order;
 my %hash_class;
 my %hash_refseq;
+my %hash_correction;
 
 while(my $line = <TAXA>){
 	chomp $line;
@@ -77,7 +75,7 @@ while(my $line = <TAXA>){
 	$hash_genus{$fields[0]} = $fields[2];			
 	$hash_family{$fields[0]} = $fields[3];	
 	$hash_class{$fields[0]} = $fields[4];
-
+	$hash_correction{$fields[0]} = $fields[5];
 	
 }
 close TAXA;
@@ -122,15 +120,17 @@ for (my $i=1; $i<=6; $i++){
 
 	while (my ($key, $value) = each (%Match)) {
 		my $tax_id = $hash{$value};
+		my $multiplier = $hash_correction{$value};
+		my $corrected_abun = $multiplier * $abun{$key};
 
 		if (exists $Count{$tax_id}){
 #			print "recog_tax: $Count{$tax_id} + $abun{$key}\n";
-			$Count{$tax_id} = $Count{$tax_id} + $abun{$key};
+			$Count{$tax_id} = $Count{$tax_id} + $corrected_abun;
 		}else{
 #			print "New Tax: $tax_id\tabun: $abun{$key}\n";
-			$Count{$tax_id} = $abun{$key};
+			$Count{$tax_id} = $corrected_abun;
 		}
-		$total_abundance +=$abun{$key};
+		$total_abundance += $corrected_abun;
 	}
 
 	while (my ($key, $value) = each (%Count)) {
