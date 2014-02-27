@@ -117,6 +117,7 @@ for (my $i=1; $i<=6; $i++){
 	
 	my %Count;
 	my $total_abundance = 0;
+	my %Count_otus;
 
 	while (my ($key, $value) = each (%Match)) {
 		my $tax_id = $hash{$value};
@@ -126,9 +127,11 @@ for (my $i=1; $i<=6; $i++){
 		if (exists $Count{$tax_id}){
 #			print "recog_tax: $Count{$tax_id} + $abun{$key}\n";
 			$Count{$tax_id} = $Count{$tax_id} + $corrected_abun;
+			$Count_otus{$tax_id} = $Count_otus{$tax_id} + 1;
 		}else{
 #			print "New Tax: $tax_id\tabun: $abun{$key}\n";
 			$Count{$tax_id} = $corrected_abun;
+			$Count_otus{$tax_id} = 1;
 		}
 		$total_abundance += $corrected_abun;
 	}
@@ -137,7 +140,7 @@ for (my $i=1; $i<=6; $i++){
 			
 		if ($key ne 'NULL'){
 			my $prop = ($value / $total_abundance) * 100;
-			print OUT $key,"\t", $prop, "\n";
+			print OUT "$key (OTUs:$Count_otus{$value})\t$prop\n";
 		}
 	}
 	print OUT "Proportion of reads identified as Diatoms : ", ($total_abundance / $total_read_number) * 100 , "\n";

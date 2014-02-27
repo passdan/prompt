@@ -3,7 +3,7 @@ Strain	Species	Genus	Family	Class	correction
 002	Surirella_brebissonii	Surirella	Surirellaceae	Bacillariophyceae	1
 005	Fragilaria_gracilis	Fragilaria	Fragilariaceae	Bacillariophyceae	1
 007	Achnanthidium_minutissimum_OTU1	Achnanthidium	Achnanthidiaceae	Bacillariophyceae	1
-007	Cymbella_cymbiformis	Cymbella	Cymbellaceae	Bacillariophyceae	1
+006	Cymbella_cymbiformis	Cymbella	Cymbellaceae	Bacillariophyceae	1
 008	Diatoma_moniliformis	Diatoma	Fragilariaceae	Bacillariophyceae	1
 009	Fragilaria_pararumpens	Fragilaria	Fragilariaceae	Bacillariophyceae	1
 012	Fragilaria_gracilis	Fragilaria	Fragilariaceae	Bacillariophyceae	1
@@ -67,11 +67,11 @@ Strain	Species	Genus	Family	Class	correction
 117	Nitzschia_palea	Nitzschia	Bacillariaceae	Bacillariophyceae	1
 120	Gomphonema_exilissimum	Gomphonema	Gomphonemataceae	Bacillariophyceae	1
 121	Fragilaria_gracilis	Fragilaria	Fragilariaceae	Bacillariophyceae	1
-122	Pinnularia_sp.	Pinnularia	Pinnulariaceae	Bacillariophyceae	1
+122	Pinnularia_sp	Pinnularia	Pinnulariaceae	Bacillariophyceae	1
 123	Gomphonema_hebridense	Gomphonema	Gomphonemataceae	Bacillariophyceae	1
 124	Gomphonema_hebridense	Gomphonema	Gomphonemataceae	Bacillariophyceae	1
 125	Brachysira_microcephala	Brachysira	Brachysiraceae	Bacillariophyceae	1
-126	Pinnularia_sp.	Pinnularia	Pinnulariaceae	Bacillariophyceae	1
+126	Pinnularia_sp	Pinnularia	Pinnulariaceae	Bacillariophyceae	1
 130	Gomphonema_hebridense	Gomphonema	Gomphonemataceae	Bacillariophyceae	1
 134	Gomphonema_parvulum	Gomphonema	Gomphonemataceae	Bacillariophyceae	1
 135	Fragilaria_gracilis	Fragilaria	Fragilariaceae	Bacillariophyceae	1
@@ -170,9 +170,9 @@ n285	Cyclotella_meneghiniana	Cyclotella	Stephanodiscaceae	Coscinodiscophyceae	1
 324	Navicula_lanceolata	Navicula	Naviculaceae	Bacillariophyceae	1
 326	Navicula_lanceolata	Navicula	Naviculaceae	Bacillariophyceae	1
 329	Navicula_lanceolata	Navicula	Naviculaceae	Bacillariophyceae	1
-330	Nitzschia_cf.	Nitzschia	Bacillariaceae	Bacillariophyceae	1
+330	Nitzschia_cf	Nitzschia	Bacillariaceae	Bacillariophyceae	1
 331	Navicula_lanceolata	Navicula	Naviculaceae	Bacillariophyceae	1
-332	Nitzschia_cf.	Nitzschia	Bacillariaceae	Bacillariophyceae	1
+332	Nitzschia_cf	Nitzschia	Bacillariaceae	Bacillariophyceae	1
 337	Achnanthidium_minutissimum_OTU1	Achnanthidium	Achnanthidiaceae	Bacillariophyceae	1
 340	Gomphonema_truncatum	Gomphonema	Gomphonemataceae	Bacillariophyceae	1
 342	Achnanthidium_minutissimum_OTU1	Achnanthidium	Achnanthidiaceae	Bacillariophyceae	1
@@ -238,7 +238,7 @@ n529	Cyclotella_meneghiniana	Cyclotella	Stephanodiscaceae	Coscinodiscophyceae	1
 551	Fragilaria_gracilis	Fragilaria	Fragilariaceae	Bacillariophyceae	1
 559	Achnanthidium_minutissimum_OTU3	Achnanthidium	Achnanthidiaceae	Bacillariophyceae	1
 568	Gomphonema_parvulum	Gomphonema	Gomphonemataceae	Bacillariophyceae	1
-569	Gomphonema_sp.	Gomphonema	Gomphonemataceae	Bacillariophyceae	1
+569	Gomphonema_sp	Gomphonema	Gomphonemataceae	Bacillariophyceae	1
 572	Gomphonema_minutum	Gomphonema	Gomphonemataceae	Bacillariophyceae	1
 574	Achnanthidium_minutissimum_OTU5	Achnanthidium	Achnanthidiaceae	Bacillariophyceae	1
 575	Fragilaria_rumpens	Fragilaria	Fragilariaceae	Bacillariophyceae	1
@@ -247,7 +247,7 @@ n529	Cyclotella_meneghiniana	Cyclotella	Stephanodiscaceae	Coscinodiscophyceae	1
 588	Gomphonema_parvulum	Gomphonema	Gomphonemataceae	Bacillariophyceae	1
 590	Eunotia_minor	Eunotia	Eunotiaceae	Bacillariophyceae	1
 592	Eunotia_exigua	Eunotia	Eunotiaceae	Bacillariophyceae	1
-593	Navicula_sp.	Navicula	Naviculaceae	Bacillariophyceae	1
+593	Navicula_sp	Navicula	Naviculaceae	Bacillariophyceae	1
 597	Surirella_minuta	Surirella	Surirellaceae	Bacillariophyceae	1
 600	Surirella_minuta	Surirella	Surirellaceae	Bacillariophyceae	1
 601	Surirella_brebissonii	Surirella	Surirellaceae	Bacillariophyceae	1
@@ -312,7 +312,7 @@ n681	Staurosira_venter	Staurosira	Fragilariaceae	Bacillariophyceae	1
 709	Surirella_angusta	Surirella	Surirellaceae	Bacillariophyceae	1
 711	Gomphonema_parvulum	Gomphonema	Gomphonemataceae	Bacillariophyceae	1
 713	Nitzschia_capitellata	Nitzschia	Bacillariaceae	Bacillariophyceae	1
-716	Navicula_sp.	Navicula	Naviculaceae	Bacillariophyceae	1
+716	Navicula_sp	Navicula	Naviculaceae	Bacillariophyceae	1
 718	Rhoicosphenia_abbreviata	Rhoicosphenia	Rhoicospheniaceae	Bacillariophyceae	1
 720	Ulnaria_ulna	Ulnaria	Fragilariaceae	Bacillariophyceae	1
 721	Diatoma_vulgaris	Diatoma	Fragilariaceae	Bacillariophyceae	1
@@ -343,13 +343,13 @@ n681	Staurosira_venter	Staurosira	Fragilariaceae	Bacillariophyceae	1
 778	Planothidium_lanceolatum	Planothidium	Achnanthidiaceae	Bacillariophyceae	1
 779	Navicula_lanceolata	Navicula	Naviculaceae	Bacillariophyceae	1
 n783	Cyclotella_meneghiniana	Cyclotella	Stephanodiscaceae	Coscinodiscophyceae	1
-785	Pinnularia_sp.	Pinnularia	Pinnulariaceae	Bacillariophyceae	1
+785	Pinnularia_sp	Pinnularia	Pinnulariaceae	Bacillariophyceae	1
 787	Nitzschia_sigmoidea	Nitzschia	Bacillariaceae	Bacillariophyceae	1
 791	Fragilaria_Lyngbye	Fragilaria	Fragilariaceae	Bacillariophyceae	1
 794	Eunotia_bilunaris	Eunotia	Eunotiaceae	Bacillariophyceae	1
 795	Nitzschia_recta	Nitzschia	Bacillariaceae	Bacillariophyceae	1
 796	Navicula_gregaria	Navicula	Naviculaceae	Bacillariophyceae	1
-800	Navicula_sp.	Navicula	Naviculaceae	Bacillariophyceae	1
+800	Navicula_sp	Navicula	Naviculaceae	Bacillariophyceae	1
 802	Reimeria_sinuata	Reimeria	Gomphonemataceae	Bacillariophyceae	1
 804	Encyonema_silesiacum	Encyonema	Cymbellaceae	Bacillariophyceae	1
 806	Nitzschia_paleacea	Nitzschia	Bacillariaceae	Bacillariophyceae	1
@@ -372,7 +372,7 @@ n783	Cyclotella_meneghiniana	Cyclotella	Stephanodiscaceae	Coscinodiscophyceae	1
 847	Encyonema_silesiacum	Encyonema	Cymbellaceae	Bacillariophyceae	1
 848	Nitzschia_palea	Nitzschia	Bacillariaceae	Bacillariophyceae	1
 849	Meridion_circulare	Meridon	Fragilariaceae	Bacillariophyceae	1
-850	Nitzschia_cf.	Nitzschia	Bacillariaceae	Bacillariophyceae	1
+850	Nitzschia_cf	Nitzschia	Bacillariaceae	Bacillariophyceae	1
 853	Fragilaria_pararumpens	Fragilaria	Fragilariaceae	Bacillariophyceae	1
 855	Fragilaria_gracilis	Fragilaria	Fragilariaceae	Bacillariophyceae	1
 860	Reimeria_sinuata	Reimeria	Gomphonemataceae	Bacillariophyceae	1
@@ -400,7 +400,7 @@ s495	Eolimna_minima	Eolimna	Sellaphoraceae	Bacillariophyceae	1
 ngDQ514780	Cyclotella_distinguenda	Cyclotella	Stephanodiscaceae	Coscinodiscophyceae	1
 ngHQ912451	Staurosira_construens	Staurosira	Fragilariaceae	Fragilariophyceae	1
 ngHQ828193	Staurosira_elliptica 	Staurosira	Fragilariaceae	Fragilariophyceae	1
-gHQ912474	Denticula_sp.	Denticula	Bacillariaceae	Bacillariophyceae	1
+gHQ912474	Denticula_sp	Denticula	Bacillariaceae	Bacillariophyceae	1
 gHQ912403	Amphora_pediculus	Amphora	Catenulaceae	Bacillariophyceae	1
 iDTM113_247	Diatoma_sp	Diatoma	Fragilariaceae	Bacillariophyceae	1
 nAJ579569	Botrydiopsis_callosa 	Botrydiopsis	Botryidiopsidaceae	Xanthophyceae	1
