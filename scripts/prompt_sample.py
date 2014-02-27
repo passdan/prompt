@@ -79,7 +79,7 @@ def blastn(fas, db):
     blast_out = (tmpdir + "blast_files/" + sample + ".blast")
 
 
-    blastn_cline = NcbiblastnCommandline(query=blast_in, db=db, evalue=0.001, outfmt=6, out=blast_out, num_threads=3)
+    blastn_cline = NcbiblastnCommandline(query=blast_in, db=db, evalue=0.001, outfmt=6, out=blast_out, num_threads=12)
 
     stdout, stderr = blastn_cline()
 

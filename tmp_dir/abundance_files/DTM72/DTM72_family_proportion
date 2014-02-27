@@ -1,9 +1,8 @@
-	0
-Melosiraceae	5.88235294117647
-Bacillariaceae	0.35650623885918
-No_Match	57.2192513368984
-Catenulaceae	35.1158645276292
-Naviculaceae	0.17825311942959
-Achnanthidiaceae	1.06951871657754
-Cymbellaceae	0.17825311942959
-Proportion of reads identified as Diatoms : 12.0723047127179
+Melosiraceae (OTUs:6)	0.710441334768568
+Bacillariaceae (OTUs:2)	0.0430570505920344
+No_Match (OTUs:429)	94.8331539289559
+Naviculaceae (OTUs:1)	0.0215285252960172
+Achnanthidiaceae (OTUs:3)	0.129171151776103
+Cymbellaceae (OTUs:1)	0.0215285252960172
+Catenulaceae (OTUs:32)	4.24111948331539
+Proportion of reads identified as Diatoms : 99.9569614805251

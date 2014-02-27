@@ -1,25 +1,24 @@
-	0
-Pinnularia_subcapitata	0.54863233795752
-Nitzschia_amphibia	9.95375813151501
-Thalassiosira_pseudonana	0.0391880241398229
-Ulnaria_acus	0.0313504193118583
-Planothidium_lanceolatum	0.313504193118583
-Melosira_varians	0.00783760482796457
-Pinnularia_sp.	0.125401677247433
-Pinnularia_neomajor	0.219452935183008
-Stephanodiscus_hantzschii	1.09726467591504
-Cocconeis_placentula	1.09726467591504
-Sellaphora_seminulum	0.242965749666902
-Rhoicosphenia_abbreviata	0.431068265538052
-Eolimna_minima	6.85006661964104
-Reimeria_sinuata	0.0313504193118583
-No_Match	43.9846382945372
-Nitzschia_dissipata	0.054863233795752
-Achnanthidium_minutissimum_OTU5	0.00783760482796457
-Planothidium_frequentissimum	1.7477858766361
-Meridion_circulare	0.0156752096559291
-Nitzschia_cf	0.0783760482796457
-Amphora_pediculus	32.9022650677953
-Navicula_upsaliensis	0.0783760482796457
-Navicula_cryptocephala	0.141076886903362
-Proportion of reads identified as Diatoms : 98.6164785901994
+Pinnularia_subcapitata (OTUs:6)	0.542593597395551
+Nitzschia_amphibia (OTUs:133)	9.84419812417642
+Thalassiosira_pseudonana (OTUs:1)	0.0387566855282536
+Ulnaria_acus (OTUs:1)	0.0310053484226029
+Planothidium_lanceolatum (OTUs:10)	0.310053484226029
+Melosira_varians (OTUs:1)	0.00775133710565072
+Pinnularia_sp (OTUs:1)	0.124021393690412
+Pinnularia_neomajor (OTUs:4)	0.21703743895822
+Stephanodiscus_hantzschii (OTUs:20)	1.0851871947911
+Cocconeis_placentula (OTUs:16)	1.0851871947911
+Sellaphora_seminulum (OTUs:8)	0.240291450275172
+Rhoicosphenia_abbreviata (OTUs:16)	0.42632354081079
+Eolimna_minima (OTUs:154)	6.77466863033873
+Reimeria_sinuata (OTUs:1)	0.0310053484226029
+No_Match (OTUs:728)	44.6011937059143
+Nitzschia_dissipata (OTUs:1)	0.0542593597395551
+Achnanthidium_minutissimum_OTU5 (OTUs:1)	0.00775133710565072
+Planothidium_frequentissimum (OTUs:31)	1.72854817456011
+Meridion_circulare (OTUs:1)	0.0155026742113014
+Nitzschia_cf (OTUs:1)	0.0775133710565073
+Amphora_pediculus (OTUs:430)	32.5401131695217
+Navicula_upsaliensis (OTUs:4)	0.0775133710565073
+Navicula_cryptocephala (OTUs:2)	0.139524067901713
+Proportion of reads identified as Diatoms : 99.7140207141753

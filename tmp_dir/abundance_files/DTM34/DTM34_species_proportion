@@ -1,21 +1,21 @@
-	0
-Nitzschia_amphibia	3.81443298969072
-Ulnaria_acus	0.103092783505155
-Fragilaria_gracilis	0.103092783505155
-Denticula_sp.	3.60824742268041
-Nitzschia_cf	0.103092783505155
-Fragilaria_vaucheriae	1.34020618556701
-Pseudostaurosira_brevistriata	1.75257731958763
-Gomphonema_clavatum	0.721649484536082
-Fragilaria_Lyngbye	0.309278350515464
-Encyonopsis_microcephala	0.824742268041237
-Cocconeis_pediculus	0.103092783505155
-Cocconeis_placentula	1.23711340206186
-Eolimna_minima	1.03092783505155
-No_Match	10.8247422680412
-Ulnaria_ulna	0.927835051546392
-Planothidium_frequentissimum	0.103092783505155
-Achnanthidium_minutissimum_OTU5	1.34020618556701
-Gomphonema_minutum	0.103092783505155
-Amphora_pediculus	71.6494845360825
-Proportion of reads identified as Diatoms : 18.4726718720244
+Denticula_sp (OTUs:5)	0.666539706722529
+Nitzschia_amphibia (OTUs:4)	0.704627689963816
+Ulnaria_acus (OTUs:1)	0.0190439916206437
+Fragilaria_gracilis (OTUs:1)	0.0190439916206437
+Fragilaria_vaucheriae (OTUs:2)	0.247571891068368
+Pseudostaurosira_brevistriata (OTUs:2)	0.323747857550943
+Cymbella_cymbiformis (OTUs:1)	0.0761759664825748
+Gomphonema_clavatum (OTUs:2)	0.133307941344506
+Fragilaria_Lyngbye (OTUs:1)	0.0571319748619311
+Encyonopsis_microcephala (OTUs:3)	0.15235193296515
+Cocconeis_pediculus (OTUs:1)	0.0190439916206437
+Cocconeis_placentula (OTUs:4)	0.228527899447724
+Eolimna_minima (OTUs:3)	0.190439916206437
+No_Match (OTUs:536)	83.4507712816606
+Ulnaria_ulna (OTUs:7)	0.171395924585793
+Planothidium_frequentissimum (OTUs:1)	0.0190439916206437
+Achnanthidium_minutissimum_OTU5 (OTUs:5)	0.247571891068368
+Gomphonema_minutum (OTUs:1)	0.0190439916206437
+Nitzschia_cf (OTUs:1)	0.0190439916206437
+Amphora_pediculus (OTUs:129)	13.2355741763474
+Proportion of reads identified as Diatoms : 100

@@ -1,9 +1,8 @@
-	0
-Nitzschia_amphibia	0.35650623885918
-No_Match	57.2192513368984
-Navicula_cryptotenella	0.17825311942959
-Achnanthidium_minutissimum_OTU5	1.06951871657754
-Melosira_varians	5.88235294117647
-Amphora_pediculus	35.1158645276292
-Cymbella_cf	0.17825311942959
-Proportion of reads identified as Diatoms : 12.0723047127179
+Nitzschia_amphibia (OTUs:2)	0.0430570505920344
+Cymbella_cymbiformis (OTUs:1)	0.0215285252960172
+Melosira_varians (OTUs:6)	0.710441334768568
+No_Match (OTUs:429)	94.8331539289559
+Navicula_cryptotenella (OTUs:1)	0.0215285252960172
+Amphora_pediculus (OTUs:32)	4.24111948331539
+Achnanthidium_minutissimum_OTU5 (OTUs:3)	0.129171151776103
+Proportion of reads identified as Diatoms : 99.9569614805251

@@ -1,31 +1,30 @@
-	0
-Navicula_gregaria	0.0381170192490947
-Nitzschia_amphibia	4.44063274251953
-Thalassiosira_pseudonana	0.0571755288736421
-Planothidium_lanceolatum	0.819515913855537
-Fragilaria_vaucheriae	0.114351057747284
-Nitzschia_cf	0.0190585096245474
-Nitzschia_sigmoidea	0.0190585096245474
-Eunotia_minor	0.209643605870021
-Gomphonema_clavatum	0.228702115494568
-Melosira_varians	6.72765389746522
-Pinnularia_sp.	0.0381170192490947
-Sellaphora_seminulum	0.0381170192490947
-Cocconeis_placentula	0.323994663617305
-Eolimna_minima	1.75338288545836
-Ulnaria_ulna	0.914808461978273
-No_Match	62.2069754145226
-Navicula_sp.	0.0571755288736421
-Reimeria_sinuata	0.0952925481227368
-Nitzschia_dissipata	0.114351057747284
-Planothidium_frequentissimum	12.0259195730894
-Achnanthidium_minutissimum_OTU5	0.438345721364589
-Achnanthidium_minutissimum_OTU2	0.0381170192490947
-Meridion_circulare	0.0381170192490947
-Encyonema_silesiacum	0.0190585096245474
-Eunotia_implicata	0.0762340384981894
-Nitzschia_cf	0.133409567371832
-Pinnularia_microstauron	0.133409567371832
-Amphora_pediculus	8.72879740804269
-Navicula_upsaliensis	0.152468076996379
-Proportion of reads identified as Diatoms : 93.246845566021
+Navicula_gregaria (OTUs:1)	0.035644270183568
+Nitzschia_amphibia (OTUs:36)	4.15255747638567
+Thalassiosira_pseudonana (OTUs:3)	0.053466405275352
+Planothidium_lanceolatum (OTUs:13)	0.766351808946712
+Fragilaria_vaucheriae (OTUs:1)	0.106932810550704
+Nitzschia_sigmoidea (OTUs:1)	0.017822135091784
+Eunotia_minor (OTUs:3)	0.196043486009624
+Cymbella_cymbiformis (OTUs:2)	0.053466405275352
+Gomphonema_clavatum (OTUs:4)	0.213865621101408
+Melosira_varians (OTUs:42)	6.29121368739975
+Pinnularia_sp (OTUs:2)	0.035644270183568
+Sellaphora_seminulum (OTUs:1)	0.035644270183568
+Cocconeis_placentula (OTUs:3)	0.302976296560328
+Eolimna_minima (OTUs:30)	1.63963642844413
+Ulnaria_ulna (OTUs:6)	0.855462484405632
+No_Match (OTUs:493)	64.605239707717
+Reimeria_sinuata (OTUs:3)	0.08911067545892
+Nitzschia_dissipata (OTUs:2)	0.106932810550704
+Planothidium_frequentissimum (OTUs:74)	11.2457672429157
+Achnanthidium_minutissimum_OTU5 (OTUs:7)	0.409909107111032
+Achnanthidium_minutissimum_OTU2 (OTUs:1)	0.035644270183568
+Meridion_circulare (OTUs:1)	0.035644270183568
+Eunotia_implicata (OTUs:3)	0.071288540367136
+Encyonema_silesiacum (OTUs:1)	0.017822135091784
+Nitzschia_cf (OTUs:7)	0.142577080734272
+Navicula_sp (OTUs:1)	0.053466405275352
+Pinnularia_microstauron (OTUs:1)	0.124754945642488
+Amphora_pediculus (OTUs:42)	8.16253787203707
+Navicula_upsaliensis (OTUs:3)	0.142577080734272
+Proportion of reads identified as Diatoms : 99.7156566554114

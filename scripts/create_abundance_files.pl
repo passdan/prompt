@@ -140,7 +140,7 @@ for (my $i=1; $i<=6; $i++){
 			
 		if ($key ne 'NULL'){
 			my $prop = ($value / $total_abundance) * 100;
-			print OUT "$key (OTUs:$Count_otus{$value})\t$prop\n";
+			print OUT "$key (OTUs:$Count_otus{$key})\t$prop\n";
 		}
 	}
 	print OUT "Proportion of reads identified as Diatoms : ", ($total_abundance / $total_read_number) * 100 , "\n";

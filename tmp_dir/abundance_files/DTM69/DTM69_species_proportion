@@ -1,23 +1,21 @@
-Nitzschia_paleacea	0.0170299727520436
-	0
-Navicula_gregaria	0.18732970027248
-Nitzschia_amphibia	17.6771117166213
-Planothidium_lanceolatum	0.306539509536785
-Nitzschia_cf	0.0340599455040872
-Fragilaria_vaucheriae	0.102179836512262
-Nitzschia_sigmoidea	0.153269754768392
-Melosira_varians	2.43528610354223
-Navicula_lanceolata	0.170299727520436
-Cocconeis_pediculus	0.0170299727520436
-Cocconeis_placentula	0.136239782016349
-Rhoicosphenia_abbreviata	0.0170299727520436
-Eolimna_minima	5.07493188010899
-Diatoma_vulgaris	0.0170299727520436
-Reimeria_sinuata	1.07288828337875
-No_Match	18.2391008174387
-Nitzschia_dissipata	0.0170299727520436
-Planothidium_frequentissimum	0.119209809264305
-Nitzschia_cf	0.527929155313351
-Amphora_pediculus	53.525204359673
-Gomphonema_cymbelliclinum	0.153269754768392
-Proportion of reads identified as Diatoms : 97.5739448321702
+Nitzschia_paleacea (OTUs:1)	0.0166168162180126
+Navicula_gregaria (OTUs:1)	0.182784978398139
+Nitzschia_amphibia (OTUs:75)	17.2482552342971
+Planothidium_lanceolatum (OTUs:6)	0.299102691924227
+Fragilaria_vaucheriae (OTUs:2)	0.0997008973080758
+Nitzschia_sigmoidea (OTUs:2)	0.149551345962114
+Melosira_varians (OTUs:10)	2.37620471917581
+Navicula_lanceolata (OTUs:1)	0.166168162180126
+Cocconeis_pediculus (OTUs:1)	0.0166168162180126
+Cocconeis_placentula (OTUs:2)	0.132934529744101
+Rhoicosphenia_abbreviata (OTUs:1)	0.0166168162180126
+Eolimna_minima (OTUs:63)	4.95181123296776
+Diatoma_vulgaris (OTUs:1)	0.0166168162180126
+Reimeria_sinuata (OTUs:9)	1.0468594217348
+No_Match (OTUs:150)	20.2226653373214
+Nitzschia_dissipata (OTUs:1)	0.0166168162180126
+Planothidium_frequentissimum (OTUs:5)	0.116317713526088
+Nitzschia_cf (OTUs:10)	0.548354935194417
+Amphora_pediculus (OTUs:213)	52.2266533732137
+Gomphonema_cymbelliclinum (OTUs:1)	0.149551345962114
+Proportion of reads identified as Diatoms : 100

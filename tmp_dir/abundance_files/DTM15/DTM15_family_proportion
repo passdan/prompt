@@ -1,16 +1,15 @@
-	0
-Sellaphoraceae	2.37996258574101
-Rhoicospheniaceae	0.904177925587196
-Gomphonemataceae	0.769070879235086
-Fragilariaceae	1.02889212221991
-Eunotiaceae	0.166285595510289
-Achnanthidiaceae	0.405321139056329
-Naviculaceae	1.1951777177302
-Cymbellaceae	0.187071294949075
-Stephanodiscaceae	0.0623570983163583
-Melosiraceae	11.5880274371233
-Cocconeidaceae	5.5393889004365
-No_Match	15.1215963417169
-Bacillariaceae	18.561629598836
-Catenulaceae	42.0910413635419
-Proportion of reads identified as Diatoms : 92.6261070465922
+Sellaphoraceae (OTUs:62)	2.22849357726742
+Rhoicospheniaceae (OTUs:20)	0.846632931101596
+Gomphonemataceae (OTUs:15)	0.720124562086415
+Fragilariaceae (OTUs:20)	0.963409887115609
+Eunotiaceae (OTUs:10)	0.155702608018684
+Achnanthidiaceae (OTUs:13)	0.379525107045543
+Naviculaceae (OTUs:17)	1.11911249513429
+Cymbellaceae (OTUs:4)	0.301673803036201
+Stephanodiscaceae (OTUs:2)	0.0583884780070066
+Melosiraceae (OTUs:94)	10.8505254963021
+Cocconeidaceae (OTUs:70)	5.18684312962242
+No_Match (OTUs:385)	20.3970416504476
+Bacillariaceae (OTUs:187)	17.3803036200856
+Catenulaceae (OTUs:432)	39.4122226547295
+Proportion of reads identified as Diatoms : 98.921832884097
