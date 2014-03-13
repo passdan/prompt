@@ -1,0 +1,16 @@
+  single_rarefaction.py -i refseq.biom -o 8/rarefaction/RARIF_fHY_/rarefaction_406_0.biom   -d 406 
+ mv 8/rarefaction/RARIF_fHY_/rarefaction_406_0.biom 8/rarefaction//rarefaction_406_0.biom 
+ single_rarefaction.py -i refseq.biom -o 8/rarefaction/RARIF_fHY_/rarefaction_406_1.biom   -d 406 
+ mv 8/rarefaction/RARIF_fHY_/rarefaction_406_1.biom 8/rarefaction//rarefaction_406_1.biom 
+ single_rarefaction.py -i refseq.biom -o 8/rarefaction/RARIF_fHY_/rarefaction_406_2.biom   -d 406 
+ mv 8/rarefaction/RARIF_fHY_/rarefaction_406_2.biom 8/rarefaction//rarefaction_406_2.biom 
+ single_rarefaction.py -i refseq.biom -o 8/rarefaction/RARIF_fHY_/rarefaction_406_3.biom   -d 406 
+ mv 8/rarefaction/RARIF_fHY_/rarefaction_406_3.biom 8/rarefaction//rarefaction_406_3.biom 
+ single_rarefaction.py -i refseq.biom -o 8/rarefaction/RARIF_fHY_/rarefaction_406_4.biom   -d 406 
+ mv 8/rarefaction/RARIF_fHY_/rarefaction_406_4.biom 8/rarefaction//rarefaction_406_4.biom 
+ single_rarefaction.py -i refseq.biom -o 8/rarefaction/RARIF_fHY_/rarefaction_406_5.biom   -d 406 
+ mv 8/rarefaction/RARIF_fHY_/rarefaction_406_5.biom 8/rarefaction//rarefaction_406_5.biom 
+ single_rarefaction.py -i refseq.biom -o 8/rarefaction/RARIF_fHY_/rarefaction_406_6.biom   -d 406 
+ mv 8/rarefaction/RARIF_fHY_/rarefaction_406_6.biom 8/rarefaction//rarefaction_406_6.biom 
+ single_rarefaction.py -i refseq.biom -o 8/rarefaction/RARIF_fHY_/rarefaction_406_7.biom   -d 406 
+ mv 8/rarefaction/RARIF_fHY_/rarefaction_406_7.biom 8/rarefaction//rarefaction_406_7.biom 

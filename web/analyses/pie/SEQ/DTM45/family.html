@@ -9,6 +9,8 @@
 </head>
 <body>
 <h2>454 Sequencing:DTM45:family:</h2>
+<h3><u>Navigation</u></h3>
+<h4>Microscopy: Class | Family | Genus | Species </h4>
 <font face="Arial Narrow">
 <script src="../../../amcharts/javascript/amcharts.js"
  type="text/javascript"></script>
@@ -17,13 +19,15 @@
 <script type="text/javascript">
 var chart;
 var legend;
-var chartData =[{family:"Catenulaceae",abundance:60.099},
-{family:"No_Match",abundance:30.928},
-{family:"Cocconeidaceae",abundance:2.138},
-{family:"Naviculaceae",abundance:2.062},
-{family:"Bacillariaceae",abundance:2.024},
-{family:"Achnanthidiaceae",abundance:0.955},
-{family:"other",abundance:1.795}]
+var chartData =[{family:"Catenulaceae (OTUs:154)",abundance:68.139},
+{family:"Bacillariaceae (OTUs:16)",abundance:4.762},
+{family:"Cocconeidaceae (OTUs:18)",abundance:2.424},
+{family:"Naviculaceae (OTUs:16)",abundance:2.338},
+{family:"No_Match (OTUs:64)",abundance:19.004},
+{family:"Achnanthidiaceae (OTUs:9)",abundance:1.082},
+{family:"Fragilariaceae (OTUs:6)",abundance:0.563},
+{family:"Gomphonemataceae (OTUs:5)",abundance:0.563},
+{family:"other",abundance:1.126}]
 window.onload = function()
 {
 chart = new AmCharts.AmPieChart();

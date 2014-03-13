@@ -1,0 +1,59 @@
+Logging started at 16:50:16 on 07 Mar 2014
+QIIME version: 1.7.0
+
+qiime_config values:
+template_alignment_lanemask_fp	/home/db/blastdb/qiime/lanemask_in_1s_and_0s
+pynast_template_alignment_fp	/home/db/blastdb/qiime/core_set_aligned.imputed.fasta
+seconds_to_sleep	2
+torque_queue	friendlyq
+jobs_to_start	14
+cloud_environment	False
+denoiser_min_per_core	50
+python_exe_fp	python
+temp_dir	/tmp/
+blastall_fp	blastall
+sc_queue	all.q
+cluster_jobs_fp	/home/sbi6dap/programs/qiime/bin/start_parallel_jobs.py
+assign_taxonomy_reference_seqs_fp	/home/db/blastdb/qiime/gg_12_10_otus/rep_set/97_otus.fasta
+qiime_scripts_dir	/home/sbi6dap/programs/qiime/bin/
+assign_taxonomy_id_to_taxonomy_fp	/home/db/blastdb/qiime/gg_12_10_otus/taxonomy/97_otu_taxonomy.txt
+
+parameter file values:
+parallel:jobs_to_start	14
+
+Input file md5 sums:
+refseq.biom: 821b3d8a2569159effa5a7fcf647dbd1
+sample_map.txt: 653e9f1b1da6cf551dbdae8d16329594
+
+Executing commands.
+
+# Alpha rarefaction command 
+python /home/sbi6dap/programs/qiime/bin//multiple_rarefactions.py -i refseq.biom -m 10 -x 100 -s 9 -o arare/rarefaction/ 
+
+Stdout:
+
+Stderr:
+
+# Alpha diversity on rarefied OTU tables command 
+python /home/sbi6dap/programs/qiime/bin//alpha_diversity.py -i arare/rarefaction/ -o arare/alpha_div/ 
+
+
+
+*** ERROR RAISED DURING STEP: Alpha diversity on rarefied OTU tables
+Command run was:
+ python /home/sbi6dap/programs/qiime/bin//alpha_diversity.py -i arare/rarefaction/ -o arare/alpha_div/ 
+Command returned exit status: 1
+Stdout:
+
+Stderr
+Traceback (most recent call last):
+  File "/home/sbi6dap/programs/qiime/bin//alpha_diversity.py", line 108, in <module>
+    main()
+  File "/home/sbi6dap/programs/qiime/bin//alpha_diversity.py", line 93, in main
+    opts.tree_path)
+  File "/usr/lib/python2.7/dist-packages/qiime/alpha_diversity.py", line 351, in multiple_file_alpha
+    "phylogenetic tree supplied")
+ValueError: phylogenetic metric supplied, but no phylogenetic tree supplied
+
+
+Logging stopped at 16:50:23 on 07 Mar 2014

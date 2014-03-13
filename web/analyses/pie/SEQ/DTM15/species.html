@@ -9,6 +9,8 @@
 </head>
 <body>
 <h2>454 Sequencing:DTM15:species:</h2>
+<h3><u>Navigation</u></h3>
+<h4>Microscopy: Class | Family | Genus | Species </h4>
 <font face="Arial Narrow">
 <script src="../../../amcharts/javascript/amcharts.js"
  type="text/javascript"></script>
@@ -17,19 +19,19 @@
 <script type="text/javascript">
 var chart;
 var legend;
-var chartData =[{species:"Cyclotella_meneghiniana",abundance:5.965},
-{species:"Cocconeis_pediculus",abundance:4.379},
-{species:"Amphora_pediculus",abundance:39.412},
-{species:"No_Match",abundance:28.163},
-{species:"Melosira_varians",abundance:10.851},
-{species:"Nitzschia_cf",abundance:1.625},
-{species:"Denticula_kuetzingii",abundance:1.469},
-{species:"Eolimna_minima",abundance:1.460},
-{species:"Rhoicosphenia_abbreviata",abundance:0.847},
-{species:"Cocconeis_placentula",abundance:0.817},
-{species:"Sellaphora_seminulum",abundance:0.769},
-{species:"Diatoma_vulgaris",abundance:0.720},
-{species:"other",abundance:3.523}]
+var chartData =[{species:"Cyclotella_meneghiniana (OTUs:102)",abundance:6.037},
+{species:"Cocconeis_pediculus (OTUs:59)",abundance:4.432},
+{species:"Amphora_pediculus (OTUs:432)",abundance:39.886},
+{species:"Nitzschia_amphibia (OTUs:173)",abundance:15.816},
+{species:"No_Match (OTUs:239)",abundance:12.921},
+{species:"Melosira_varians (OTUs:94)",abundance:10.981},
+{species:"Nitzschia_cf (OTUs:3)",abundance:1.526},
+{species:"Eolimna_sp_Styx (OTUs:44)",abundance:1.251},
+{species:"Rhoicosphenia_abbreviata (OTUs:20)",abundance:0.857},
+{species:"Cocconeis_placentula (OTUs:11)",abundance:0.817},
+{species:"Sellaphora_seminulum (OTUs:10)",abundance:0.778},
+{species:"Diatoma_vulgaris (OTUs:11)",abundance:0.729},
+{species:"other",abundance:3.969}]
 window.onload = function()
 {
 chart = new AmCharts.AmPieChart();

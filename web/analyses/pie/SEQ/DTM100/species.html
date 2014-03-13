@@ -9,6 +9,8 @@
 </head>
 <body>
 <h2>454 Sequencing:DTM100:species:</h2>
+<h3><u>Navigation</u></h3>
+<h4>Microscopy: Class | Family | Genus | Species </h4>
 <font face="Arial Narrow">
 <script src="../../../amcharts/javascript/amcharts.js"
  type="text/javascript"></script>
@@ -17,14 +19,16 @@
 <script type="text/javascript">
 var chart;
 var legend;
-var chartData =[{species:"No_Match",abundance:80.538},
-{species:"Planothidium_lanceolatum",abundance:6.274},
-{species:"Fragilaria_vaucheriae",abundance:4.097},
-{species:"Denticula_kuetzingii",abundance:3.585},
-{species:"Eolimna_minima",abundance:2.177},
-{species:"Meridion_circulare",abundance:1.280},
-{species:"Planothidium_frequentissimum",abundance:1.152},
-{species:"other",abundance:0.896}]
+var chartData =[{species:"Planothidium_lanceolatum (OTUs:11)",abundance:6.290},
+{species:"Achnanthes_oblongella (OTUs:43)",abundance:51.990},
+{species:"Fragilaria_vaucheriae (OTUs:4)",abundance:4.108},
+{species:"Nitzschia_amphibia (OTUs:3)",abundance:3.723},
+{species:"No_Match (OTUs:31)",abundance:28.370},
+{species:"Eolimna_sp_Styx (OTUs:3)",abundance:1.284},
+{species:"Meridion_circulare (OTUs:3)",abundance:1.284},
+{species:"Planothidium_frequentissimum (OTUs:1)",abundance:1.155},
+{species:"Eolimna_minima (OTUs:4)",abundance:0.899},
+{species:"other",abundance:0.899}]
 window.onload = function()
 {
 chart = new AmCharts.AmPieChart();

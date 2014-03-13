@@ -1,24 +1,30 @@
-Pinnularia_subcapitata (OTUs:6)	0.542593597395551
-Nitzschia_amphibia (OTUs:133)	9.84419812417642
-Thalassiosira_pseudonana (OTUs:1)	0.0387566855282536
-Ulnaria_acus (OTUs:1)	0.0310053484226029
-Planothidium_lanceolatum (OTUs:10)	0.310053484226029
-Melosira_varians (OTUs:1)	0.00775133710565072
-Pinnularia_sp (OTUs:1)	0.124021393690412
-Pinnularia_neomajor (OTUs:4)	0.21703743895822
-Stephanodiscus_hantzschii (OTUs:20)	1.0851871947911
-Cocconeis_placentula (OTUs:16)	1.0851871947911
-Sellaphora_seminulum (OTUs:8)	0.240291450275172
-Rhoicosphenia_abbreviata (OTUs:16)	0.42632354081079
-Eolimna_minima (OTUs:154)	6.77466863033873
-Reimeria_sinuata (OTUs:1)	0.0310053484226029
-No_Match (OTUs:728)	44.6011937059143
-Nitzschia_dissipata (OTUs:1)	0.0542593597395551
-Achnanthidium_minutissimum_OTU5 (OTUs:1)	0.00775133710565072
-Planothidium_frequentissimum (OTUs:31)	1.72854817456011
-Meridion_circulare (OTUs:1)	0.0155026742113014
-Nitzschia_cf (OTUs:1)	0.0775133710565073
-Amphora_pediculus (OTUs:430)	32.5401131695217
-Navicula_upsaliensis (OTUs:4)	0.0775133710565073
-Navicula_cryptocephala (OTUs:2)	0.139524067901713
-Proportion of reads identified as Diatoms : 99.7140207141753
+Achnanthes_oblongella 	0.0264719507621716
+Pinnularia_subcapitata 	0.617678851117337
+Nitzschia_amphibia 	11.206459155986
+Thalassiosira_pseudonana 	0.0441199179369526
+Ulnaria_acus 	0.0352959343495621
+Planothidium_lanceolatum 	0.352959343495621
+Melosira_varians 	0.00882398358739053
+Achnanthes_conspica 	34.6341355805078
+Pinnularia_sp. 	0.141183737398248
+Pinnularia_neomajor 	0.247071540446935
+Sellaphora_seminulum 	0.273543491209106
+Stephanodiscus_hantzschii 	1.23535770223467
+Cocconeis_placentula 	1.23535770223467
+Rhoicosphenia_abbreviata 	0.485319097306479
+Eolimna_minima 	1.40301339039509
+Reimeria_sinuata 	0.0352959343495621
+No_Match 	14.8860603119278
+Nitzschia_dissipata 	0.0617678851117337
+Planothidium_frequentissimum 	1.96774833998809
+Achnanthidium_minutissimum 	0.00882398358739053
+Eunotia_cf_formica 	0.00882398358739053
+Eolimna_sp_Styx 	6.32679623215901
+Meridion_circulare 	0.0176479671747811
+Staurosira_construens 	0.370607310670402
+Nitzschia_cf 	0.0882398358739053
+Cyclotella_meneghiniana 	0.882398358739053
+Amphora_pediculus 	23.1519269374159
+Navicula_cryptocephala 	0.158831704573029
+Navicula_upsaliensis 	0.0882398358739053
+Proportion of reads identified as Diatoms : 87.5927500386458

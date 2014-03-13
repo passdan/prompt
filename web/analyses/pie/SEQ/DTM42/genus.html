@@ -9,6 +9,8 @@
 </head>
 <body>
 <h2>454 Sequencing:DTM42:genus:</h2>
+<h3><u>Navigation</u></h3>
+<h4>Microscopy: Class | Family | Genus | Species </h4>
 <font face="Arial Narrow">
 <script src="../../../amcharts/javascript/amcharts.js"
  type="text/javascript"></script>
@@ -17,16 +19,17 @@
 <script type="text/javascript">
 var chart;
 var legend;
-var chartData =[{genus:"Eolimna",abundance:6.782},
-{genus:"No_Match",abundance:52.174},
-{genus:"Amphora",abundance:32.540},
-{genus:"Planothidium",abundance:2.039},
-{genus:"Denticula",abundance:1.178},
-{genus:"Cocconeis",abundance:1.085},
-{genus:"Stephanodiscus",abundance:1.070},
-{genus:"Pinnularia",abundance:0.884},
-{genus:"Cyclotella",abundance:0.775},
-{genus:"other",abundance:1.473}]
+var chartData =[{genus:"Nitzschia (OTUs:135)",abundance:9.971},
+{genus:"Eolimna (OTUs:156)",abundance:6.787},
+{genus:"Amphora (OTUs:430)",abundance:32.525},
+{genus:"Achnanthes (OTUs:399)",abundance:30.433},
+{genus:"Planothidium (OTUs:41)",abundance:2.038},
+{genus:"No_Match (OTUs:299)",abundance:13.070},
+{genus:"Cocconeis (OTUs:16)",abundance:1.085},
+{genus:"Stephanodiscus (OTUs:20)",abundance:1.085},
+{genus:"Pinnularia (OTUs:11)",abundance:0.883},
+{genus:"Cyclotella (OTUs:19)",abundance:0.775},
+{genus:"other",abundance:1.348}]
 window.onload = function()
 {
 chart = new AmCharts.AmPieChart();

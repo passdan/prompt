@@ -1,13 +1,15 @@
-Nitzschia_vermicularoides (OTUs:2)	0.0872926798852725
-Nitzschia_amphibia (OTUs:4)	0.0997630627260257
-Eolimna_minima (OTUs:297)	31.1634867190423
-No_Match (OTUs:279)	17.9947624392069
-Planothidium_lanceolatum (OTUs:1)	0.0623519142037661
-Nitzschia_dissipata (OTUs:3)	0.211996508292805
-Achnanthidium_minutissimum_OTU5 (OTUs:2)	0.0623519142037661
-Planothidium_frequentissimum (OTUs:11)	0.997630627260257
-Meridion_circulare (OTUs:7)	0.773163736126699
-Nitzschia_cf (OTUs:1)	18.7803965581743
-Navicula_sp (OTUs:1)	0.224466891133558
-Amphora_pediculus (OTUs:260)	29.5423369497444
-Proportion of reads identified as Diatoms : 99.4173072154723
+Nitzschia_vermicularoides 	0.105221623043535
+Nitzschia_amphibia 	0.120253283478326
+Navicula_sp. 	0.270569887826234
+No_Match 	12.9121963134853
+Planothidium_lanceolatum 	0.0751583021739539
+Nitzschia_dissipata 	0.255538227391443
+Planothidium_frequentissimum 	1.20253283478326
+Achnanthidium_minutissimum 	0.0751583021739539
+Eolimna_sp_Styx 	37.6242460682813
+Meridion_circulare 	0.931962946957028
+Nitzschia_cf 	22.6376806147949
+Cyclotella_meneghiniana 	0.315664869130606
+Amphora_pediculus 	22.2562522312621
+Staurosira_venter 	1.21756449521805
+Proportion of reads identified as Diatoms : 82.477374163154

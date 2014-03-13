@@ -9,6 +9,8 @@
 </head>
 <body>
 <h2>454 Sequencing:DTM34:genus:</h2>
+<h3><u>Navigation</u></h3>
+<h4>Microscopy: Class | Family | Genus | Species </h4>
 <font face="Arial Narrow">
 <script src="../../../amcharts/javascript/amcharts.js"
  type="text/javascript"></script>
@@ -17,12 +19,13 @@
 <script type="text/javascript">
 var chart;
 var legend;
-var chartData =[{genus:"Cyclotella",abundance:51.628},
-{genus:"Staurosira",abundance:29.918},
-{genus:"No_Match",abundance:2.019},
-{genus:"Amphora",abundance:13.236},
-{genus:"Denticula",abundance:1.333},
-{genus:"other",abundance:1.866}]
+var chartData =[{genus:"Cyclotella (OTUs:334)",abundance:51.776},
+{genus:"Staurosira (OTUs:158)",abundance:29.985},
+{genus:"Amphora (OTUs:129)",abundance:13.273},
+{genus:"No_Match (OTUs:37)",abundance:1.642},
+{genus:"Nitzschia (OTUs:5)",abundance:0.726},
+{genus:"Denticula (OTUs:5)",abundance:0.668},
+{genus:"other",abundance:1.929}]
 window.onload = function()
 {
 chart = new AmCharts.AmPieChart();

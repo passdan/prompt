@@ -9,6 +9,8 @@
 </head>
 <body>
 <h2>454 Sequencing:DTM99:species:</h2>
+<h3><u>Navigation</u></h3>
+<h4>Microscopy: Class | Family | Genus | Species </h4>
 <font face="Arial Narrow">
 <script src="../../../amcharts/javascript/amcharts.js"
  type="text/javascript"></script>
@@ -17,13 +19,15 @@
 <script type="text/javascript">
 var chart;
 var legend;
-var chartData =[{species:"Amphora_pediculus",abundance:58.901},
-{species:"Cocconeis_placentula",abundance:4.712},
-{species:"Eolimna_minima",abundance:30.890},
-{species:"No_Match",abundance:3.796},
-{species:"Sellaphora_seminulum",abundance:0.785},
-{species:"Thalassiosira_pseudonana",abundance:0.524},
-{species:"other",abundance:0.393}]
+var chartData =[{species:"Amphora_pediculus (OTUs:80)",abundance:59.682},
+{species:"Cocconeis_placentula (OTUs:7)",abundance:4.775},
+{species:"Eolimna_sp_Styx (OTUs:51)",abundance:29.178},
+{species:"Eolimna_minima (OTUs:9)",abundance:2.255},
+{species:"No_Match (OTUs:11)",abundance:1.857},
+{species:"Sellaphora_seminulum (OTUs:3)",abundance:0.796},
+{species:"Nitzschia_amphibia (OTUs:2)",abundance:0.531},
+{species:"Thalassiosira_pseudonana (OTUs:2)",abundance:0.531},
+{species:"other",abundance:0.398}]
 window.onload = function()
 {
 chart = new AmCharts.AmPieChart();

@@ -1,21 +1,26 @@
-Denticula_sp (OTUs:5)	0.666539706722529
-Nitzschia_amphibia (OTUs:4)	0.704627689963816
-Ulnaria_acus (OTUs:1)	0.0190439916206437
-Fragilaria_gracilis (OTUs:1)	0.0190439916206437
-Fragilaria_vaucheriae (OTUs:2)	0.247571891068368
-Pseudostaurosira_brevistriata (OTUs:2)	0.323747857550943
-Cymbella_cymbiformis (OTUs:1)	0.0761759664825748
-Gomphonema_clavatum (OTUs:2)	0.133307941344506
-Fragilaria_Lyngbye (OTUs:1)	0.0571319748619311
-Encyonopsis_microcephala (OTUs:3)	0.15235193296515
-Cocconeis_pediculus (OTUs:1)	0.0190439916206437
-Cocconeis_placentula (OTUs:4)	0.228527899447724
-Eolimna_minima (OTUs:3)	0.190439916206437
-No_Match (OTUs:536)	83.4507712816606
-Ulnaria_ulna (OTUs:7)	0.171395924585793
-Planothidium_frequentissimum (OTUs:1)	0.0190439916206437
-Achnanthidium_minutissimum_OTU5 (OTUs:5)	0.247571891068368
-Gomphonema_minutum (OTUs:1)	0.0190439916206437
-Nitzschia_cf (OTUs:1)	0.0190439916206437
-Amphora_pediculus (OTUs:129)	13.2355741763474
-Proportion of reads identified as Diatoms : 100
+Nitzschia_amphibia 	0.743662537999648
+Ulnaria_acus 	0.020098987513504
+Fragilaria_gracilis 	0.020098987513504
+Denticula_sp. 	0.70346456297264
+Cyclotella_distinguenda 	54.4481571740824
+Nitzschia_cf. 	0.020098987513504
+Fragilaria_vaucheriae 	0.261286837675552
+Staurosira_elliptica 	0.221088862648544
+Pseudostaurosira_brevistriata 	0.341682787729568
+Cymbella_cymbiformis 	0.080395950054016
+Gomphonema_clavatum 	0.140692912594528
+Fragilaria_Lyngbye 	0.060296962540512
+Encyonopsis_microcephala 	0.160791900108032
+Cocconeis_pediculus 	0.020098987513504
+Staurosira_venter 	11.5770168077783
+Cocconeis_placentula 	0.241187850162048
+No_Match 	1.72851292616134
+Ulnaria_ulna 	0.180890887621536
+Planothidium_frequentissimum 	0.020098987513504
+Gomphonema_minutum 	0.020098987513504
+Achnanthidium_minutissimum 	0.261286837675552
+Eolimna_sp_Styx 	0.20098987513504
+Staurosira_construens 	19.7573047257744
+Cyclotella_meneghiniana 	0.040197975027008
+Amphora_pediculus 	8.7304977011783
+Proportion of reads identified as Diatoms : 94.7509998095601

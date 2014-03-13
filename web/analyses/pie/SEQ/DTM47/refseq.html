@@ -9,6 +9,8 @@
 </head>
 <body>
 <h2>454 Sequencing:DTM47:refseq:</h2>
+<h3><u>Navigation</u></h3>
+<h4>Microscopy: Class | Family | Genus | Species </h4>
 <font face="Arial Narrow">
 <script src="../../../amcharts/javascript/amcharts.js"
  type="text/javascript"></script>
@@ -17,17 +19,21 @@
 <script type="text/javascript">
 var chart;
 var legend;
-var chartData =[{refseq:"087",abundance:7.753},
-{refseq:"767",abundance:6.291},
-{refseq:"000",abundance:59.971},
-{refseq:"633",abundance:3.101},
-{refseq:"451",abundance:2.869},
-{refseq:"gHQ912474",abundance:2.335},
-{refseq:"914",abundance:11.246},
-{refseq:"iDTM42_2671",abundance:1.105},
-{refseq:"881",abundance:0.749},
-{refseq:"681",abundance:0.535},
-{refseq:"other",abundance:4.046}]
+var chartData =[{refseq:"087 (OTUs:23)",abundance:6.358},
+{refseq:"767 (OTUs:42)",abundance:6.305},
+{refseq:"iDTM100_4 (OTUs:34)",abundance:5.233},
+{refseq:"000 (OTUs:300)",abundance:37.632},
+{refseq:"633 (OTUs:25)",abundance:3.108},
+{refseq:"451 (OTUs:40)",abundance:2.876},
+{refseq:"503 (OTUs:27)",abundance:2.447},
+{refseq:"iDTM47_46 (OTUs:75)",abundance:15.128},
+{refseq:"914 (OTUs:74)",abundance:11.270},
+{refseq:"gHQ912403 (OTUs:18)",abundance:1.804},
+{refseq:"722 (OTUs:9)",abundance:1.715},
+{refseq:"gJQ610175 (OTUs:20)",abundance:1.232},
+{refseq:"881 (OTUs:5)",abundance:0.750},
+{refseq:"681 (OTUs:11)",abundance:0.518},
+{refseq:"other",abundance:3.626}]
 window.onload = function()
 {
 chart = new AmCharts.AmPieChart();

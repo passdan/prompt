@@ -1,0 +1,4 @@
+8/rarefaction/RARIF_awv_
+8/rarefaction/RARIF_awv_/merge_map.txt
+8/rarefaction/RARIF_awv_/deletion_list.txt
+8/rarefaction/RARIF_awv_/expected_out_files.txt

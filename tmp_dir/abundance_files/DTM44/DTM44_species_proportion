@@ -1,19 +1,21 @@
-Nitzschia_amphibia (OTUs:176)	26.1480129195338
-Thalassiosira_pseudonana (OTUs:1)	0.0140429714927679
-Nitzschia_palea (OTUs:1)	0.0140429714927679
-Melosira_varians (OTUs:1)	0.0140429714927679
-Nitzschia_recta (OTUs:2)	0.0280859429855357
-Sellaphora_seminulum (OTUs:1)	0.0140429714927679
-Nitzschia_vermicularoides (OTUs:1)	0.0140429714927679
-Cocconeis_placentula (OTUs:1)	0.0280859429855357
-Pinnularia_neomajor (OTUs:1)	0.0140429714927679
-Eolimna_minima (OTUs:13)	0.477461030754108
-No_Match (OTUs:111)	3.8477741890184
-Nitzschia_dissipata (OTUs:3)	0.0421289144783036
-Planothidium_frequentissimum (OTUs:3)	0.0421289144783036
-Achnanthidium_minutissimum_OTU5 (OTUs:2)	0.0421289144783036
-Navicula_radiosa (OTUs:1)	0.0140429714927679
-Navicula_sp (OTUs:1)	0.0140429714927679
-Nitzschia_cf (OTUs:2)	0.0421289144783036
-Amphora_pediculus (OTUs:469)	69.1897205448673
-Proportion of reads identified as Diatoms : 99.9859590002808
+Nitzschia_amphibia 	35.3094555194728
+Thalassiosira_pseudonana 	0.0189631877118544
+Nitzschia_palea 	0.0189631877118544
+Nitzschia_cf. 	0.0568895631355631
+Melosira_varians 	0.0189631877118544
+Nitzschia_recta 	0.0379263754237087
+Staurosira_venter 	0.0379263754237087
+Sellaphora_seminulum 	0.0189631877118544
+Pinnularia_neomajor 	0.0189631877118544
+Nitzschia_vermicularoides 	0.0189631877118544
+Cocconeis_placentula 	0.0379263754237087
+Eolimna_minima 	0.512006068220068
+Navicula_sp. 	0.0189631877118544
+No_Match 	5.15798705762439
+Nitzschia_dissipata 	0.0568895631355631
+Planothidium_frequentissimum 	0.0568895631355631
+Navicula_radiosa 	0.0189631877118544
+Achnanthidium_minutissimum 	0.0568895631355631
+Eolimna_sp_Styx 	0.132742313982981
+Amphora_pediculus 	58.3947661601915
+Proportion of reads identified as Diatoms : 74.0434568941309

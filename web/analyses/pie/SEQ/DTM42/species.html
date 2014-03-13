@@ -9,6 +9,8 @@
 </head>
 <body>
 <h2>454 Sequencing:DTM42:species:</h2>
+<h3><u>Navigation</u></h3>
+<h4>Microscopy: Class | Family | Genus | Species </h4>
 <font face="Arial Narrow">
 <script src="../../../amcharts/javascript/amcharts.js"
  type="text/javascript"></script>
@@ -17,16 +19,18 @@
 <script type="text/javascript">
 var chart;
 var legend;
-var chartData =[{species:"Eolimna_minima",abundance:6.782},
-{species:"No_Match",abundance:52.174},
-{species:"Amphora_pediculus",abundance:32.540},
-{species:"Planothidium_frequentissimum",abundance:1.729},
-{species:"Denticula_kuetzingii",abundance:1.178},
-{species:"Cocconeis_placentula",abundance:1.085},
-{species:"Stephanodiscus_hantzschii",abundance:1.070},
-{species:"Cyclotella_meneghiniana",abundance:0.775},
-{species:"Pinnularia_subcapitata",abundance:0.597},
-{species:"other",abundance:2.070}]
+var chartData =[{species:"Nitzschia_amphibia (OTUs:133)",abundance:9.840},
+{species:"Eolimna_sp_Styx (OTUs:121)",abundance:5.555},
+{species:"Amphora_pediculus (OTUs:430)",abundance:32.525},
+{species:"Achnanthes_conspica (OTUs:396)",abundance:30.410},
+{species:"No_Match (OTUs:299)",abundance:13.070},
+{species:"Planothidium_frequentissimum (OTUs:31)",abundance:1.728},
+{species:"Eolimna_minima (OTUs:35)",abundance:1.232},
+{species:"Cocconeis_placentula (OTUs:16)",abundance:1.085},
+{species:"Stephanodiscus_hantzschii (OTUs:20)",abundance:1.085},
+{species:"Cyclotella_meneghiniana (OTUs:19)",abundance:0.775},
+{species:"Pinnularia_subcapitata (OTUs:6)",abundance:0.542},
+{species:"other",abundance:2.154}]
 window.onload = function()
 {
 chart = new AmCharts.AmPieChart();

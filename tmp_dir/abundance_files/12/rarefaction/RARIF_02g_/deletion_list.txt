@@ -1,0 +1,4 @@
+12/rarefaction/RARIF_02g_
+12/rarefaction/RARIF_02g_/merge_map.txt
+12/rarefaction/RARIF_02g_/deletion_list.txt
+12/rarefaction/RARIF_02g_/expected_out_files.txt

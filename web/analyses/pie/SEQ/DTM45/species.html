@@ -9,6 +9,8 @@
 </head>
 <body>
 <h2>454 Sequencing:DTM45:species:</h2>
+<h3><u>Navigation</u></h3>
+<h4>Microscopy: Class | Family | Genus | Species </h4>
 <font face="Arial Narrow">
 <script src="../../../amcharts/javascript/amcharts.js"
  type="text/javascript"></script>
@@ -17,14 +19,17 @@
 <script type="text/javascript">
 var chart;
 var legend;
-var chartData =[{species:"Amphora_pediculus",abundance:60.099},
-{species:"No_Match",abundance:30.928},
-{species:"Cocconeis_placentula",abundance:2.138},
-{species:"Nitzschia_dissipata",abundance:1.222},
-{species:"Planothidium_lanceolatum",abundance:0.725},
-{species:"Nitzschia_cf.",abundance:0.649},
-{species:"Navicula_radiosa",abundance:0.535},
-{species:"other",abundance:3.704}]
+var chartData =[{species:"Amphora_pediculus (OTUs:154)",abundance:68.139},
+{species:"Nitzschia_amphibia (OTUs:4)",abundance:2.597},
+{species:"Cocconeis_placentula (OTUs:18)",abundance:2.424},
+{species:"No_Match (OTUs:64)",abundance:19.004},
+{species:"Nitzschia_cf. (OTUs:6)",abundance:1.126},
+{species:"Nitzschia_dissipata (OTUs:4)",abundance:0.952},
+{species:"Planothidium_lanceolatum (OTUs:7)",abundance:0.823},
+{species:"Navicula_radiosa (OTUs:2)",abundance:0.606},
+{species:"Diatoma_vulgaris (OTUs:5)",abundance:0.519},
+{species:"Navicula_lanceolata (OTUs:5)",abundance:0.519},
+{species:"other",abundance:3.290}]
 window.onload = function()
 {
 chart = new AmCharts.AmPieChart();

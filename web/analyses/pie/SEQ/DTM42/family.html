@@ -9,6 +9,8 @@
 </head>
 <body>
 <h2>454 Sequencing:DTM42:family:</h2>
+<h3><u>Navigation</u></h3>
+<h4>Microscopy: Class | Family | Genus | Species </h4>
 <font face="Arial Narrow">
 <script src="../../../amcharts/javascript/amcharts.js"
  type="text/javascript"></script>
@@ -17,15 +19,16 @@
 <script type="text/javascript">
 var chart;
 var legend;
-var chartData =[{family:"Sellaphoraceae",abundance:7.023},
-{family:"No_Match",abundance:52.174},
-{family:"Catenulaceae",abundance:32.540},
-{family:"Achnanthidiaceae",abundance:2.046},
-{family:"Stephanodiscaceae",abundance:1.884},
-{family:"Bacillariaceae",abundance:1.310},
-{family:"Cocconeidaceae",abundance:1.085},
-{family:"Pinnulariaceae",abundance:0.884},
-{family:"other",abundance:1.054}]
+var chartData =[{family:"Bacillariaceae (OTUs:135)",abundance:9.971},
+{family:"Sellaphoraceae (OTUs:164)",abundance:7.027},
+{family:"Catenulaceae (OTUs:430)",abundance:32.525},
+{family:"Achnanthaceae (OTUs:399)",abundance:30.433},
+{family:"Achnanthidiaceae (OTUs:42)",abundance:2.045},
+{family:"No_Match (OTUs:299)",abundance:13.070},
+{family:"Stephanodiscaceae (OTUs:40)",abundance:1.898},
+{family:"Cocconeidaceae (OTUs:16)",abundance:1.085},
+{family:"Pinnulariaceae (OTUs:11)",abundance:0.883},
+{family:"other",abundance:1.061}]
 window.onload = function()
 {
 chart = new AmCharts.AmPieChart();

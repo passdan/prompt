@@ -20,6 +20,7 @@ sample = sys.argv[2]
 tmpdir = sys.argv[3]
 database = sys.argv[4]
 blast_homology = sys.argv[5]
+multicore_no = sys.argv[6]
 
 in_fasta = sample + ".fas"
 
@@ -79,7 +80,7 @@ def blastn(fas, db):
     blast_out = (tmpdir + "blast_files/" + sample + ".blast")
 
 
-    blastn_cline = NcbiblastnCommandline(query=blast_in, db=db, evalue=0.001, outfmt=6, out=blast_out, num_threads=12)
+    blastn_cline = NcbiblastnCommandline(query=blast_in, db=db, evalue=0.001, outfmt=6, out=blast_out, num_threads=multicore_no)
 
     stdout, stderr = blastn_cline()
 
@@ -95,9 +96,9 @@ def blastn(fas, db):
 def cdhit(fas):
     cdhit_in = (indir + fas)
     global cdhit_out
-    cdhit_out = (tmpdir + fas + "_cdhitout.fa")
-    cd_stdout = (tmpdir + "cdhit_stdout.txt")
-    cd_stderr = (tmpdir + "cdhit_sterr.txt")
+    cdhit_out = (tmpdir + "cdhit_files/" + fas + "_cdhitout.fa")
+    cd_stdout = (tmpdir + "cdhit_files/ cdhit_stdout.txt")
+    cd_stderr = (tmpdir + "cdhit_files/ cdhit_sterr.txt")
 
     call(["cd-hit-454","-i",cdhit_in,"-o",cdhit_out, "-c", "0.99"])
     #subprocess.Popen(["cd-hit-454","-i",cdhit_in,"-o",cdhit_out], stdout=subprocess.PIPE)

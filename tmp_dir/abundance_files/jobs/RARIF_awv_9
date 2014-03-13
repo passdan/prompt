@@ -1,0 +1,16 @@
+  single_rarefaction.py -i refseq.biom -o 8/rarefaction/RARIF_awv_/rarefaction_1403_2.biom   -d 1403 
+ mv 8/rarefaction/RARIF_awv_/rarefaction_1403_2.biom 8/rarefaction//rarefaction_1403_2.biom 
+ single_rarefaction.py -i refseq.biom -o 8/rarefaction/RARIF_awv_/rarefaction_1403_3.biom   -d 1403 
+ mv 8/rarefaction/RARIF_awv_/rarefaction_1403_3.biom 8/rarefaction//rarefaction_1403_3.biom 
+ single_rarefaction.py -i refseq.biom -o 8/rarefaction/RARIF_awv_/rarefaction_1403_4.biom   -d 1403 
+ mv 8/rarefaction/RARIF_awv_/rarefaction_1403_4.biom 8/rarefaction//rarefaction_1403_4.biom 
+ single_rarefaction.py -i refseq.biom -o 8/rarefaction/RARIF_awv_/rarefaction_1403_5.biom   -d 1403 
+ mv 8/rarefaction/RARIF_awv_/rarefaction_1403_5.biom 8/rarefaction//rarefaction_1403_5.biom 
+ single_rarefaction.py -i refseq.biom -o 8/rarefaction/RARIF_awv_/rarefaction_1403_6.biom   -d 1403 
+ mv 8/rarefaction/RARIF_awv_/rarefaction_1403_6.biom 8/rarefaction//rarefaction_1403_6.biom 
+ single_rarefaction.py -i refseq.biom -o 8/rarefaction/RARIF_awv_/rarefaction_1403_7.biom   -d 1403 
+ mv 8/rarefaction/RARIF_awv_/rarefaction_1403_7.biom 8/rarefaction//rarefaction_1403_7.biom 
+ single_rarefaction.py -i refseq.biom -o 8/rarefaction/RARIF_awv_/rarefaction_1403_8.biom   -d 1403 
+ mv 8/rarefaction/RARIF_awv_/rarefaction_1403_8.biom 8/rarefaction//rarefaction_1403_8.biom 
+ single_rarefaction.py -i refseq.biom -o 8/rarefaction/RARIF_awv_/rarefaction_1403_9.biom   -d 1403 
+ mv 8/rarefaction/RARIF_awv_/rarefaction_1403_9.biom 8/rarefaction//rarefaction_1403_9.biom 

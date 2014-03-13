@@ -1,32 +1,37 @@
-Navicula_gregaria (OTUs:2)	0.0583884780070066
-Nitzschia_amphibia (OTUs:173)	15.6286492798754
-Thalassiosira_pseudonana (OTUs:2)	0.0583884780070066
-Ulnaria_acus (OTUs:4)	0.0583884780070066
-Fragilaria_gracilis (OTUs:3)	0.0583884780070066
-Nitzschia_palea (OTUs:7)	0.165434021019852
-Encyonema_sp (OTUs:2)	0.17516543402102
-Gomphonema_clavatum (OTUs:7)	0.311405216037369
-Cymbella_cymbiformis (OTUs:2)	0.126508369015181
-Achnanthidium_minutissimum_OTU4 (OTUs:4)	0.0681198910081744
-Melosira_varians (OTUs:94)	10.8505254963021
-Navicula_lanceolata (OTUs:11)	0.369793694044375
-Cocconeis_pediculus (OTUs:59)	4.3791358505255
-Nitzschia_vermicularoides (OTUs:3)	0.0681198910081744
-Sellaphora_seminulum (OTUs:10)	0.768781627092254
-Cocconeis_placentula (OTUs:11)	0.807707279096925
-Rhoicosphenia_abbreviata (OTUs:20)	0.846632931101596
-Eolimna_minima (OTUs:52)	1.45971195017517
-Ulnaria_ulna (OTUs:1)	0.00973141300116777
-No_Match (OTUs:385)	20.3970416504476
-Diatoma_vulgaris (OTUs:11)	0.720124562086415
-Nitzschia_dissipata (OTUs:1)	0.00973141300116777
-Navicula_cryptotenella (OTUs:3)	0.340599455040872
-Achnanthidium_minutissimum_OTU5 (OTUs:1)	0.0486570650058388
-Planothidium_frequentissimum (OTUs:8)	0.26274815103153
-Navicula_radiosa (OTUs:1)	0.35033086804204
-Fragilaria_radians (OTUs:1)	0.116776956014013
-Eunotia_bilunaris (OTUs:10)	0.155702608018684
-Nitzschia_cf (OTUs:3)	1.508369015181
-Amphora_pediculus (OTUs:432)	39.4122226547295
-Gomphonema_cymbelliclinum (OTUs:8)	0.408719346049046
-Proportion of reads identified as Diatoms : 98.921832884097
+Navicula_gregaria 	0.0694826438145972
+Ulnaria_acus 	0.0694826438145972
+Fragilaria_gracilis 	0.0694826438145972
+Nitzschia_palea 	0.196867490808025
+Encyonema_sp 	0.208447931443791
+Gomphonema_clavatum 	0.370574100344518
+Melosira_varians 	12.9121913088793
+Achnanthes_conspica 	0.0926435250861295
+Navicula_lanceolata 	0.440056744159115
+Staurosira_venter 	0.416895862887583
+Sellaphora_seminulum 	0.914854810225529
+Cocconeis_placentula 	0.961176572768594
+Eolimna_minima 	0.266350134622622
+Ulnaria_ulna 	0.0115804406357662
+No_Match 	15.1935381141252
+Navicula_cryptotenella 	0.405315422251817
+Fragilaria_radians 	0.138965287629194
+Eolimna_sp_Styx 	1.47071596074231
+Cyclotella_meneghiniana 	7.09881010972467
+Eunotia_bilunaris 	0.185287050172259
+Gomphonema_cymbelliclinum 	0.48637850670218
+Nitzschia_amphibia 	18.5981876610405
+Thalassiosira_pseudonana 	0.0694826438145972
+Cyclotella_distinguenda 	0.0115804406357662
+Cymbella_cymbiformis 	0.15054572826496
+Cocconeis_pediculus 	5.21119828609479
+Nitzschia_vermicularoides 	0.0810630844503633
+Rhoicosphenia_abbreviata 	1.00749833531166
+Diatoma_vulgaris 	0.856952607046698
+Nitzschia_dissipata 	0.0115804406357662
+Navicula_radiosa 	0.416895862887583
+Planothidium_frequentissimum 	0.312671897165687
+Achnanthidium_minutissimum 	0.138965287629194
+Staurosira_construens 	0.0463217625430648
+Nitzschia_cf 	1.79496829854376
+Amphora_pediculus 	29.3129903592832
+Proportion of reads identified as Diatoms : 83.1271659607239
