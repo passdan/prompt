@@ -1,0 +1,34 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+use Bio::Perl;
+use Bio::SeqIO;
+use Bio::Seq::SeqBuilder;
+
+my $usage = "usage: gen_blast_db infile.gb outfile.fasta\n";
+my $filename = $ARGV[0] or die $usage;
+my $outfile = $ARGV[1] or die $usage;
+
+
+my $inseq = Bio::SeqIO->new(-file => "<$filename",
+                            -format => 'GenBank');
+
+my $fasta_out = Bio::SeqIO->new(-file => ">$outfile",
+			     -format => 'fasta');
+
+my $builder = $inseq->sequence_builder();
+   $builder->want_none();
+
+$builder->add_wanted_slot('species','seq','description');
+
+while (my $seq = $inseq->next_seq) {
+
+	my $desc = $seq->description();
+	my $species_string = $seq->species()->binomial('FULL');
+
+	$desc = "|$species_string| " . $desc;
+	$seq->description($desc);
+	$fasta_out->write_seq($seq);
+}
+

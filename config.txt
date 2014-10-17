@@ -1,0 +1,11 @@
+## File paths and other settings for running PROMpT ##
+
+[locations]
+sample_dir: /home/sbi6dap/projects/prompt-DTM/input_fasta/
+sample_list: /home/sbi6dap/projects/prompt-DTM/sample_list.txt
+tmp_dir: /home/sbi6dap/projects/prompt-DTM/tmp_dir
+blast_db: /home/sbi6dap/projects/prompt/blast_db/composite
+
+[parameters]
+blast_homology: 96
+core_no: 14
