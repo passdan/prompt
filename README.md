@@ -1,3 +1,5 @@
+![My image](passdan.github.com/PROMpT/web/images/prompt_logo_main.png)
+
 Primary Rapid Overview of Metagenomic Taxonomy - Open Pipeline System and Web interface
 
 <h2>1. Introduction</h2>
