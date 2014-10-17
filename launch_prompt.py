@@ -2,8 +2,11 @@
 
 
 import sys
-import getopt
+import ConfigParser
 from subprocess import call
+
+Config = ConfigParser.ConfigParser()
+
 
 sample_dir = "input_fasta/"
 sample_list = "sample_list.txt"

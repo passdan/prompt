@@ -1,4 +1,0 @@
-Achnanthidium_minutissimum_type	91.91919192
-Eolima_minima	7.070707071
-Neidium_sp	0.336700337
-Pinnularia_sp	0.673400673

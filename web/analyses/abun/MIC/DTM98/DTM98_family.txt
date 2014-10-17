@@ -1,6 +1,0 @@
-Achnanthidiaceae	33.97435897
-Bacillariaceae	0.641025641
-Eunotiaceae	0.320512821
-Fragilariaceae	0.961538462
-Naviculaceae	0.320512821
-Sellaphoraceae	63.78205128

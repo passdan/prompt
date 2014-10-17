@@ -1,2 +1,0 @@
-Bacillariophyceae	99.03846154
-Fragilariophyceae	0.961538462

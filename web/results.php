@@ -1,7 +1,6 @@
 <html>
 <head>
-<title>php test page</title>
-<link rel="stylesheet" type="text/css" href="mystyles.css" media="screen" />
+<title>Results</title>
 <style type="text/css">
 body {background-image:url('images/diatom_back.jpg');}
 </style>
@@ -9,10 +8,11 @@ body {background-image:url('images/diatom_back.jpg');}
 
 <body>
 <center>
-<p>
-<img style="width: 700px; height: 150px;" alt="" src="images/prompt_logo.png" float:left="">
-</center>
+<p><a href="index.html">
+<img style="width: 700px; height: 150px;" alt="" src="images/prompt_logo.png"  float:left=""></a>;
+<big style="font-family: Calibri;"><font size=7><br>
 <hr>
+<span style="font-family: Arial Black;"><font size=3>
 
 <h1><center>Data Portal</center></h1>
 <h2>Sample Pie charts</h2>

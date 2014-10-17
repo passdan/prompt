@@ -1,3 +1,0 @@
-Bacillariophyceae	98.18181818
-Fragilariophyceae	0.606060606
-Unknown	1.212121212

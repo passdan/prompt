@@ -1,4 +1,0 @@
-8/rarefaction/RARIF_fHY_
-8/rarefaction/RARIF_fHY_/merge_map.txt
-8/rarefaction/RARIF_fHY_/deletion_list.txt
-8/rarefaction/RARIF_fHY_/expected_out_files.txt
