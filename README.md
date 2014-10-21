@@ -1,4 +1,4 @@
-![My image](passdan.github.com/PROMpT/web/images/prompt_logo_main.png)
+![My image](https://raw.githubusercontent.com/passdan/PROMpT/master/web/images/prompt-logo.png)
 
 Primary Rapid Overview of Metagenomic Taxonomy - Open Pipeline System and Web interface
 
