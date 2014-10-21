@@ -1,6 +1,6 @@
-![My image](passdan.github.com/PROMpT/web/images/prompt-logo.png)
+![My image](https://raw.githubusercontent.com/passdan/PROMpT/master/web/images/prompt-logo.png)
 
-Primary Rapid Overview of Metagenomic Taxonomy - Open Pipeline System and Web interface
+Primary Rapid Overview of Metagenomic Taxonomy - Open Pipeline System and Web interface for Amplicon data
 
 <h2>1. Introduction</h2>
 
