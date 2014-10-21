@@ -13,7 +13,6 @@ Config.read(conf_file)
 def main():
    
     # assign config parameters
-    script_dir = ConfigSectionMap("locations")['script_dir']
     sample_dir = ConfigSectionMap("locations")['sample_dir']
     sample_list = ConfigSectionMap("locations")['sample_list']
     tmp_dir = ConfigSectionMap("locations")['tmp_dir']
@@ -41,7 +40,7 @@ def main():
     
         print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         print "Running prompt_sample.py on sample " + sampleID + " (" + rows[1].rstrip() + ")"
-        call([script_dir + "prompt_sample.py", sample_dir, sampleID, tmp_dir, blast_db, blast_homology, core_no, script_dir])
+        call(["scripts/prompt_sample.py", sample_dir, sampleID, tmp_dir, blast_db, blast_homology, core_no])
     
     
 def ConfigSectionMap(section):
