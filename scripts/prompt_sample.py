@@ -21,6 +21,7 @@ tmpdir = sys.argv[3]
 database = sys.argv[4]
 blast_homology = sys.argv[5]
 multicore_no = sys.argv[6]
+script_dir = sys.argv[7]
 
 in_fasta = sample + ".fas"
 
@@ -56,22 +57,21 @@ def main():
     print divider
     print "Filtering Blast results at " + str(blast_homology) + "% required database match"
     print "Filtering " + blast_out
-    call(["scripts/filter_blast.py", blast_out, str(blast_homology)])
-
+    call([script_dir + "/filter_blast.py", blast_out, str(blast_homology)])
 
     ##Create abundance files
     print divider
     print "Converting blast output into abundance files"
     call(["mkdir", tmpdir + "abundance_files/" + sample])
-    call(["perl", "scripts/create_abundance_files.pl", str(sample) + ".blast_filter", str(seq_no), tmpdir, cdhit_clusters])
+    call(["perl", script_dir + "/create_abundance_files.pl", str(sample) + ".blast_filter", str(seq_no), tmpdir, cdhit_clusters])
 
     #build web files
     print divider
     print "converting output files into html webfiles"
     call(["mkdir", tmpdir + "html_files/" + sample])
     for level in taxa_list:
-        print "Generating html file:" + sample + ":" + level
-        call(["perl", "scripts/gen_taxa_html.pl", tmpdir, sample, level])
+        print "Generating html file: " + sample + ":" + level
+        call(["perl", script_dir + "/generate_html.pl", tmpdir, script_dir, sample, level])
 
 def blastn(fas, db):
     print("blasting cdhit sequences against the " + db + " database")
@@ -103,7 +103,7 @@ def cdhit(fas):
     call(["cd-hit-454","-i",cdhit_in,"-o",cdhit_out, "-c", "0.99"])
     #subprocess.Popen(["cd-hit-454","-i",cdhit_in,"-o",cdhit_out], stdout=subprocess.PIPE)
 
-    call(["scripts/parse_cd-hit.py", cdhit_out + ".clstr", tmpdir])
+    call([script_dir + "/parse_cd-hit.py", cdhit_out + ".clstr", tmpdir])
     global cdhit_clusters
     cdhit_clusters = (cdhit_out + ".clstr.parse")
 
