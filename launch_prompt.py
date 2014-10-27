@@ -20,16 +20,24 @@ def main():
     blast_db = ConfigSectionMap("locations")['blast_db']
     blast_homology = ConfigSectionMap("parameters")['blast_homology'] 
     core_no = ConfigSectionMap("parameters")['core_no']
+    run_mode = ConfigSectionMap("parameters")['run_mode']
     
     #log_file = open(tmp_dir + Run_Log.txt, 'w')
     #log_file.write("##Parameters used in this analysis run##")
     
-    call(["rm", "-r", "tmp_dir"])
-    call(["mkdir", tmp_dir])
-    call(["mkdir", tmp_dir + "/abundance_files"])
-    call(["mkdir", tmp_dir + "/cdhit_files"])
-    call(["mkdir", tmp_dir + "/blast_files"])
-    call(["mkdir", tmp_dir + "/html_files"])
+    if (run_mode == "both") or (run_mode == "processing_only"):
+        print "Removing previous abundance and website files"
+        call(["rm", "-r",  tmp_dir + "/cdhit_files"])
+        call(["rm", "-r",  tmp_dir + "/blast_files"])
+        call(["mkdir", tmp_dir + "/cdhit_files"])
+        call(["mkdir", tmp_dir + "/blast_files"])
+
+    if (run_mode == "both") or (run_mode == "analysis_only"):
+        print "Removing previous abundance and website files"
+        call(["rm", "-r",  tmp_dir + "abundance_files"])
+        call(["rm", "-r",  tmp_dir + "html_files"])
+        call(["mkdir", tmp_dir + "/abundance_files"])
+        call(["mkdir", tmp_dir + "/html_files"])
     
     
     open_sample_list = open(sample_list, "rU")
@@ -41,7 +49,7 @@ def main():
     
         print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         print "Running prompt_sample.py on sample " + sampleID + " (" + rows[1].rstrip() + ")"
-        call([script_dir + "prompt_sample.py", sample_dir, sampleID, tmp_dir, blast_db, blast_homology, core_no, script_dir])
+        call([script_dir + "prompt_sample.py", sample_dir, sampleID, tmp_dir, blast_db, blast_homology, core_no, script_dir, run_mode])
     
     
 def ConfigSectionMap(section):

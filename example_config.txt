@@ -9,3 +9,4 @@ blast_db: /home/sbi6dap/projects/prompt/blast_db/composite
 [parameters]
 blast_homology: 96
 core_no: 14
+run_mode: both  ## Options: both/processing_only/analysis_only

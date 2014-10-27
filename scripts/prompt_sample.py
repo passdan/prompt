@@ -22,6 +22,7 @@ database = sys.argv[4]
 blast_homology = sys.argv[5]
 multicore_no = sys.argv[6]
 script_dir = sys.argv[7]
+run_mode = sys.argv[8]
 
 in_fasta = sample + ".fas"
 
@@ -38,40 +39,17 @@ except IOError:
 
 
 def main():
-    #process infiles
-    print divider
-    print "Processing infiles"
+
 
     process_infiles(open_fasta)
+   
+    if (run_mode == "both") or (run_mode == "processing_only"):
+    
+        process_sample()
+   
+    if (run_mode == "both") or (run_mode == "analysis_only"):
 
-    #cd-hit
-    print divider 
-    print "Passing to CD-HIT for data reduction"
-    cdhit_fas = cdhit(in_fasta)
-
-    #do blast
-    print divider 
-    print "Passing to blast for taxonomic assignment"
-    blast_out = blastn(cdhit_fas, database)
-
-    print divider
-    print "Filtering Blast results at " + str(blast_homology) + "% required database match"
-    print "Filtering " + blast_out
-    call([script_dir + "/filter_blast.py", blast_out, str(blast_homology)])
-
-    ##Create abundance files
-    print divider
-    print "Converting blast output into abundance files"
-    call(["mkdir", tmpdir + "abundance_files/" + sample])
-    call(["perl", script_dir + "/create_abundance_files.pl", str(sample) + ".blast_filter", str(seq_no), tmpdir, cdhit_clusters])
-
-    #build web files
-    print divider
-    print "converting output files into html webfiles"
-    call(["mkdir", tmpdir + "html_files/" + sample])
-    for level in taxa_list:
-        print "Generating html file: " + sample + ":" + level
-        call(["perl", script_dir + "/generate_html.pl", tmpdir, script_dir, sample, level])
+        analyse_sample()
 
 def blastn(fas, db):
     print("blasting cdhit sequences against the " + db + " database")
@@ -111,7 +89,9 @@ def cdhit(fas):
 
 def process_infiles(open_fasta):
 
-    call(["mkdir", tmpdir + "abundance_files/" + sample])
+    #process infiles
+    print divider
+    print "Processing infiles"
 
     for record in SeqIO.parse(open_fasta, "fasta"):
         lengths.append(len(record.seq))
@@ -120,6 +100,41 @@ def process_infiles(open_fasta):
     seq_no = len(lengths)
 
     print "Average length of", seq_no, "input sequences is ", sum(lengths)/seq_no, "base pairs"
+
+def process_sample():
+ 
+    #cd-hit
+    print divider 
+    print "Passing to CD-HIT for data reduction"
+    cdhit_fas = cdhit(in_fasta)
+    
+    #do blast
+    print divider 
+    print "Passing to blast for taxonomic assignment"
+    blast_out = blastn(cdhit_fas, database)
+    
+    print divider
+    print "Filtering Blast results at " + str(blast_homology) + "% required database match"
+    print "Filtering " + blast_out
+    call([script_dir + "/filter_blast.py", blast_out, str(blast_homology)])
+ 
+def analyse_sample():
+
+    cdhit_cluster_file =  tmpdir + "cdhit_files/" + in_fasta + "_cdhitout.fa.clstr.parse"
+
+    ##Create abundance files
+    print divider
+    print "Converting blast output into abundance files"
+    call(["mkdir", tmpdir + "abundance_files/" + sample])
+    call(["perl", script_dir + "create_abundance_files.pl", str(sample) + ".blast_filter", str(seq_no), tmpdir, cdhit_cluster_file])
+    
+    #build web files
+    print divider
+    print "converting output files into html webfiles"
+    call(["mkdir", tmpdir + "html_files/" + sample])
+    for level in taxa_list:
+        print "Generating html file: " + sample + ":" + level
+        call(["perl", script_dir + "/generate_html.pl", tmpdir, script_dir, sample, level])
 
 if __name__ == "__main__":
     main()

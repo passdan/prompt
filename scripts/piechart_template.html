@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.o/prompt/amchartsml4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Results</title>
+        <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/prompt/stylesheets/stylesheet_chart.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="/prompt/stylesheets/pygment_trac.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/prompt/stylesheets/print.css" media="print">
+
+            <!-- amCharts javascript sources -->
+		<script type="text/javascript" src="/prompt/amcharts/amcharts.js"></script>
+		<script type="text/javascript" src="/prompt/amcharts/pie.js"></script>
+		<script type="text/javascript" src="/prompt/amcharts/themes/light.js"></script>
+		<script type="text/javascript" src="/prompt/amcharts/exporting/amexport.js"></script>
+		<script type="text/javascript" src="/prompt/amcharts/exporting/canvg.js"></script>
+		<script type="text/javascript" src="/prompt/amcharts/exporting/rgbcolor.js"></script>
+		<script type="text/javascript" src="/prompt/amcharts/exporting/filesaver.js"></script>
+		<!-- amCharts javascript code -->
+		<script type="text/javascript">
+			AmCharts.makeChart("chartdiv",
+				{
+					"type": "pie",
+					"pathToImages": "/prompt/amcharts/images/",
+					"balloonText": "[[title]]<br><span style='font-size:22px'><b>[[value]]</b> ([[percents]]%)</span>",
+					"titleField": "XXTAXALEVELXX",
+					"valueField": "abundance",
+					"theme": "light",
+					"startEffect": "easeOutSine",
+					"labelRadius": 5,
+					"groupPercent": 2,
+					"allLabels": [],
+					"amExport": {
+                                                top:21,
+                                                  right:200,
+                                                  exportPNG:true,
+                                                  exportSVG:true
+						},
+					"balloon": {},
+					"legend": {
+						"align": "center",
+						"markerType": "circle",
+						"position": "right",
+						"right": 0
+					},
+					"titles": [],
+					"dataProvider": [
+					XXINPUTDATAXX
+					]
+				}
+			);
+		</script>
+    </head>
+    
+    <body>
+        <header>
+          <img src="/prompt/images/prompt-beta.png" alt="PROMpT logo" width="500" height="auto">
+          <h2>Navigation</h2>
+          <h4>Sequencing: <a href="../XXURLXX/class.html">Class</a> | <a href="../XXURLXX/family.html">Family</a> | <a href="../XXURLXX/genus.html">Genus</a> | <a href="../XXURLXX/species.html">Species</a> | <a href="../XXURLXX/refseq.html">Refseq</a></h4>
+          <h4>Microscopy: <a href="/prompt/amchartsC/XXURLXX/class.html">Class</a> | <a href="../../MIC/XXURLXX/family.html">Family</a> | <a href="../../MIC/XXURLXX/genus.html">Genus</a> | <a href="../../MIC/XXURLXX/species.html">Species</a></h4>
+        </header>
+          <hr>
+
+        <section id=pie_chart>
+            <h2>XXTITLEXX</h2>
+            <div id="chartdiv" style="width: 100%; height: 700px;"></div>
+        </section>
+        <hr>
+
+        <section id=data>
+          <a href="/prompt/amcharts/abun/SEQ/XXURLXX/XXTAXALEVELXX.csv">Download Sample Data</a> ||
+          <a href="/prompt/results.php">Return to Results Page</a>
+        </section>
+    </body>
+
+</html>
