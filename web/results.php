@@ -30,7 +30,7 @@
 
           <form name='form1' action='./results.php'>
             <h3>Data Origin:</h3>
-            <input type="radio" name="origin" value="SEQ" onclick=submit() selected >Barcode Sequencing
+            <input type="radio" name="origin" value="NGS" onclick=submit() selected >Barcode Sequencing
             <input type="radio" name="origin" value="MIC" onclick=submit() >Microscopy
           </form>
           <form name='form2' action='./results.php'>
@@ -41,12 +41,12 @@
 
             $sites = glob("analyses/pie/$origin/*");
 
-            $col1 = 0;
+            $col1 = 1;
 
             foreach ($sites as $site){
                 $site = preg_replace("/analyses\/pie\/$origin\//i", '', $site);
                 print "<input name=\"site\" type=\"radio\" value=\"$site\"  onclick=\"submit()\">$site\n";
-                $col1++;
+               # $col1++;
                 if ( is_int ($col1 / 8))
                    print "<br>\n";
                    $col1++;
@@ -76,7 +76,7 @@
         <section id="comp_analysis">
 
           <h2>Comparative sample analysis</h2>
-          <form name='form2' target="_blank" action='/cgi-bin/prompt/make-csv.cgi' method="GET">
+          <form name='form2' target="_blank" action='/cgi-bin/make-csv.cgi' method="POST">
           <h3> Choose Taxa Level:</h3>
 
           <?php
@@ -98,14 +98,14 @@
                   $col2++;
                   
          }
-              $SEQ_opts = glob("analyses/abun/SEQ/*");
+              $NGS_opts = glob("analyses/abun/NGS/*");
               $col2 = 1;
 
           print "<h3>NGS</h3>\n";
         
-          foreach ($SEQ_opts as $heat_opt){
-              $heat_opt = preg_replace("/analyses\/abun\/SEQ\//i", '', $heat_opt);
-              print "<input name='SEQ_$heat_opt' type='checkbox' value='$heat_opt' >$heat_opt";
+          foreach ($NGS_opts as $heat_opt){
+              $heat_opt = preg_replace("/analyses\/abun\/NGS\//i", '', $heat_opt);
+              print "<input name='selection' type='checkbox' value='NGS_$heat_opt' >$heat_opt";
               if ( is_int ($col2 / 8))
                 print "<br>\n";
                 $col2++;

@@ -1,0 +1,18 @@
+
+
+
+
+
+A number of steps are required to deploy the web-end of the PROMpT package and require administrator access to the system
+
+Firstly, ensure that the latest LAMP server is configured.
+
+the cgi-bin directory must be present in /usr/lib/cgi-bin and the following lines added to /etc/apache2/sites-available/000-default.conf :
+
+ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+<Directory "/usr/lib/cgi-bin">
+AllowOverride None
+Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+Order allow,deny
+Allow from all
+</Directory>

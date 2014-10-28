@@ -17,6 +17,12 @@ my $script_dir = $ARGV[1];
 my $site = $ARGV[2];
 my $level = $ARGV[3];
 
+my $type = "NGS";
+
+if (defined $ARGV[4]) {
+	my $type = $ARGV[4];
+}
+
 my $file = $site . "_" . $level . "_proportion";
 
 open TAXA, "$tmp_dir/abundance_files/$site/$file" or die "Cannot open $file abundance file\n";
@@ -60,7 +66,10 @@ while (<TEMPLATE>){
 		s/XXTAXALEVELXX/$file/;
 		print;
        }elsif(/XXTITLEXX/){
-                s/XXTITLEXX/NGS | $site | $file/;
+                s/XXTITLEXX/$type | $site | $file/;
+                print;
+       }elsif(/XXABUNFILESXX/){
+                s/XXABUNFILESXX/$type\/$site\/$site\_$file\_proportion/g;
                 print;
        }elsif(/XXURLXX/){
                 s/XXURLXX/$site/g;
