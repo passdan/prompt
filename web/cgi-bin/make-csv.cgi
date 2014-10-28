@@ -71,15 +71,17 @@ system("echo $samplestring >/var/www/prompt/tmp/current_selection.csv");
 system("sed 's/ /,/g' < /var/www/prompt/tmp/tmplatest.txt >> /var/www/prompt/tmp/current_selection.csv"); 
 
 system('R --vanilla --slave < /usr/lib/cgi-bin/heatmap.r');
-#system("Rscript --vanilla /usr/lib/cgi-bin/heatmap.r --default-packages=gplots");
+system('R --vanilla --slave < /usr/lib/cgi-bin/nmds.r');
 
 print<<EOF;      
   <h2>Download data: <a href="/prompt/tmp/current_selection.csv">Current_selection.csv</a></h2>
   <hr>
+  <center>
   <h2><a href="/prompt/tmp/heatmap.png">Heatmap</a></h2>
-   <a href="/prompt/tmp/heatmap.png"><img src="/prompt/tmp/heatmap.png" alt="heatmap" width=400 height=auto>
+   <a href="/prompt/tmp/heatmap.png"><img src="/prompt/tmp/heatmap.png" alt="heatmap" width=600 height=auto>
   <h2><a href="/prompt/tmp/nmds.png">NMDS</a></h2>
-  <img src="/prompt/tmp/nmds.png" alt="nmds" width=400 height=auto>
+   <a href="/prompt/tmp/nmds.png"><img src="/prompt/tmp/nmds.png" alt="nmds" width=600 height=auto>
+  </center>
 </BODY>
 </HTML>
 EOF

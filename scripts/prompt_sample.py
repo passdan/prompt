@@ -26,6 +26,11 @@ run_mode = sys.argv[8]
 
 in_fasta = sample + ".fas"
 
+orig_stdout = sys.stdout
+bufsize = 1
+with open('log.txt', 'a', bufsize) as f
+sys.stdout = f
+
 seq_no = 0
 lengths = []
 

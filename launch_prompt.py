@@ -5,6 +5,11 @@ import ConfigParser
 from subprocess import call
  
 conf_file = sys.argv[1]
+
+orig_stdout = sys.stdout
+bufsize = 1
+f = file('log.txt', 'w', bufsize)
+sys.stdout = f
     
 Config = ConfigParser.ConfigParser()
 print "Reading configuration file from " + conf_file
@@ -25,6 +30,11 @@ def main():
     #log_file = open(tmp_dir + Run_Log.txt, 'w')
     #log_file.write("##Parameters used in this analysis run##")
     
+    if (run_mode == "both"):
+        print "Removing previous run files"
+        call(["rm", "-r",  tmp_dir])
+        call(["mkdir", tmp_dir])
+
     if (run_mode == "both") or (run_mode == "processing_only"):
         print "Removing previous abundance and website files"
         call(["rm", "-r",  tmp_dir + "/cdhit_files"])
