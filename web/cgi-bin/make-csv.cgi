@@ -17,17 +17,21 @@ Content-type: text/html
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Results</title>
         <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="/prompt/stylesheets/stylesheet_chart.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/prompt/stylesheets/stylesheet.css" media="screen">
         <link rel="stylesheet" type="text/css" href="/prompt/stylesheets/pygment_trac.css" media="screen">
         <link rel="stylesheet" type="text/css" href="/prompt/stylesheets/print.css" media="print">
     </head>
     <body>
+      <div id="container">
+	<div class="inner">
+
         <header>
-          <img src="/prompt/images/prompt-beta.png" alt="PROMpT logo" width="500" height="auto">
+	  <center>
+          <img src="/prompt/images/prompt-beta.png" alt="PROMpT logo">
           <h2>Navigation</h2>
+	  <h4><a href="/prompt/index.html">Home</a> | <a href="/prompt/processing.html">Processing</a> | <a href="/prompt/results.php">Results</a></h4>
         </header>
-          <hr>
-	<h2> loading $taxa </h2>
+        <hr>
 EOSTUFF
 
 @samples = split("\0", $selection);
@@ -35,7 +39,7 @@ EOSTUFF
 system `rm /var/www/prompt/tmp/tmplatest.txt`;
 system `touch /var/www/prompt/tmp/tmplatest.txt`;
 
-print "Analysing:<br>";
+print "<h1>Analysing:</h1>";
 $samplestring = $taxa;
 
 foreach $i (@samples){
@@ -66,10 +70,16 @@ foreach $path (@paths){
 system("echo $samplestring >/var/www/prompt/tmp/current_selection.csv");
 system("sed 's/ /,/g' < /var/www/prompt/tmp/tmplatest.txt >> /var/www/prompt/tmp/current_selection.csv"); 
 
-print '<h2>Data is available at  <a href="/tmp/current_selection.csv">Current_selection.csv</a></h2>';
-print '<h2>View the <a href="/var/www/prompt/tmp/404">Heatmap</a> or <a href="/var/www/prompt/tmp/404">NMDS</a></h2>';
+system('R --vanilla --slave < /usr/lib/cgi-bin/heatmap.r');
+#system("Rscript --vanilla /usr/lib/cgi-bin/heatmap.r --default-packages=gplots");
 
-print<<EOF;                      <!-- Finish up document -->
+print<<EOF;      
+  <h2>Download data: <a href="/prompt/tmp/current_selection.csv">Current_selection.csv</a></h2>
+  <hr>
+  <h2><a href="/prompt/tmp/heatmap.png">Heatmap</a></h2>
+   <a href="/prompt/tmp/heatmap.png"><img src="/prompt/tmp/heatmap.png" alt="heatmap" width=400 height=auto>
+  <h2><a href="/prompt/tmp/nmds.png">NMDS</a></h2>
+  <img src="/prompt/tmp/nmds.png" alt="nmds" width=400 height=auto>
 </BODY>
 </HTML>
 EOF

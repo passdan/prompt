@@ -16,3 +16,8 @@ Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
 Order allow,deny
 Allow from all
 </Directory>
+
+The R package gplots must be installed globally. This is easiest done by:
+sudo su
+R
+install.packages("gplots")

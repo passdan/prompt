@@ -20,6 +20,8 @@
         <header>
           <center>
           <img src="images/prompt-beta.png" alt="PROMpT logo">
+          <h2>Navigation</h2>
+          <h4><a href="/prompt/index.html">Home</a> | <a href="/prompt/processing.html">Processing</a> | <a href="/prompt/results.php">Results</a></h4>
           </center>
         </header>
         <hr>
@@ -114,10 +116,6 @@
         echo "</p>";
         echo "<input type='submit' value='Collate Data' onclick=\"submit\">";
         echo "</form>";
-
-        echo "<input type='button' value='Generate Heatmap' onclick=\"window.open('r_call.php'); window.open('tmp/current.pdf')\">";
-        echo "<input type='button' value='Download data' onclick=\"window.open('tmp/compound_abun.csv')\">";
-        echo "<br>n.b. If multiple pdf's are open, press refresh to view newest.<br>\n";
 ?>
  
         </section>
