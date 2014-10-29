@@ -1,5 +1,19 @@
 
+Installation:
 
+Dependancies:
+Most dependanceies are already installed and configured in the latest version of Bio-Linux, and is the recommended operating system for PROMpT to be deployed upon.
+
+If you wish to install on another linux distribution the following packages are required:
+
+
+
+R packages must be installed globally so that they are accessible to the webserver
+>sudo su
+>R
+>install.packages("gplots")
+>install.packages("vegan")
+>install.packages("ggplot2")
 
 
 
@@ -18,6 +32,4 @@ Allow from all
 </Directory>
 
 The R package gplots must be installed globally. This is easiest done by:
-sudo su
-R
-install.packages("gplots")
+
