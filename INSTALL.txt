@@ -1,27 +1,25 @@
 
-Installation:
-
 Dependancies:
-Most dependanceies are already installed and configured in the latest version of Bio-Linux, and is the recommended operating system for PROMpT to be deployed upon.
+Most dependanceies are already installed and configured in the latest version of Bio-Linux (8), and is the recommended operating system for PROMpT to be deployed upon.
 
-If you wish to install on another linux distribution the following packages are required:
+If you wish to install on another linux distribution first ensure the following packages are configured:
+cd-hit, blast+, perl, python, R. 
 
+The following R packages must be installed globally so that they are accessible to the webserver
+$ sudo su
+$ R
+ >install.packages("gplots")
+ >install.packages("vegan")
+ >install.packages("ggplot2")
 
+WEBSERVER
+A number of steps are required to deploy the web-end of the PROMpT package and require administrator access to the system.
+Firstly, Ensure that the latest LAMP server is configured. The process for this is described at https://help.ubuntu.com/community/ApacheMySQLPHP but sumarily:
 
-R packages must be installed globally so that they are accessible to the webserver
->sudo su
->R
->install.packages("gplots")
->install.packages("vegan")
->install.packages("ggplot2")
+$ sudo apt-get update
+$ sudo apt-get install lamp-server^
 
-
-
-A number of steps are required to deploy the web-end of the PROMpT package and require administrator access to the system
-
-Firstly, ensure that the latest LAMP server is configured.
-
-the cgi-bin directory must be present in /usr/lib/cgi-bin and the following lines added to /etc/apache2/sites-available/000-default.conf :
+The cgi-bin scripts must be present in /usr/lib/cgi-bin (described below) and the following lines added to /etc/apache2/sites-available/000-default.conf. This allows you to start analyses from the web interface, and run some of the statistics:
 
 ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
 <Directory "/usr/lib/cgi-bin">
@@ -31,5 +29,20 @@ Order allow,deny
 Allow from all
 </Directory>
 
-The R package gplots must be installed globally. This is easiest done by:
+Installation:
 
+$ cd [your local directory]
+$ git clone git@github.com:passdan/PROMpT.git
+$ cd PROMpT
+
+$ sudo cp -r scripts /usr/lib/prompt/
+$ sudo cp -r web* /var/www/prompt/
+$ sudo cp web/cgi-bin/* /usr/lib/cgi-bin/
+
+$ sudo chown -r www-data:www-data /var/www/prompt
+
+Prompt is now able to run. If you go to a web browser and visit 'localhost/prompt' you should see the home page (there's no data in it yet!)
+
+To run an analysis you must supply PROMpT with the reference database which you intend to utilise, and the taxonomic reference file for it. The format for these files can be found in the 'blast_db' and 'taxonomy' directory example files.
+
+Finally, transfer your fasta sequence samples (one file per sample) into an available directory on the server accompanied by a mapping file listing samples for analysis, and a modified version of the config.txt file.
