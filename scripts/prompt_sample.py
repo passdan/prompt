@@ -2,15 +2,17 @@
 #prompt-core-processes
 #daniel.antony.pass@googlemail.com
 
-#######################
-##This script runs the backbone of prompt. External packages 
-##are called from here but additional scripts which are refered
-##to can be found in the ./scripts folder.
-#######################
+###################################################################
+## This script runs the backbone of prompt. External packages    ##
+## are called from here but additional scripts which are refered ##
+## to can be found in the ./scripts folder.                      ##
+###################################################################
 
+import os
 import sys
 import re
 from subprocess import call
+import shutil
 import subprocess
 from Bio import SeqIO
 from Bio.Blast.Applications import NcbiblastnCommandline
@@ -23,19 +25,20 @@ blast_homology = sys.argv[5]
 multicore_no = sys.argv[6]
 script_dir = sys.argv[7]
 run_mode = sys.argv[8]
+webdir = sys.argv[9]
 
 in_fasta = sample + ".fas"
 
 orig_stdout = sys.stdout
 bufsize = 1
-with open('log.txt', 'a', bufsize) as f
+f = file(webdir + 'tmp/log.txt', 'a', bufsize)
 sys.stdout = f
 
 seq_no = 0
 lengths = []
 
 taxa_list = ("refseq","species","genus","family","class")
-divider = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+divider = "<br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>"
 
 try:
     open_fasta = open(indir + in_fasta, "rU")
@@ -44,7 +47,6 @@ except IOError:
 
 
 def main():
-
 
     process_infiles(open_fasta)
    
@@ -55,6 +57,8 @@ def main():
     if (run_mode == "both") or (run_mode == "analysis_only"):
 
         analyse_sample()
+        pop_website()
+
 
 def blastn(fas, db):
     print("blasting cdhit sequences against the " + db + " database")
@@ -96,7 +100,7 @@ def process_infiles(open_fasta):
 
     #process infiles
     print divider
-    print "Processing infiles"
+    print "Processing infile for sample" + sample
 
     for record in SeqIO.parse(open_fasta, "fasta"):
         lengths.append(len(record.seq))
@@ -131,8 +135,8 @@ def analyse_sample():
     print divider
     print "Converting blast output into abundance files"
     call(["mkdir", tmpdir + "abundance_files/" + sample])
-    call(["perl", script_dir + "create_abundance_files.pl", str(sample) + ".blast_filter", str(seq_no), tmpdir, cdhit_cluster_file])
-    
+    call(["perl", script_dir + "create_abundance_files.pl",  str(sample) + ".blast_filter", str(seq_no), tmpdir, cdhit_cluster_file])
+
     #build web files
     print divider
     print "converting output files into html webfiles"
@@ -140,6 +144,27 @@ def analyse_sample():
     for level in taxa_list:
         print "Generating html file: " + sample + ":" + level
         call(["perl", script_dir + "/generate_html.pl", tmpdir, script_dir, sample, level])
+
+def pop_website():
+    #Populate website
+    print divider
+    print "Copying files to the webserver"
+    copyDirectory(tmpdir + 'html_files/' + sample, webdir + '/analyses/pie/NGS/' + sample)
+    copyDirectory(tmpdir + 'abundance_files/' + sample, webdir + '/analyses/abun/NGS/' + sample)
+    #call(["mv", tmpdir + "html_files/*", webdir + "/analyses/pie/NGS/"])
+    #call(["mv", tmpdir + "abundance_files/*", webdir + "/analyses/abun/NGS/"])
+
+
+def copyDirectory(src, dest):
+    try:
+        shutil.copytree(src, dest)
+    # Directories are the same
+    except shutil.Error as e:
+        print('Directory not copied. Error: %s' % e)
+    # Any error saying that the directory doesn't exist
+    except OSError as e:
+        print('Directory not copied. Error: %s' % e)
+
 
 if __name__ == "__main__":
     main()

@@ -1,11 +1,9 @@
 #!/usr/bin/perl
  
-$conf_file = "/home/daniel/work/prompt-dtm/config.txt";
-$tmp_dir = "/home/daniel/work/prompt-dtm/";
-$script_dir = "/home/daniel/work/PROMpT/scripts/";
+$conf_file = "/home/prompt_dir/prompt-test/config.txt";
+$script_dir = "/usr/lib/prompt/";
 
-system("cd $tmp_dir");
-system("script_dir" . "/launch_prompt.py" . "config.txt");
+system("$script_dir/launch_prompt.py $conf_file > /dev/null &");
 
 print<<EOSTUFF; 
 Content-type: text/html

@@ -16,7 +16,7 @@ print "Calculating abundances for $BLASTn_file\n";
 open BLAST, "< $tmp_dir/" . "blast_files/" . "$BLASTn_file" or die("\nPath: $tmp_dir/" . "blast_files/" . "$BLASTn_file\n$!");
 #print "Processing: blast in = $tmp_dir/" . "blast_files/" . "$BLASTn_file\n";
 
-open TAXA, "< taxonomy/taxa_dictionary.txt" or die "Can't open all_taxa.txt for reading.\n";
+open TAXA, "< $tmp_dir/../taxonomy/taxa_dictionary.txt" or die "Can't open all_taxa.txt for reading.\n";
 open ABUN, "< $clust_abun" or die "Can't open $clust_abun abundance file\n";
 
 my $sample = $BLASTn_file;

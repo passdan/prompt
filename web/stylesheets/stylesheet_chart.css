@@ -84,11 +84,6 @@ header h2 {
   line-height: 1.3;
 }
 
-img{
-width:500px;
-height:auto;
-}
-
 #container {
   background: transparent url(../images/highlight-bg.jpg) 50% 0 no-repeat;
   min-height: 595px;

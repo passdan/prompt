@@ -1,12 +1,16 @@
 ## File paths and other settings for running PROMpT ##
 
 [locations]
+script_dir: /home/sbi6dap/projects/PROMpT/scripts/
 sample_dir: /home/sbi6dap/projects/prompt-DTM/input_fasta/
+web_dir: /var/www/prompt/
 sample_list: /home/sbi6dap/projects/prompt-DTM/sample_list.txt
-tmp_dir: /home/sbi6dap/projects/prompt-DTM/tmp_dir
-blast_db: /home/sbi6dap/projects/prompt/blast_db/composite
+tmp_dir: /home/sbi6dap/projects/prompt-DTM/tmp_dir/
+blast_db: /home/sbi6dap/projects/prompt-DTM/blast_db/composite
 
 [parameters]
 blast_homology: 96
 core_no: 14
-run_mode: both  ## Options: both/processing_only/analysis_only
+
+## Options: both/processing_only/analysis_only
+run_mode: both

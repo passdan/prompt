@@ -33,13 +33,35 @@
 
         </section>
 
-        <section id="progress">
+        <section id="process">
 	  <hr>
 	  <center>
           <form name='process' target="_blank" action='/cgi-bin/launch_prompt.cgi' method="POST">
 <input type='image' src='images/go.png' value='Process Now' width=400 height=auto onclick=\"submit\">
 	  </center>
         </section>
+
+	<section id="progress">
+	    <script>
+		function display_file(f)
+		  {
+		   var httpRequest = new XMLHttpRequest();
+		   httpRequest.open("GET", f, true);
+		   httpRequest.send(null);
+		   httpRequest.onreadystatechange = function()
+		   {
+		    if(this.readyState == 4 && this.status == 200)
+		    {
+		     document.getElementById("div1").innerHTML = this.responseText;
+		     }
+		    }
+		   }
+	    </script>
+	<center>
+	  <input type="button" name="compose" value="Display/Update Runlog" onclick="display_file('/prompt/tmp/log.txt')"><br>
+          <div id="div1"></div>
+	</center>
+	</section>
 
         <footer>
           PROMpT is maintained by <a href="https://github.com/passdan">passdan</a><br>

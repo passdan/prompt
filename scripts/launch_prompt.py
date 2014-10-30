@@ -5,11 +5,6 @@ import ConfigParser
 from subprocess import call
  
 conf_file = sys.argv[1]
-
-orig_stdout = sys.stdout
-bufsize = 1
-f = file('log.txt', 'w', bufsize)
-sys.stdout = f
     
 Config = ConfigParser.ConfigParser()
 print "Reading configuration file from " + conf_file
@@ -20,6 +15,7 @@ def main():
     # assign config parameters
     script_dir = ConfigSectionMap("locations")['script_dir']
     sample_dir = ConfigSectionMap("locations")['sample_dir']
+    web_dir = ConfigSectionMap("locations")['web_dir']
     sample_list = ConfigSectionMap("locations")['sample_list']
     tmp_dir = ConfigSectionMap("locations")['tmp_dir']
     blast_db = ConfigSectionMap("locations")['blast_db']
@@ -27,8 +23,10 @@ def main():
     core_no = ConfigSectionMap("parameters")['core_no']
     run_mode = ConfigSectionMap("parameters")['run_mode']
     
-    #log_file = open(tmp_dir + Run_Log.txt, 'w')
-    #log_file.write("##Parameters used in this analysis run##")
+    #orig_stdout = sys.stdout
+    #bufsize = 1
+    #f = file(web_dir + 'tmp/log.txt', 'w', bufsize)
+    #sys.stdout = f
     
     if (run_mode == "both"):
         print "Removing previous run files"
@@ -59,7 +57,7 @@ def main():
     
         print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         print "Running prompt_sample.py on sample " + sampleID + " (" + rows[1].rstrip() + ")"
-        call([script_dir + "prompt_sample.py", sample_dir, sampleID, tmp_dir, blast_db, blast_homology, core_no, script_dir, run_mode])
+        call([script_dir + "prompt_sample.py", sample_dir, sampleID, tmp_dir, blast_db, blast_homology, core_no, script_dir, run_mode, web_dir])
     
     
 def ConfigSectionMap(section):
