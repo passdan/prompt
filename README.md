@@ -10,4 +10,4 @@ It is designed to be implemented in analysis of your chosen taxonomic clade, req
 
 Once deployed, PROMpT will be able to be accessed through the web browser to generate new analyses and visualise the community results at varying taxonomic levels with a number of statistical tools.
 
---Full documentation under construction--
+Please see Installation.pdf for setup and run instructions.
