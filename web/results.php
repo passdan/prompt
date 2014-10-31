@@ -78,7 +78,7 @@
         <section id="comp_analysis">
 
           <h2>Comparative sample analysis</h2>
-          <form name='form2' target="_blank" action='/cgi-bin/make-csv.cgi' method="POST">
+          <form name='form3' target="_blank" action='/cgi-bin/make-csv.cgi' method="POST">
           <h3> Choose Taxa Level:</h3>
 
           <?php
@@ -94,7 +94,7 @@
           print "<h3>MIC</h3>\n";
           foreach ($MIC_opts as $heat_opt){
               $heat_opt = preg_replace("/analyses\/abun\/MIC\//i", '', $heat_opt);
-              print "<input name='MIC_$heat_opt' type='checkbox' value='$heat_opt' >$heat_opt";
+              print "<input name='selection' type='checkbox' value='MIC_$heat_opt' >$heat_opt";
               if ( is_int ($col2 / 8))
                   print "<br>\n";
                   $col2++;

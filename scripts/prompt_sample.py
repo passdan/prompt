@@ -131,7 +131,7 @@ def analyse_sample():
 
     cdhit_cluster_file =  tmpdir + "cdhit_files/" + in_fasta + "_cdhitout.fa.clstr.parse"
 
-    ##Create abundance files
+    #Create abundance files
     print divider
     print "Converting blast output into abundance files"
     call(["mkdir", tmpdir + "abundance_files/" + sample])
@@ -151,9 +151,6 @@ def pop_website():
     print "Copying files to the webserver"
     copyDirectory(tmpdir + 'html_files/' + sample, webdir + '/analyses/pie/NGS/' + sample)
     copyDirectory(tmpdir + 'abundance_files/' + sample, webdir + '/analyses/abun/NGS/' + sample)
-    #call(["mv", tmpdir + "html_files/*", webdir + "/analyses/pie/NGS/"])
-    #call(["mv", tmpdir + "abundance_files/*", webdir + "/analyses/abun/NGS/"])
-
 
 def copyDirectory(src, dest):
     try:

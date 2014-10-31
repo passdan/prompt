@@ -25,7 +25,7 @@ if (defined $ARGV[4]) {
 
 my $file = $site . "_" . $level . "_proportion";
 
-open TAXA, "$tmp_dir/abundance_files/$site/$file" or die "Cannot open $file abundance file\n";
+open TAXA, "$tmp_dir/abundance_files/$site/$file" or die "Cannot open $tmp_dir/abundance_files/$site/$file abundance file\n";
 open TEMPLATE, "$script_dir/piechart_template.html" or die "!!Template file is not present in script directory!!\n";
 
 $file =~ s/.*_(.+)_proportion/$1/;
